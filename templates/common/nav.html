@@ -1,0 +1,46 @@
+{% load static %}
+
+
+<nav class="d-flex justify-content-between">
+    <a href="{% url 'home' %}" class="menu-link">
+        <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
+    </a>
+    <ul class="menu center-flex">
+        <li class="menu-item">
+            <a href="{% url 'log-in' %}" class="menu-link">
+                <i class="ai-file"></i>
+                <span>Log in</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{%  url 'add_post' %}" class="menu-link">
+                <i class="ai-circle-plus"></i>
+                <span>Add post</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'posts' %}" class="menu-link">
+                <i class="ai-book-open"></i>
+                <span>Post feed</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="ai-bell"></i>
+                <span>Notifications</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="ai-gear"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="ai-person"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <form method="post" class="container" enctype="multipart/form-data">
+        <div class="form-style mx-auto flex-column form-group d-flex align-items-center justify-center">
+            <h1> Create yor profile</h1>
+                {% csrf_token %}
+                {{ form }}
+
+                <button>Submit</button>
+         </div>
+    </form>
+
+
+
+{% endblock %}

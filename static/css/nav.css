@@ -1,0 +1,25 @@
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.menu{
+    list-style-type: none;
+    font-weight: 700;
+    font-family: "Times New Roman", sans-serif;
+    background-color: rgb(105, 11, 34);
+    color: rgb(252 242 228);
+    font-size: x-large;
+
+}
+
+.nav-logo{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+nav{
+   background-color: rgb(105, 11, 34);
+}
+

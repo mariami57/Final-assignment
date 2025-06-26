@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   <main>
+        <div class="d-flex flex-column align-items-center justify-center">
+            <h1>Contact Us - WanderWords</h1>
+            <h2>Whether you're seeking help with your next literary adventure, want to share a story, or just want to say hello — we’d love to hear from you! At WanderReads, we connect book lovers and travel enthusiasts across the globe. Let’s chat.</h2>
+            <img src="{% static 'images/photo-1485770958101-9dd7e4ea6d93.avif' %}" alt="banner"/>
+            <h3>Contact Methods:</h3>
+            <div class="contacts d-flex align-items-center justify-center">
+
+                <div class="contact-info">
+                    <p> <i class="fa-solid fa-envelope"></i>  Email</p>
+                    <p>For general inquiries, partnership proposals, or book/travel tips:</p>
+                    <p><a href="#">hello@wanderwords.com</a></p>
+                </div>
+
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-headset"></i>  Support</p>
+                    <p>Need help with your account or a booking?</p>
+                    <p><a href="#">hello@wanderwords.com</a></p>
+                </div>
+
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-pen-fancy"></i>  Press & Media</p>
+                    <p>For interviews, media kits, or speaking opportunities:</p>
+                    <p><a href="#">press@wanderwords.com</a></p>
+                </div>
+
+
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-earth-americas"></i><span>  Social Media</span></p>
+                  
+                    <p>Connect with us on your favorite platform:</p>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+{% endblock %}

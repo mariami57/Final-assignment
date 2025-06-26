@@ -1,0 +1,70 @@
+.form-style{
+    margin-top: 30px;
+    border: 2px solid rgb(224, 122, 95);
+    background-color: rgb(227, 152, 132);
+    border-radius: 10px;
+    width: 40%;
+
+}
+
+
+.form-style label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.form-style h1{
+    margin: 10px 35px;
+}
+
+.form-style input, .form-style textarea{
+    border-radius: 5px;
+    border: 2px solid rgb(105, 11, 34);
+}
+
+.form-style *, .form-style textarea{
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.form-style button {
+    background-color: rgb(188, 49, 82);
+    border: 2px solid rgb(188, 49, 82);
+    border-radius: 5px;
+    width: 40%;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+ input:focus, .form-style textarea:focus {
+    border-color: rgb(10, 188, 133);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgb(243, 191, 177);
+  }
+
+.form-style input{
+  border-radius: 15px;
+  margin: 0 0 15px;
+  padding: 5px;
+  box-sizing: border-box;
+
+
+}
+
+input[type="file"]::file-selector-button {
+    background-color: rgb(188, 49, 82);
+    border: 2px solid rgb(188, 49, 82);
+    border-radius: 5px;
+    width: 50%;
+    padding: 0 5px;
+
+}
+
+input[type="file"] {
+    width: 70%;
+    margin-left: 60px;
+
+}

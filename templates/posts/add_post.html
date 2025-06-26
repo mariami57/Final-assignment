@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <form method="post" class="container" enctype="multipart/form-data">
+        <div class="form-style mx-auto d-flex flex-column form-group  align-items-center justify-center">
+            <h1>Create Post</h1>
+            {% csrf_token %}
+            {{ form }}
+            <button>Submit</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

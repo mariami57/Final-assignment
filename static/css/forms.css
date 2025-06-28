@@ -30,14 +30,7 @@
     font-style: normal;
 }
 
-.form-style button {
-    background-color: rgb(188, 49, 82);
-    border: 2px solid rgb(188, 49, 82);
-    border-radius: 5px;
-    width: 40%;
-    padding: 0 5px;
-    margin-bottom: 10px;
-}
+
 
  input:focus, .form-style textarea:focus {
     border-color: rgb(10, 188, 133);

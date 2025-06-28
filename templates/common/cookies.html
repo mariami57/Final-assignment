@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div>
+            <h1 class="section-title times">Manage Your Cookie Preferences <i class="fa-solid fa-cookie-bite"></i></h1>
+
+            <h2 class="subtitle">We use cookies to enhance your experience, analyze site performance, and provide personalized content. You can choose which types of cookies you're comfortable with. Your preferences can be updated at any time.</h2>
+        </div>
+        <div class="container d-flex">
+
+
+
+            <div class="sub-container d-flex flex-column justify-space-between">
+                <h4>Strictly Necessary Cookies</h4>
+                <p>They are always active</p>
+                <p>These cookies are essential for the website to function properly. They enable core features like page navigation, secure access, and form submission.</p>
+
+            </div>
+
+            <div class="sub-container">
+                <h4>Performance Cookies</h4>
+                <label class="switch mt-4">
+                    <input type="checkbox" id="allowCookies">
+                    <span class="slider"></span>
+                </label>
+                <p class="mt-4">These cookies help us understand how visitors interact with our website, so we can improve user experience. All data is anonymized.</p>
+
+            </div>
+
+            <div class="sub-container">
+                <h4>Functional Cookies</h4>
+                <label class="switch mt-4">
+                    <input type="checkbox" id="allowCookies">
+                    <span class="slider"></span>
+                </label>
+                <p class="mt-4">These cookies remember your preferences and settings, such as language, region, and accessibility options, to provide a more personalized experience.</p>
+            </div>
+
+            <div class="sub-container">
+                <h4>Targeting/ Advertising Cookies</h4>
+                <label class="switch">
+                    <input type="checkbox" id="allowCookies">
+                    <span class="slider"></span>
+                </label>
+                <p class="mt-4">These cookies are used to deliver relevant ads and marketing campaigns, track ad performance, and measure campaign effectiveness.</p>
+            </div>
+        </div>
+
+      <br><br>
+        <button class="mx-auto" onclick="savePreferences()">Save Preferences</button>
+    </main>
+
+    <script>
+            function savePreferences() {
+              const preferences = {
+                performance: document.getElementById('performanceCookies').checked,
+                functional: document.getElementById('functionalCookies').checked,
+                targeting: document.getElementById('targetingCookies').checked,
+              };
+              console.log('Saved preferences:', preferences);
+
+              alert('Preferences saved!');
+            }
+    </script>
+{% endblock %}

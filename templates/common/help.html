@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div>
+            <h1 class="section-title times">Help Center</h1>
+            <h2 class="subtitle">Welcome to our Help Center! Whether you’re a new visitor or a longtime user, we're here to support you. Browse the topics below or contact us directly if you need further assistance.</h2>
+        </div>
+
+        <div class="container">
+            <div class="">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="details">
+                    <details>
+                      <summary><strong>How do I create an account?</strong></summary>
+                      <p>Click on the "Sign Up" button at the top right corner of the page and fill in your details. </p>
+                    </details>
+
+                    <details>
+                      <summary><strong>How can I contact customer support?</strong></summary>
+                      <p>You can reach us at support@example.com or through our live chat, available Monday to Friday.</p>
+                    </details>
+
+                    <details>
+                      <summary><strong> I forgot my password. What should I do?</strong></summary>
+                      <p>Go to the password reset page and enter your email address. We'll send you a link to create a new password.</p>
+                    </details>
+
+                    <details>
+                      <summary><strong> How do I share content with others?</strong></summary>
+                      <p>Look for the “Share” button on your dashboard. You can copy a link or invite others via email.</p>
+                    </details>
+
+                    <details>
+                      <summary><strong>  Is my data secure?</strong></summary>
+                      <p> Yes. We use SSL encryption and follow industry best practices to keep your data safe.</p>
+                    </details>
+
+                    <details>
+                      <summary><strong> Do you sell my data?</strong></summary>
+                      <p> Never. We do not sell or share your personal data with third parties. </p>
+                    </details>
+                </div>
+
+            </div>
+
+            <div class="">
+                  <h3><strong> Having trouble with the website or app?</strong></h3>
+                  <ul>Try the following:
+                      <li>Refresh your browser or clear your cache.</li>
+                      <li>Ensure you're using the latest version of your browser.</li>
+                      <li>Check your internet connection.</li>
+                  </ul>
+            </div>
+
+            <div class="">
+                  <h3><strong> Community Guidelines</strong></h3>
+
+                    <p>Welcome to our community! To keep this a safe, respectful, and enjoyable space for everyone, please follow these guidelines when using our platform.</p>
+                    <ol>
+                        <li> Be Respectful: We encourage open discussion, but personal attacks, bullying, or harassment of any kind will not be tolerated.
+                            <ul>
+                                <li>What’s okay:
+                                    <ul>
+                                        <li>Respectful disagreement</li>
+                                        <li>Constructive criticism</li>
+                                    </ul>
+                                </li>
+
+                                <li>What’s not okay:
+                                    <ul>
+                                        <li>Hate speech or slurs</li>
+                                        <li>Threats or targeted harassment</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li> Protect Personal Privacy: Respect your own and others' privacy.
+                            <ul>
+                                <li>Do not post someone else’s personal information (addresses, phone numbers, IDs) without consent.</li>
+                                <li>Avoid sharing content that could put others at risk.</li>
+                            </ul>
+                        </li>
+
+                        <li> No Spam or Scams: Keep the platform clean and relevant.
+                            Do not:
+                            <ul>
+                                <li>Send repetitive or irrelevant messages</li>
+                                <li>Post deceptive links or phishing content</li>
+                                <li>Impersonate others to mislead</li>
+                            </ul>
+                        </li>
+
+                        <li> Respect Intellectual Property: Only share content you created or have permission to share.
+                            <ul>
+                                <li>Don’t upload copyrighted music, videos, or images unless you own the rights or have a license.</li>
+                                <li>Always credit original creators when applicable.</li>
+                            </ul>
+                        </li>
+
+                        <li> We Enforce These Rules
+                            Breaking these rules can result in:
+                            <ul>
+                                <li>Content removal</li>
+                                <li>Account warnings or suspensions</li>
+                                <li>Permanent bans for repeated or severe violations</li>
+                            </ul>
+                        </li>
+
+                        <li> Help Us Improve
+                            <p>We’re always refining our rules. If you have feedback or see areas for improvement, <a href="{% url 'contacts' %}">contact us</a>.</p>
+                        </li>
+                    </ol>
+            </div>
+
+
+        </div>
+
+    </main>
+
+{% endblock %}

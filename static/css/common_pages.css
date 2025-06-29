@@ -101,3 +101,37 @@ img {
     color: #935f51;
 }
 
+details {
+    border: 2px solid rgb(224, 122, 95);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+}
+
+details p {
+    font-style: italic;
+    font-size: 0.8em;
+    padding-top: 5px;
+}
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+
+.faq {
+    width: 15%;
+    margin-right: 40px;
+}
+
+.comg-help {
+    text-align: inherit;
+    padding: 30px;
+}
+
+.sub-container ul {
+    padding: 0;
+}

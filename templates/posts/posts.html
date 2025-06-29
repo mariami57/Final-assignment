@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 
-    {% for post in posts %}
+    {% for post in post_list %}
 
     <h2>{{ post.title }}</h2>
         <h4>Post by {{ post.author }}</h4>
-        {% if post.image %}
-            <img src="{{ post.image.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
+        {% if post.image1 %}
+            <img src="{{ post.image1.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
+        {% endif %}
+
+        {% if post.image2 %}
+            <img src="{{ post.image2.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
+        {% endif %}
+
+        {% if post.image3 %}
+            <img src="{{ post.image3.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
         {% endif %}
         <p>{{ post.content }} </p>
         <p> Created at: {{ post.created_at }}</p>

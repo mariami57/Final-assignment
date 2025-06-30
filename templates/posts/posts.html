@@ -5,21 +5,47 @@
 
     {% for post in post_list %}
 
-    <h2>{{ post.title }}</h2>
-        <h4>Post by {{ post.author }}</h4>
-        {% if post.image1 %}
-            <img src="{{ post.image1.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
-        {% endif %}
+        <h2>{{ post.title }}</h2>
+            <h4>Post by {{ post.author }}</h4>
+            {% with forloop.counter as i %}
 
-        {% if post.image2 %}
-            <img src="{{ post.image2.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
-        {% endif %}
+              <!-- Carousel Start -->
+              <div class="carousel">
+                {% if post.image1 %}<input type="radio" name="carousel{{ i }}" id="slide1-{{ i }}" checked>{% endif %}
+                {% if post.image2 %}<input type="radio" name="carousel{{ i }}" id="slide2-{{ i }}">{% endif %}
+                {% if post.image3 %}<input type="radio" name="carousel{{ i }}" id="slide3-{{ i }}">{% endif %}
 
-        {% if post.image3 %}
-            <img src="{{ post.image3.url }}" width="50" height="50" alt="{{ post.title }}" class="img-fluid"/>
-        {% endif %}
-        <p>{{ post.content }} </p>
-        <p> Created at: {{ post.created_at }}</p>
+                <div class="slides">
+                  {% if post.image1 %}
+                    <div class="slide"><img src="{{ post.image1.url }}" alt="{{ post.title }} image 1"></div>
+                  {% endif %}
+                  {% if post.image2 %}
+                    <div class="slide"><img src="{{ post.image2.url }}" alt="{{ post.title }} image 2"></div>
+                  {% endif %}
+                  {% if post.image3 %}
+                    <div class="slide"><img src="{{ post.image3.url }}" alt="{{ post.title }} image 3"></div>
+                  {% endif %}
+                </div>
+
+                <div class="arrows">
+                  <label class="prev" for="slide3-1"></label>
+                  <label class="next" for="slide2-1"></label>
+
+                  <label class="prev" for="slide1-1"></label>
+                  <label class="next" for="slide3-1"></label>
+
+                  <label class="prev" for="slide2-1"></label>
+                  <label class="next" for="slide1-1"></label>
+                </div>
+
+                <div class="navigation">
+                  {% if post.image1 %}<label for="slide1-{{ i }}"></label>{% endif %}
+                  {% if post.image2 %}<label for="slide2-{{ i }}"></label>{% endif %}
+                  {% if post.image3 %}<label for="slide3-{{ i }}"></label>{% endif %}
+                </div>
+              </div>
+            <!-- Carousel End -->
+        {% endwith %}
 
     {% endfor %}
 {% endblock %}

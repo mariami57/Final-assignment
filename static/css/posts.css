@@ -1,0 +1,113 @@
+.carousel {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navigation label {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+#slide1-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2-1:checked ~ .slides {
+  transform: translateX(-100%);
+}
+
+#slide3-1:checked ~ .slides{
+    transform: translateX(-200%);
+}
+
+#slide1-1:checked ~ .arrows label.prev[for="slide3-1"],
+#slide1-1:checked ~ .arrows label.next[for="slide2-1"],
+#slide2-1:checked ~ .arrows label.prev[for="slide1-1"],
+#slide2-1:checked ~ .arrows label.next[for="slide3-1"],
+#slide3-1:checked ~ .arrows label.prev[for="slide2-1"],
+#slide3-1:checked ~ .arrows label.next[for="slide1-1"] {
+  display: block;
+}
+
+.arrows label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrows label.prev::before {
+  content: "<"; /* Left arrow */
+  font-size: 50px;
+  color: black;
+    background-color: #cccccc;
+    border-radius: 30%;
+    opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows label.next::before {
+  content: ">"; /* Right arrow */
+  font-size: 50px;
+    color: black;
+    background-color: #cccccc;
+    border-radius: 30%;
+    opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows label.prev {
+  left: 10px;
+}
+
+.arrows label.next {
+  right: 10px;
+}

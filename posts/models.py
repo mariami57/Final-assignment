@@ -9,3 +9,14 @@ class Post(models.Model):
     image1 = models.ImageField(upload_to='post_mediafiles/', blank=True,null=True)
     image2 = models.ImageField(upload_to='post_mediafiles/', blank=True, null=True)
     image3 = models.ImageField(upload_to='post_mediafiles/', blank=True, null=True)
+
+    @property
+    def image_count(self):
+        count = 0
+        if self.image1:
+            count += 1
+        if self.image2:
+            count += 1
+        if self.image3:
+            count += 1
+        return count

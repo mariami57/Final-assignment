@@ -2,43 +2,40 @@
 
 
 {% block content %}
-<div class="content-container center-flex">
-        {% for post in post_list %}
-            <div class="post-content content-container center-flex">
-              {% with forloop.counter as i %}
-                <h1 class="section-title">{{ post.title }}</h1>
-                  <div>
-                      <h4>Post by {{ post.author }}</h4>
-                      <p>{{ post.created_at }}</p>
-                </div>
 
-                <div class="carousel-container" id="carousel-{{ i }}">
-                  <div class="slides" id="slides-{{ i }}">
-                    {% if post.image1 %}
-                      <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1"></div>
-                    {% endif %}
-                    {% if post.image2 %}
-                      <div class="slide"><img src="{{ post.image2.url }}" alt="Image 2"></div>
-                    {% endif %}
-                    {% if post.image3 %}
-                      <div class="slide"><img src="{{ post.image3.url }}" alt="Image 3"></div>
-                    {% endif %}
-                  </div>
+{% for post in post_list %}
+      {% with forloop.counter as i %}
+        <h2>{{ post.title }}</h2>
 
-                    <p class="slide-counter" id="counter-{{ i }}">1/{{ post.image_count }}</p>
+        <div class="carousel-container" id="carousel-{{ i }}">
+          <div class="slides" id="slides-{{ i }}">
+            {% if post.image1 %}
+              <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1"></div>
+            {% endif %}
+            {% if post.image2 %}
+              <div class="slide"><img src="{{ post.image2.url }}" alt="Image 2"></div>
+            {% endif %}
+            {% if post.image3 %}
+              <div class="slide"><img src="{{ post.image3.url }}" alt="Image 3"></div>
+            {% endif %}
+          </div>
 
-                {% if post.image_count > 1 %}
-                  <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
-                  <button class="arrow next" data-id="{{ i }}">&#10095;</button>
-                {% endif %}
-                </div>
+            <div class="slide-counter" id="counter-{{ i }}">1/{{ post.image_count }}</div>
 
-                <p>{{ post.content }}</p>
+        {% if post.image_count > 1 %}
+          <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
+          <button class="arrow next" data-id="{{ i }}">&#10095;</button>
+        {% endif %}
+        </div>
 
-              {% endwith %}
-            </div>
-        {% endfor %}
-</div>
+        <p>{{ post.content }}</p>
+        <div>
+          <h4>Post by {{ post.author }}</h4>
+          <p>{{ post.created_at }}</p>
+        </div>
+      {% endwith %}
+{% endfor %}
+
 
 <script>
 const sliders = {};

@@ -3,49 +3,91 @@
 
 {% block content %}
 
-    {% for post in post_list %}
-
+{% for post in post_list %}
+      {% with forloop.counter as i %}
         <h2>{{ post.title }}</h2>
-            <h4>Post by {{ post.author }}</h4>
-            {% with forloop.counter as i %}
 
-              <!-- Carousel Start -->
-              <div class="carousel">
-                {% if post.image1 %}<input type="radio" name="carousel{{ i }}" id="slide1-{{ i }}" checked>{% endif %}
-                {% if post.image2 %}<input type="radio" name="carousel{{ i }}" id="slide2-{{ i }}">{% endif %}
-                {% if post.image3 %}<input type="radio" name="carousel{{ i }}" id="slide3-{{ i }}">{% endif %}
+        <div class="carousel-container" id="carousel-{{ i }}">
+          <div class="slides" id="slides-{{ i }}">
+            {% if post.image1 %}
+              <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1"></div>
+            {% endif %}
+            {% if post.image2 %}
+              <div class="slide"><img src="{{ post.image2.url }}" alt="Image 2"></div>
+            {% endif %}
+            {% if post.image3 %}
+              <div class="slide"><img src="{{ post.image3.url }}" alt="Image 3"></div>
+            {% endif %}
+          </div>
 
-                <div class="slides">
-                  {% if post.image1 %}
-                    <div class="slide"><img src="{{ post.image1.url }}" alt="{{ post.title }} image 1"></div>
-                  {% endif %}
-                  {% if post.image2 %}
-                    <div class="slide"><img src="{{ post.image2.url }}" alt="{{ post.title }} image 2"></div>
-                  {% endif %}
-                  {% if post.image3 %}
-                    <div class="slide"><img src="{{ post.image3.url }}" alt="{{ post.title }} image 3"></div>
-                  {% endif %}
-                </div>
+            <div class="slide-counter" id="counter-{{ i }}">1/{{ post.image_count }}</div>
 
-                <div class="arrows">
-                  <label class="prev" for="slide3-1"></label>
-                  <label class="next" for="slide2-1"></label>
+        {% if post.image_count > 1 %}
+          <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
+          <button class="arrow next" data-id="{{ i }}">&#10095;</button>
+        {% endif %}
+        </div>
 
-                  <label class="prev" for="slide1-1"></label>
-                  <label class="next" for="slide3-1"></label>
+        <p>{{ post.content }}</p>
+        <div>
+          <h4>Post by {{ post.author }}</h4>
+          <p>{{ post.created_at }}</p>
+        </div>
+      {% endwith %}
+{% endfor %}
 
-                  <label class="prev" for="slide2-1"></label>
-                  <label class="next" for="slide1-1"></label>
-                </div>
 
-                <div class="navigation">
-                  {% if post.image1 %}<label for="slide1-{{ i }}"></label>{% endif %}
-                  {% if post.image2 %}<label for="slide2-{{ i }}"></label>{% endif %}
-                  {% if post.image3 %}<label for="slide3-{{ i }}"></label>{% endif %}
-                </div>
-              </div>
-            <!-- Carousel End -->
-        {% endwith %}
+<script>
+const sliders = {};
 
-    {% endfor %}
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.slides').forEach(slidesEl => {
+    const slideCount = slidesEl.querySelectorAll('.slide').length;
+    const id = slidesEl.id.replace('slides-', '');
+
+    sliders[id] = { index: 0, count: slideCount };
+
+    slidesEl.style.width = `${slideCount * 100}%`;
+    slidesEl.querySelectorAll('.slide').forEach(slide => {
+      slide.style.width = `${100 / slideCount}%`;
+    });
+
+
+    updateCounter(id);
+  });
+
+  document.querySelectorAll('.arrow.prev').forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.id;
+      moveSlide(id, -1);
+    });
+  });
+
+  document.querySelectorAll('.arrow.next').forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.id;
+      moveSlide(id, 1);
+    });
+  });
+});
+
+function moveSlide(id, direction) {
+  const slidesEl = document.getElementById(`slides-${id}`);
+  const slider = sliders[id];
+
+  slider.index = (slider.index + direction + slider.count) % slider.count;
+  slidesEl.style.transform = `translateX(-${slider.index * (100 / slider.count)}%)`;
+
+  updateCounter(id);
+}
+
+function updateCounter(id) {
+  const counterEl = document.getElementById(`counter-${id}`);
+  if (!counterEl) return;
+  const slider = sliders[id];
+  counterEl.textContent = `${slider.index + 1}/${slider.count}`;
+}
+
+</script>
 {% endblock %}
+

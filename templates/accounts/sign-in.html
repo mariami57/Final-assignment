@@ -7,8 +7,15 @@
         <div class="form-style mx-auto flex-column form-group d-flex align-items-center justify-center">
             <h1> Create yor profile</h1>
                 {% csrf_token %}
-                {{ form }}
-
+                {% for field in form %}
+                    <div>
+                        <label for="{{ field.id_for_label }}"> {{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="error">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
                 <button>Submit</button>
          </div>
     </form>

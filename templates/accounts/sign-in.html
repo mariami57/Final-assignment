@@ -8,7 +8,7 @@
             <h1> Create yor profile</h1>
                 {% csrf_token %}
                 {% for field in form %}
-                    <div>
+                    <div class="mx-auto flex-column d-flex align-items-center justify-center">
                         <label for="{{ field.id_for_label }}"> {{ field.label }}</label>
                         {{ field }}
                         {% if field.errors %}

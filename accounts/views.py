@@ -9,4 +9,4 @@ from accounts.forms import WanderWordsUserCreationForm
 class SignInView(CreateView):
     form_class = WanderWordsUserCreationForm
     template_name = 'accounts/sign-in.html'
-    success_url = reverse_lazy('posts')
+    success_url = reverse_lazy('posts-feed')

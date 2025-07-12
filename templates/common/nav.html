@@ -6,36 +6,51 @@
         <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
     </a>
     <ul class="menu center-flex">
-        <li class="menu-item">
-{#            <a href="{% url 'log-in' %}" class="menu-link">#}
-                <span>Log in</span>
-            </a>
-        </li>
-        <li class="menu-item">
+
+
+        <li>
             <a href="{%  url 'add-post' %}" class="menu-link">
                 <span>Add post</span>
             </a>
         </li>
-        <li class="menu-item">
+        <li>
             <a href="{% url 'posts-feed' %}" class="menu-link">
                 <span>Post feed</span>
             </a>
         </li>
-        <li class="menu-item">
+        <li>
             <a href="#" class="menu-link">
                 <span>Notifications</span>
             </a>
         </li>
-        <li class="menu-item">
+        <li>
             <a href="#" class="menu-link">
                 <span>Settings</span>
             </a>
         </li>
-        <li class="menu-item">
+        <li>
             <a href="#" class="menu-link">
                 <i class="ai-person"></i>
                 <span>Profile</span>
             </a>
         </li>
+
+        {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" class="menu-link">
+                    <span>Log out</span>
+                </a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'login' %}" class="menu-link">
+                    <span>Log in</span>
+                </a>
+            </li>
+        {% endif %}
     </ul>
 </nav>
+
+<form style="display: none" id="logout-form" action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+</form>

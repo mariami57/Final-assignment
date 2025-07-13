@@ -35,6 +35,9 @@ PROJECT_APPS = [
     'common',
     'posts',
     'accounts',
+    'books',
+    'destinations',
+    'reviews',
 ]
 
 INSTALLED_APPS = [

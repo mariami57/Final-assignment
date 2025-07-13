@@ -15,14 +15,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Post',
+            name='Review',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=150)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('image1', models.ImageField(blank=True, null=True, upload_to='post_mediafiles/')),
-                ('image2', models.ImageField(blank=True, null=True, upload_to='post_mediafiles/')),
-                ('image3', models.ImageField(blank=True, null=True, upload_to='post_mediafiles/')),
+                ('content', models.TextField(blank=True, null=True)),
+                ('rating', models.FloatField(blank=True, null=True)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

@@ -10,7 +10,6 @@ class WebUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=100, unique=True)
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True)
-    is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
     objects = WebUserManager()
@@ -21,6 +20,17 @@ class WebUser(AbstractBaseUser, PermissionsMixin):
         return self.username
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(WebUser, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=50, blank=True, null=True)
+    last_name = models.CharField(max_length=50, blank=True, null=True)
+    phone_number = models.CharField(max_length=10,blank=True, null=True)
+    backup_email = models.EmailField(blank=True, null=True)
+    profile_picture = models.ImageField(blank=True, null=True)
+
+    @property
+    def full_name(self):
+        return f"{self.first_name or ''} {self.last_name or ''}"
 
 
 

@@ -18,3 +18,6 @@ class AddPostView(LoginRequiredMixin, CreateView):
     form_class = PostCreateForm
     template_name = 'posts/add_post.html'
     success_url = reverse_lazy('posts-feed')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user

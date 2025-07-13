@@ -9,7 +9,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     genre = models.CharField(max_length=50, null=True, blank=True)
-    destinations = models.ManyToManyField(Destination, related_name='books')
+    destinations = models.ManyToManyField(Destination, related_name='books', blank=True)
     added_by = models.ForeignKey(UserModel, on_delete=models.CASCADE, related_name='books_added')
 
     def __str__(self):

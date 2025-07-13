@@ -3,10 +3,53 @@
 {% block content %}
 <div>
     <form method="post" class="container" enctype="multipart/form-data">
-        <div class="form-style mx-auto d-flex flex-column form-group  align-items-center justify-center">
+        <div class="form-style mx-auto d-flex flex-column form-group align-items-center justify-center add-post">
             <h1>Create Post</h1>
             {% csrf_token %}
-            {{ form }}
+
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            <div class="form-row d-flex gap-2">
+                <div class="d-flex flex-column">
+                    {{ form.book.label_tag }}
+                    {{ form.book }}
+                </div>
+
+                <div class="d-flex flex-column">
+                    {{ form.destination.label_tag }}
+                    {{ form.destination }}
+                </div>
+            </div>
+
+            <div  class="form-row d-flex gap-3">
+                <div class="d-flex flex-column">
+                    {{ form.content.label_tag }}
+                    {{ form.content }}
+                </div>
+
+                <div class="d-flex flex-column">
+                    {{ form.book_review.label_tag }}
+                    {{ form.book_review }}
+                </div>
+            </div>
+
+            <div  class="form-row d-flex gap-2 mt-3">
+                <div class="d-flex flex-column">
+                    {{ form.image1.label_tag }}
+                    {{ form.image1 }}
+                </div>
+
+                <div class="d-flex flex-column">
+                    {{ form.image2.label_tag }}
+                    {{ form.image2 }}
+                </div>
+
+                <div class="d-flex flex-column">
+                    {{ form.image3.label_tag }}
+                    {{ form.image3 }}
+                </div>
+
+            </div>
             <button>Submit</button>
         </div>
     </form>

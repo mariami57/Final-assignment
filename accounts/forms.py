@@ -4,13 +4,13 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
-from accounts.models import WanderWordsUser
+from accounts.models import WebUser
 
 UserModel = get_user_model()
 
-class WanderWordsUserCreationForm(UserCreationForm):
+class WebUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
-        model = WanderWordsUser
+        model = WebUser
         fields = ('username', 'email')
 
 

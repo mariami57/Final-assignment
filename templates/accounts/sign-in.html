@@ -6,6 +6,7 @@
     <form method="post" class="container" enctype="multipart/form-data">
         <div class="form-style mx-auto flex-column form-group d-flex align-items-center justify-center">
             <h1> Create yor profile</h1>
+            <p>After successfully registered you will be asked to log in</p>
                 {% csrf_token %}
                 {% for field in form %}
                     <div class="mx-auto flex-column d-flex align-items-center justify-center">
@@ -16,6 +17,7 @@
                         {% endif %}
                     </div>
                 {% endfor %}
+
                 <button>Submit</button>
          </div>
     </form>

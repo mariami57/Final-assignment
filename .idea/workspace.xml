@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_assignment/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_assignment/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_assignment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_assignment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/add_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/add_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/posts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -40,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -114,6 +123,8 @@
       <workItem from="1751432191195" duration="7443000" />
       <workItem from="1752336050221" duration="7507000" />
       <workItem from="1752392293771" duration="11100000" />
+      <workItem from="1752421956679" duration="9888000" />
+      <workItem from="1752472077952" duration="2555000" />
     </task>
     <servers />
   </component>

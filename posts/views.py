@@ -22,7 +22,6 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        form.instance.user = self.request.user
         response = super().form_valid(form)
         messages.success(self.request, "Post created! Want to leave a book review?")
         return response

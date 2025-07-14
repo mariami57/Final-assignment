@@ -7,14 +7,25 @@
     {% else %}
         <div class="content-container center-flex">
                 {% for post in post_list %}
+
                     <div class="post-content content-container center-flex">
                       {% with forloop.counter as i %}
-                        <h1 class="section-title">{{ post.title }}</h1>
-                          <div>
-                              <h4>Post by {{ post.author }}</h4>
-                              <p>{{ post.created_at }}</p>
-                        </div>
+                          <div class="profile-details d-flex gap-3">
+                            <div>
+                                {% include 'common/profile-picture.html'%}
+                            </div>
+                            <div class="info">
+                                {% if post.user.profile.full_name %}
+                                    {{ post.user.profile.full_name }}
+                                {% else %}
+                                    {{ post.user.username }}
+                                {% endif %}
+                                <h1 class="section-title">{{ post.title }}</h1>
+                                <p>{{ post.created_at }}</p>
+                            </div>
 
+                        </div>
+                          <p>{{ post.content }}</p>
                         <div class="carousel-container" id="carousel-{{ i }}">
                           <div class="slides" id="slides-{{ i }}">
                             {% if post.image1 %}
@@ -36,7 +47,7 @@
                         {% endif %}
                         </div>
 
-                        <p>{{ post.content }}</p>
+
 
                       {% endwith %}
                     </div>

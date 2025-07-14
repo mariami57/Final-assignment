@@ -30,7 +30,8 @@ class Profile(models.Model):
 
     @property
     def full_name(self):
-        return f"{self.first_name or ''} {self.last_name or ''}"
+        full_name = f"{self.first_name or ''} {self.last_name or ''}".strip()
+        return full_name if full_name else None
 
 
 

@@ -1,0 +1,7 @@
+{% load static %}
+
+{% if profile_picture %}
+    <img src="{{ profile_picture }}" class="nav-logo">
+{% else %}
+    <img src="{% static 'images/default-avatar-profile.jpg' %}" alt="default-profile-picture" class="nav-logo">
+{% endif %}

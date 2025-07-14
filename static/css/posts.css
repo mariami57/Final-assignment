@@ -41,8 +41,8 @@
 
 .post-content{
   width: 50%;
-  border: 2px solid rgb(224, 122, 95);
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .post-content p {

@@ -21,6 +21,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+
 }
 
 .arrow {
@@ -40,12 +41,20 @@
 .arrow.next { right: 10px; }
 
 .post-content{
-  width: 50%;
+  max-width: 800px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
 }
 
 .post-content p {
-  width: 80%;
-  text-align: center;
+  width: 100%;
+}
+
+.small-font {
+    font-size: 0.7em;
+}
+
+.small-text{
+  opacity: 80%;
 }

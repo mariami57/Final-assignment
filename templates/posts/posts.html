@@ -10,22 +10,22 @@
 
                     <div class="post-content content-container">
                       {% with forloop.counter as i %}
-                          <div class="profile-details d-flex gap-3 my-2">
+                          <a class="profile-details d-flex gap-3 my-2" href="#">
                             <div>
                                 {% include 'common/profile-picture.html'%}
                             </div>
                             <div class="info">
                                 {% if post.user.profile.full_name %}
-                                    <h2 class="py-3">{{ post.user.profile.full_name }}</h2>
+                                    <h2 class="py-3 abril-fatface-regular">{{ post.user.profile.full_name }}</h2>
                                 {% else %}
-                                    <h2 class="py-3">{{ post.user.username }}</h2>
+                                    <h2 class="py-3 abril-fatface-regular">{{ post.user.username }}</h2>
                                 {% endif %}
 
                             </div>
-                          </div>
-                          <h4>{{ post.title }}</h4>
-                          <p class="small-font small-text">{{ post.created_at }}</p>
-                          <p>{{ post.content }}</p>
+                          </a>
+                          <h4 class="edu-nsw-act-hand-pre-cursive">{{ post.title }}</h4>
+                          <p class="small-font small-text times-new-roman">{{ post.created_at }}</p>
+                          <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
                         <div class="carousel-container" id="carousel-{{ i }}">
                           <div class="slides" id="slides-{{ i }}">
                             {% if post.image1 %}
@@ -39,16 +39,13 @@
                             {% endif %}
                           </div>
 
-                            <p class="slide-counter" id="counter-{{ i }}">1/{{ post.image_count }}</p>
+                            <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
 
                         {% if post.image_count > 1 %}
                           <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
                           <button class="arrow next" data-id="{{ i }}">&#10095;</button>
                         {% endif %}
                         </div>
-
-
-
                       {% endwith %}
                     </div>
                 {% endfor %}
@@ -129,6 +126,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 {% endblock %}
-
-
-

@@ -52,9 +52,27 @@
 }
 
 .small-font {
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 
 .small-text{
   opacity: 80%;
+}
+
+
+.times-new-roman {
+  font-family: "Times New Roman", sans-serif;
+}
+
+.edu-nsw-act-hand-pre-cursive {
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.abril-fatface-regular {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -23,12 +23,12 @@
                                 {% endif %}
                             </div>
                           </a>
-                         {% if editable  and request.user.pk == photo.user.pk %}
+                         {% if request.user == post.user %}
                             <div class="menu-container">
                                 <details>
                                       <summary ></summary>
                                       <div class="popup-menu">
-                                          <p><a href="#" class="times-new-roman">Edit</a></p>
+                                          <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>
                                           <p><a href="#" class="times-new-roman">Delete</a></p>
                                       </div>
                                 </details>

@@ -126,8 +126,9 @@
   .popup-menu a {
     display: block;
     padding: 0.5em 1em;
-    color: #333;
     text-decoration: none;
+    font-style: normal;
+    font-size: 1.1em;
   }
 
   .popup-menu a:hover {

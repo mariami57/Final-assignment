@@ -23,16 +23,19 @@
                                 {% endif %}
                             </div>
                           </a>
+                         {% if editable  and request.user.pk == photo.user.pk %}
                             <div class="menu-container">
                                 <details>
                                       <summary ></summary>
                                       <div class="popup-menu">
-                                          <p><a href="#">Edit</a></p>
-                                          <p><a href="#">Delete</a></p>
+                                          <p><a href="#" class="times-new-roman">Edit</a></p>
+                                          <p><a href="#" class="times-new-roman">Delete</a></p>
                                       </div>
                                 </details>
                             </div>
+                         {% endif %}
                         </div>
+
 
                           <h4 class="edu-nsw-act-hand-pre-cursive">{{ post.title }}</h4>
                           <p class="small-font small-text times-new-roman">{{ post.created_at }}</p>

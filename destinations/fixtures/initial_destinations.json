@@ -1,0 +1,90 @@
+[
+  {
+    "model": "destinations.destination",
+    "pk": 1,
+    "fields": {
+      "name": "Tuscany",
+      "country": "Italy"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 2,
+    "fields": {
+      "name": "Tokyo",
+      "country": "Japan"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 3,
+    "fields": {
+      "name": "Patagonia",
+      "country": "Argentina"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 4,
+    "fields": {
+      "name": "Cross-country",
+      "country": "USA"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 5,
+    "fields": {
+      "name": "Paris",
+      "country": "France"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 6,
+    "fields": {
+      "name": "Bangkok",
+      "country": "Thailand"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 7,
+    "fields": {
+      "name": "Kenya",
+      "country": "Africa"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 8,
+    "fields": {
+      "name": "Mumbai",
+      "country": "India"
+    }
+  },
+    {
+    "model": "destinations.destination",
+    "pk": 9,
+    "fields": {
+      "name": "Andalusia",
+      "country": "Spain"
+    }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 10,
+    "fields": {
+      "name": "New Ross",
+      "country": "Ireland"
+    }
+  }
+]

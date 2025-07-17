@@ -1,0 +1,113 @@
+[
+  {
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+      "title": "Under the Tuscan Sun",
+      "author": "Frances Mayes",
+      "genre": "Memoir",
+      "added_by": 4,
+      "destinations": [1]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+      "title": "Norwegian Wood",
+      "author": "Haruki Murakami",
+      "genre": "Fiction/Romance",
+      "added_by": 4,
+      "destinations": [2]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "title": "In Patagonia",
+      "author": "Bruce Chatwin",
+      "genre": "Travel",
+      "added_by": 4,
+      "destinations": [3]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "title": "On the road",
+      "author": "Jack Kerouac",
+      "genre": "Fiction/Beat",
+      "added_by": 4,
+      "destinations": [4]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "title": "A Moveable Feast",
+      "author": "Ernest Hemingway",
+      "genre": "Memoir/Literary",
+      "added_by": 4,
+      "destinations": [1]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 6,
+    "fields": {
+      "title": "The Beach",
+      "author": "Alex Garland",
+      "genre": "Fiction/Thriller",
+      "added_by": 4,
+      "destinations": [6]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 7,
+    "fields": {
+      "title": "Out of Africa",
+      "author": "Isak Dinesen (Karen Blixen)",
+      "genre": "Memoir/Historical",
+      "added_by": 4,
+      "destinations": [7]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 8,
+    "fields": {
+      "title": "Shantaram",
+      "author": "Greogry David",
+      "genre": "Fiction/Crime",
+      "added_by": 4,
+      "destinations": [8]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 9,
+    "fields": {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "genre": "Fiction",
+      "added_by": 4,
+      "destinations": [9]
+    }
+  },
+    {
+    "model": "books.book",
+    "pk": 10,
+    "fields": {
+      "title": "Small things like these",
+      "author": "Claire Keegan",
+      "genre": "Historical/Fiction",
+      "added_by": 4,
+      "destinations": [10]
+    }
+  }
+
+]

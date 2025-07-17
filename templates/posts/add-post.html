@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block content %}
 <div>
     <form method="post" class="container" enctype="multipart/form-data">
@@ -11,13 +12,32 @@
             {{ form.title }}
             <div class="form-row d-flex gap-2">
                 <div class="d-flex flex-column">
-                    {{ form.book.label_tag }}
-                    {{ form.book }}
-                </div>
+                    {{ form.book_choice.label }}
+                    <div class="d-flex">
+                        <select id="book_choice" name="book_choice" onchange="toggleField('book_choice', 'id_book_title')">
+                            {% for value, label in form.book_choice.field.choices %}
+                                <option value="{{ value }}">{{ label }}</option>
+                            {% endfor %}
+                        </select><br>
+                    </div>
+
+                    <div style="display:none;">
+                        {{ form.book_title.label }} {{ form.book_title }}
+                    </div>
+                    </div>
+
 
                 <div class="d-flex flex-column">
-                    {{ form.destination.label_tag }}
-                    {{ form.destination }}
+                  {{ form.destination_choice.label }}
+                  <select id="destination_choice" name="destination_choice" onchange="toggleField('destination_choice', 'id_destination_name')">
+                    {% for value, label in form.destination_choice.field.choices %}
+                      <option value="{{ value }}">{{ label }}</option>
+                    {% endfor %}
+                  </select><br>
+
+                  <div style="display:none;">
+                    {{ form.destination_name.label }} {{ form.destination_name }}
+                  </div>
                 </div>
             </div>
 
@@ -49,6 +69,16 @@
 </div>
 
 
-
+<script>
+function toggleField(selectId, inputId) {
+    const select = document.getElementById(selectId);
+    const input = document.getElementById(inputId);
+    if (select.value === "other") {
+        input.parentElement.style.display = "block";
+    } else {
+        input.parentElement.style.display = "none";
+    }
+}
+</script>
 
 {% endblock %}

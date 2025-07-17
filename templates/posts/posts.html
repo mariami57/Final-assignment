@@ -36,9 +36,17 @@
                          {% endif %}
                         </div>
 
+                          <h4 class="edu-nsw-act-hand-pre-cursive"> {{ post.title }}</h4>
 
-                          <h4 class="edu-nsw-act-hand-pre-cursive">{{ post.title }}</h4>
-                          <p class="small-font small-text times-new-roman">{{ post.created_at }}</p>
+
+
+                          <div class="small-font small-text times-new-roman my-2">
+                              <a href="#" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
+                              <p class="my-0"><i class="fa-solid fa-location-dot"></i>{{ post.destination|capfirst }}</p>
+                              <p class="my-0">{{ post.created_at }}</p>
+
+                          </div>
+
                           <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
                         <div class="carousel-container" id="carousel-{{ i }}">
                           <div class="slides" id="slides-{{ i }}">

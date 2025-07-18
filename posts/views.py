@@ -27,39 +27,23 @@ class AddPostView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
 
-        # Handle book
         book_choice = form.cleaned_data.get('book_choice')
-        if book_choice == "other":
-            title = form.cleaned_data.get('book_title')
-            if title:
-                book, _ = Book.objects.get_or_create(
-                    title=title,
-                    defaults={'author': 'Unknown', 'genre': None, 'added_by': self.request.user}
-                )
-            else:
-                book = None
-        elif book_choice:
+        if book_choice:
             book = Book.objects.get(id=book_choice)
+            form.instance.book = book
         else:
-            book = None
-        form.instance.book = book
 
-        # Handle destination
+            form.add_error('book_choice', 'Please select a book.')
+            return self.form_invalid(form)
+
         dest_choice = form.cleaned_data.get('destination_choice')
-        if dest_choice == "other":
-            name = form.cleaned_data.get('destination_name')
-            if name:
-                destination, _ = Destination.objects.get_or_create(
-                    name=name,
-                    defaults={'country': 'Unknown'}
-                )
-            else:
-                destination = None
-        elif dest_choice:
+        if dest_choice:
             destination = Destination.objects.get(id=dest_choice)
+            form.instance.destination = destination
         else:
-            destination = None
-        form.instance.destination = destination
+            form.add_error('destination_choice', 'Please select a destination.')
+            return self.form_invalid(form)
+
 
         response = super().form_valid(form)
 

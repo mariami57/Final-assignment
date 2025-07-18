@@ -22,7 +22,7 @@
                 <div class="d-flex flex-column">
 
                     {{ form.book_choice.label }}
-                    <div class="d-flex">
+                    <div class="d-flex flex-column">
                         <select id="book_choice" name="book_choice" onchange="toggleField('book_choice', 'id_book_title')">
                             {% for value, label in form.book_choice.field.choices %}
                                 <option value="{{ value }}">{{ label }}</option>
@@ -44,9 +44,6 @@
                     {% endfor %}
                   </select><br>
 
-                  <div style="display:none;">
-                    {{ form.destination_name.label }} {{ form.destination_name }}
-                  </div>
                 </div>
             </div>
 
@@ -78,17 +75,5 @@
     </form>
 
 
-
-<script>
-function toggleField(selectId, inputId) {
-    const select = document.getElementById(selectId);
-    const input = document.getElementById(inputId);
-    if (select.value === "other") {
-        input.parentElement.style.display = "block";
-    } else {
-        input.parentElement.style.display = "none";
-    }
-}
-</script>
 
 {% endblock %}

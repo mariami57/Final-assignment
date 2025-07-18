@@ -2,13 +2,14 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
 
 }
 
 .slides {
   display: flex;
   transition: transform 0.5s ease;
+  max-height: 700px;
 }
 
 .slide {
@@ -41,7 +42,7 @@
 .arrow.next { right: 10px; }
 
 .post-content{
-  max-width: 800px;
+  width: 800px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 20px;
@@ -49,6 +50,7 @@
 
 .post-content p {
   width: 100%;
+  margin-top: 20px;
 }
 
 .small-font {
@@ -134,4 +136,3 @@
   .popup-menu a:hover {
     background: #ddb884;
   }
-

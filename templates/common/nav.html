@@ -2,9 +2,15 @@
 
 
 <nav class="d-flex justify-content-between">
-    <a href="{% url 'home' %}" class="menu-link">
-        <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
-    </a>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'posts-feed' %}" class="menu-link">
+            <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
+        </a>
+    {% else %}
+        <a href="{% url 'home' %}" class="menu-link">
+            <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
+        </a>
+    {% endif %}
     <ul class="menu center-flex">
         {% if request.user.is_authenticated %}
             <li>

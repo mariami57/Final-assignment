@@ -2,16 +2,25 @@
 
 
 {% block content %}
-<div>
+
     <form method="post" class="container" enctype="multipart/form-data">
         <div class="form-style mx-auto d-flex flex-column form-group align-items-center justify-center add-post">
             <h1>Create Post</h1>
             {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                    <p class="mb-0">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
 
             {{ form.title.label_tag }}
             {{ form.title }}
             <div class="form-row d-flex gap-2">
                 <div class="d-flex flex-column">
+
                     {{ form.book_choice.label }}
                     <div class="d-flex">
                         <select id="book_choice" name="book_choice" onchange="toggleField('book_choice', 'id_book_title')">
@@ -65,8 +74,9 @@
             </div>
             <button type="submit">Submit</button>
         </div>
+
     </form>
-</div>
+
 
 
 <script>

@@ -9,8 +9,8 @@ UserModel = get_user_model()
 # Create your models here.
 class Post(models.Model):
     user=models.ForeignKey(UserModel, on_delete=models.CASCADE)
-    book=models.ForeignKey(Book, on_delete=models.CASCADE, null=True, blank=True)
-    destination=models.ForeignKey(Destination, on_delete=models.CASCADE, null=True, blank=True)
+    book=models.ForeignKey(Book, on_delete=models.CASCADE)
+    destination=models.ForeignKey(Destination, on_delete=models.CASCADE)
     content=models.TextField(null=True, blank=True)
     book_review=models.ForeignKey(Review, on_delete=models.CASCADE, null=True, blank=True)
     title=models.CharField(max_length=150)

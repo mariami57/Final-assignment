@@ -10,6 +10,7 @@ from books.models import Book
 from common.mixins import UserIsCreatorMixin
 from destinations.models import Destination
 from posts.forms import PostCreateForm, PostEditForm
+from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post
 
 
@@ -18,7 +19,7 @@ class PostFeedView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'posts/posts.html'
 
-class AddPostView(LoginRequiredMixin, CreateView):
+class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostCreateForm
     template_name = 'posts/add-post.html'
@@ -26,36 +27,13 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        book_choice = form.cleaned_data.get('book_choice')
-        book_title = form.cleaned_data.get('book_title')
-
-        dest_choice = form.cleaned_data.get('destination_choice')
-        dest_name = form.cleaned_data.get('destination_name')
-
-        if book_choice == 'other' and book_title:
-            book = Book.objects.create(
-                title=book_title,author="Unknown", added_by=self.request.user,)
-        else:
-            book = Book.objects.get(id=book_choice)
-
-        if dest_choice == 'other' and dest_name:
-            d_name, d_country = dest_name.split(',')
-            destination = Destination.objects.create(
-                name=d_name,
-                country=d_country,
-                )
-        else:
-            destination = Destination.objects.get(id=dest_choice)
-
+        book, destination = self.handle_book_and_destination(form)
         form.instance.book = book
         form.instance.destination = destination
-        if book and destination:
-            book.destinations.add(destination)
-
-        response = super().form_valid(form)
+        super().form_valid(form)
 
         messages.success(self.request, 'Post created! Want to leave a book review?')
-        return response
+        return super().form_valid(form)
 
 class PostEditView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     model = Post
@@ -63,10 +41,10 @@ class PostEditView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     template_name = 'posts/edit-post.html'
     success_url = reverse_lazy('posts-feed')
 
-
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['instance'] = self.get_object()
+        kwargs['request'] = self.request
         return kwargs
 
 @login_required

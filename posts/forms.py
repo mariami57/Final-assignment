@@ -3,6 +3,7 @@ from django import forms
 
 from books.models import Book
 from destinations.models import Destination
+from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post
 
 
@@ -67,13 +68,14 @@ class PostBaseForm(forms.ModelForm):
 class PostCreateForm(PostBaseForm):
     pass
 
-class PostEditForm(PostBaseForm):
+class PostEditForm(BookDestinationHandlerMixin, PostBaseForm):
    class Meta(PostBaseForm.Meta):
        fields = ['title', 'book_choice', 'destination_choice', 'content', 'image1',
                  'image2', 'image3']
 
    def __init__(self, *args, **kwargs):
        instance = kwargs.get('instance')
+       self.request = kwargs.pop('request', None)
        super().__init__(*args, **kwargs)
 
        if instance:
@@ -82,24 +84,16 @@ class PostEditForm(PostBaseForm):
            if instance.destination:
                self.fields['destination_choice'].initial = str(instance.destination.id)
 
-   # def save(self, commit=True):
-   #     post = super().save(commit=False)
-   #
-   #     book_id = self.cleaned_data.get('book_choice')
-   #     if book_id:
-   #         try:
-   #             post.book = Book.objects.get(id=book_id)
-   #         except Book.DoesNotExist:
-   #             post.book = None
-   #
-   #     destination_id = self.cleaned_data.get('destination_choice')
-   #     if destination_id:
-   #         try:
-   #             post.destination = Destination.objects.get(id=destination_id)
-   #         except Destination.DoesNotExist:
-   #             post.destination = None
-   #
-   #     if commit:
-   #         post.save()
-   #
-   #     return post
+   def save(self, commit=True):
+       post = super().save(commit=False)
+
+
+       if hasattr(self, 'request'):
+           book, destination = self.handle_book_and_destination(self)
+           post.book = book
+           post.destination = destination
+
+       if commit:
+           post.save()
+
+       return post

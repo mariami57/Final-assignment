@@ -6,7 +6,7 @@
       "title": "Under the Tuscan Sun",
       "author": "Frances Mayes",
       "genre": "Memoir",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [1]
     }
   },
@@ -17,7 +17,7 @@
       "title": "Norwegian Wood",
       "author": "Haruki Murakami",
       "genre": "Fiction/Romance",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [2]
     }
   },
@@ -28,7 +28,7 @@
       "title": "In Patagonia",
       "author": "Bruce Chatwin",
       "genre": "Travel",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [3]
     }
   },
@@ -39,7 +39,7 @@
       "title": "On the road",
       "author": "Jack Kerouac",
       "genre": "Fiction/Beat",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [4]
     }
   },
@@ -50,8 +50,8 @@
       "title": "A Moveable Feast",
       "author": "Ernest Hemingway",
       "genre": "Memoir/Literary",
-      "added_by": 4,
-      "destinations": [1]
+      "added_by": 1,
+      "destinations": [5]
     }
   },
     {
@@ -61,7 +61,7 @@
       "title": "The Beach",
       "author": "Alex Garland",
       "genre": "Fiction/Thriller",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [6]
     }
   },
@@ -72,7 +72,7 @@
       "title": "Out of Africa",
       "author": "Isak Dinesen (Karen Blixen)",
       "genre": "Memoir/Historical",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [7]
     }
   },
@@ -83,7 +83,7 @@
       "title": "Shantaram",
       "author": "Greogry David",
       "genre": "Fiction/Crime",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [8]
     }
   },
@@ -94,7 +94,7 @@
       "title": "The Alchemist",
       "author": "Paulo Coelho",
       "genre": "Fiction",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [9]
     }
   },
@@ -105,7 +105,7 @@
       "title": "Small things like these",
       "author": "Claire Keegan",
       "genre": "Historical/Fiction",
-      "added_by": 4,
+      "added_by": 1,
       "destinations": [10]
     }
   }

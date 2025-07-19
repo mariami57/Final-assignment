@@ -10,14 +10,8 @@
       <user-name>postgres-user</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node negative="1">
-            <node kind="database" negative="1" />
-            <node kind="database" qname="postgres">
-              <node kind="schema" qname="public" />
-            </node>
-            <node kind="database" qname="wanderwords">
-              <node kind="schema" negative="1" />
-            </node>
+          <node kind="database" qname="wanderwords">
+            <node kind="schema" negative="1" />
           </node>
         </introspection-scope>
         <substitutions use-mini-cat="false" />

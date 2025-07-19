@@ -1,0 +1,29 @@
+<script>
+function toggleField(selectId, inputId) {
+    const select = document.getElementById(selectId);
+    const input = document.getElementById(inputId);
+    const parent = input.parentElement;
+
+    if (select.value === "other") {
+        parent.style.display = "flex";
+        parent.style.flexDirection = "column";
+
+    } else {
+        parent.style.display = "none";
+
+    }
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.select-search').select2({
+      width: '100%',
+      placeholder: "Search...",
+      allowClear: true
+    });
+  });
+</script>

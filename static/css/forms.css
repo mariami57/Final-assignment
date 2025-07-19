@@ -59,6 +59,7 @@ input[type="file"]::file-selector-button {
 input[type="file"] {
     width: 70%;
     margin-left: 60px;
+    border: none;
 }
 
 .add-post{

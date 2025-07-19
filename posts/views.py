@@ -63,6 +63,12 @@ class PostEditView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     template_name = 'posts/edit-post.html'
     success_url = reverse_lazy('posts-feed')
 
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.get_object()
+        return kwargs
+
 @login_required
 def post_delete_view(request, pk):
     post = Post.objects.get(pk=pk)

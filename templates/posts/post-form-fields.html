@@ -1,0 +1,56 @@
+{% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                    <p class="mb-0">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            <div class="form-row d-flex gap-2">
+                <div class="d-flex flex-column">
+                    {{ form.book_choice.label }}
+                    <div class="d-flex flex-column align-center">
+                        <select id="book_choice" name="book_choice" onchange="toggleField('book_choice', 'id_book_title')">
+                            {% for value, label in form.book_choice.field.choices %}
+                                <option value="{{ value }}" {% if form.book_choice.value == value|stringformat:"s" %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select><br>
+                    </div>
+                </div>
+
+
+                <div class="d-flex flex-column">
+                  {{ form.destination_choice.label }}
+                  <select id="destination_choice" name="destination_choice" onchange="toggleField('destination_choice', 'id_destination_name')">
+                    {% for value, label in form.destination_choice.field.choices %}
+                     <option value="{{ value }}" {% if form.destination_choice.value == value|stringformat:"s" %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                  </select><br>
+
+                </div>
+            </div>
+            <div class="form-row d-flex gap-2 flex-column">
+                 <div style="display:none;">
+                            {{ form.book_title.label }}
+                            {{ form.book_title }}
+                    </div>
+
+                    <div style="display:none;" class="form-group">
+                        {{ form.destination_name.label }}
+                        <small class="form-text text-muted">
+                            {{ form.destination_name.help_text }}
+                        </small>
+                        {{ form.destination_name }}
+
+
+                    </div>
+            </div>
+
+            <div  class="d-flex flex-column">
+                    {{ form.content.label_tag }}
+                    {{ form.content }}
+            </div>
+

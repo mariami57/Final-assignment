@@ -21,17 +21,12 @@
             <div class="form-row d-flex gap-2">
                 <div class="d-flex flex-column">
                     {{ form.book_choice.label }}
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column align-center">
                         <select id="book_choice" name="book_choice" onchange="toggleField('book_choice', 'id_book_title')">
                             {% for value, label in form.book_choice.field.choices %}
                                 <option value="{{ value }}">{{ label }}</option>
                             {% endfor %}
                         </select><br>
-                    </div>
-
-                    <div style="display:none;">
-                        {{ form.book_title.label }}
-                        {{ form.book_title }}
                     </div>
                 </div>
 
@@ -43,12 +38,24 @@
                       <option value="{{ value }}">{{ label }}</option>
                     {% endfor %}
                   </select><br>
-                    <div style="display:none;">
-                        {{ form.destination_name.label }}
-                        {{ form.destination_name }}
-                    </div>
-                </div>
 
+                </div>
+            </div>
+            <div class="form-row d-flex gap-2 flex-column">
+                 <div style="display:none;">
+                            {{ form.book_title.label }}
+                            {{ form.book_title }}
+                    </div>
+
+                    <div style="display:none;" class="form-group">
+                        {{ form.destination_name.label }}
+                        <small class="form-text text-muted">
+                            {{ form.destination_name.help_text }}
+                        </small>
+                        {{ form.destination_name }}
+
+
+                    </div>
             </div>
 
             <div  class="d-flex flex-column">
@@ -88,11 +95,25 @@ function toggleField(selectId, inputId) {
     if (select.value === "other") {
         parent.style.display = "flex";
         parent.style.flexDirection = "column";
+
     } else {
         parent.style.display = "none";
 
     }
 }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.select-search').select2({
+      width: '100%',
+      placeholder: "Search...",
+      allowClear: true
+    });
+  });
 </script>
 
 {% endblock %}

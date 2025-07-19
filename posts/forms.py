@@ -7,11 +7,13 @@ from posts.models import Post
 
 
 class PostBaseForm(forms.ModelForm):
-    book_choice = forms.CharField(label='Book', required=False)
+    book_choice = forms.CharField(label='Book', required=False,
+                    widget=forms.Select(attrs={'class': 'select-search'}))
     book_title = forms.CharField(label='Book Title', required=False)
 
-    destination_choice = forms.CharField(label='Destination', required=False)
-    destination_name = forms.CharField(label='Destination Name', required=False)
+    destination_choice = forms.CharField(label='Destination', required=False,
+                        widget=forms.Select(attrs={'class': 'select-search'}))
+    destination_name = forms.CharField(label='Destination Name', help_text='Please fill in the following format: destination name, country', required=False)
 
 
     class Meta:
@@ -40,11 +42,11 @@ class PostBaseForm(forms.ModelForm):
 
 
         books = Book.objects.all().values_list('id', 'title')
-        self.fields['book_choice'].choices = [('', '--- Select a book ---')] + list(books) + [("other", "Other")]
+        self.fields['book_choice'].choices = [('', '--- Select a book ---')] + list(books) + [(str(bid), title) for bid, title in books] + [("other", "Other")]
 
 
         destinations = Destination.objects.all().values_list('id', 'name')
-        self.fields['destination_choice'].choices = [('', '--- Select a destination ---')] + list(destinations) + [("other", "Other")]
+        self.fields['destination_choice'].choices = [('', '--- Select a destination ---')] + list(destinations) + [(str(did), name) for did, name in destinations] + [("other", "Other")]
 
         if self.data:
             self.fields['book_choice'].initial = self.data.get('book_choice')

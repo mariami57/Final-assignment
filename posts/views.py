@@ -26,29 +26,33 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-
         book_choice = form.cleaned_data.get('book_choice')
-        if book_choice:
-            book = Book.objects.get(id=book_choice)
-            form.instance.book = book
-        else:
-
-            form.add_error('book_choice', 'Please select a book.')
-            return self.form_invalid(form)
+        book_title = form.cleaned_data.get('book_title')
 
         dest_choice = form.cleaned_data.get('destination_choice')
-        if dest_choice:
-            destination = Destination.objects.get(id=dest_choice)
-            form.instance.destination = destination
+        dest_name = form.cleaned_data.get('destination_name')
+
+        if book_choice == 'other' and book_title:
+            book = Book.objects.create(
+                title=book_title,author="Unknown", added_by=self.request.user,)
         else:
-            form.add_error('destination_choice', 'Please select a destination.')
-            return self.form_invalid(form)
+            book = Book.objects.get(id=book_choice)
 
+        if dest_choice == 'other' and dest_name:
+            d_name, d_country = dest_name.split(',')
+            destination = Destination.objects.create(
+                name=d_name,
+                country=d_country,
+                )
+        else:
+            destination = Destination.objects.get(id=dest_choice)
 
-        response = super().form_valid(form)
-
+        form.instance.book = book
+        form.instance.destination = destination
         if book and destination:
             book.destinations.add(destination)
+
+        response = super().form_valid(form)
 
         messages.success(self.request, 'Post created! Want to leave a book review?')
         return response

@@ -2,7 +2,7 @@
 function toggleField(selectId, inputId) {
     const select = document.getElementById(selectId);
     const input = document.getElementById(inputId);
-    const parent = input.parentElement;
+    const parent = input?.parentElement;
 
     if (select.value === "other") {
         parent.style.display = "flex";
@@ -13,6 +13,11 @@ function toggleField(selectId, inputId) {
 
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    toggleField('book_choice', 'id_book_title');
+    toggleField('destination_choice', 'id_destination_name');
+});
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

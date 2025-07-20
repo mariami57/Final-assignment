@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/fixtures/initial_books.json" beforeDir="false" afterPath="$PROJECT_DIR$/books/fixtures/initial_books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/book-destination-script.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/book-destination-script.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/post-form-fields.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-form-fields.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -70,6 +66,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\minni\Final-assignment\templates" />
+      <recent name="C:\Users\minni\Final-assignment\templates\posts" />
       <recent name="C:\Users\minni\Documents\GitHub\Final-assignment\post_mediafiles" />
     </key>
   </component>
@@ -128,7 +126,9 @@
       <workItem from="1752685724202" duration="5153000" />
       <workItem from="1752731067763" duration="16217000" />
       <workItem from="1752826764429" duration="610000" />
-      <workItem from="1752928591475" duration="384000" />
+      <workItem from="1752928608877" duration="16411000" />
+      <workItem from="1752947446485" duration="140000" />
+      <workItem from="1753005934606" duration="2648000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,7 @@ from books.models import Book
 from destinations.models import Destination
 from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post
-
+from posts.validators import OtherDestinationFormatValidator
 
 
 class PostBaseForm(forms.ModelForm):
@@ -22,14 +22,15 @@ class PostBaseForm(forms.ModelForm):
     destination_name = forms.CharField(
         label='Destination Name',
         help_text='Please fill in the following format: destination name, country',
-        required=False
+        required=False,
+        validators=[OtherDestinationFormatValidator()],
     )
 
     class Meta:
         model = Post
         fields = ['title', 'book_choice', 'book_title', 'destination_choice', 'destination_name',
                   'content', 'image1', 'image2', 'image3']
-        # ... (widgets and labels stay the same)
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -60,7 +61,7 @@ class PostBaseForm(forms.ModelForm):
         dest_name = cleaned_data.get('destination_name')
 
         if (not book_choice and not book_title) or (not dest_choice and not dest_name):
-            raise forms.ValidationError("Please select both book and destination.")
+            raise forms.ValidationError('Please select both book and destination')
 
         return cleaned_data
 

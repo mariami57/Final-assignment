@@ -1,6 +1,6 @@
 from books.models import Book
 from destinations.models import Destination
-from posts.models import Post
+
 
 
 class BookDestinationHandlerMixin:

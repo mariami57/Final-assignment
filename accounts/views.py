@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.db.models import Count
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView
@@ -22,3 +23,12 @@ class SignInView(CreateView):
 class ProfileDetailView(DetailView):
     model = Profile
     template_name = 'accounts/profile-details-page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post_count'] =self.object.user.post_set.count()
+        context['books_count'] =self.object.user.books_added.count()
+        context['destination_count'] =self.object.user.post_set.values('destination').distinct().count()
+
+
+        return context

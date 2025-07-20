@@ -13,7 +13,7 @@
                         <div class="d-flex justify-content-between">
                             <a class="profile-details d-flex gap-3 my-2" href="{% url 'profile-details' post.user.pk %}">
                                 <div>
-                                    {% include 'common/profile-picture.html'%}
+                                    {% include 'common/profile-picture-and-info.html'%}
                                 </div>
                                 <div class="info">
                                     {% if post.user.profile.full_name %}

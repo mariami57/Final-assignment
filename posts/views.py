@@ -59,3 +59,4 @@ def post_delete_view(request, pk):
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'posts/post-detail.html'
+

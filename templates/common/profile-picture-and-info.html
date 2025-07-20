@@ -1,0 +1,15 @@
+{% load static %}
+
+{% if profile_picture %}
+    <img src="{{ profile_picture }}" class="nav-logo">
+{% else %}
+    <img src="{% static 'images/default-avatar-profile.jpg' %}" alt="default-profile-picture" class="nav-logo">
+{% endif %}
+
+<div class="info">
+    {% if profile.user.full_name %}
+        <h2 class="py-3 abril-fatface-regular">{{ profile.user.full_name }}</h2>
+    {% else %}
+        <h2 class="py-3 abril-fatface-regular">{{ profile.user.username }}</h2>
+    {% endif %}
+</div>

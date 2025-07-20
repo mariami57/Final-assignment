@@ -137,3 +137,15 @@
     background: #ddb884;
   }
 
+.post-img-profile  img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}

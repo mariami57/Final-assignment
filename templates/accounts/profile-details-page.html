@@ -30,7 +30,19 @@
                      {% endif %}
                     </div>
                     <div>
+                        {% if not object.user.post_set %}
+                            <h2 class="title text-center">No posts to show</h2>
+                        {% else %}
+                            <div class="post-image-container grid-3">
+                                {% for post in object.user.post_set.all %}
+                                    <a href="{%  url 'post-details' post.pk %}" class="post-img-profile">
+                                        <img src="{{ post.image1.url }}" alt="img-post"/>
+                                    </a>
+                                {% endfor %}
+                            </div>
 
+
+                        {% endif %}
                     </div>
 
                 </div>

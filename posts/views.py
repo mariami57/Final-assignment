@@ -55,3 +55,7 @@ def post_delete_view(request, pk):
         return redirect('posts-feed')
     else:
         return HttpResponseForbidden()
+
+class PostDetailView(LoginRequiredMixin, DetailView):
+    model = Post
+    template_name = 'posts/post-detail.html'

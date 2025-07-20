@@ -9,7 +9,7 @@ from accounts.models import WebUser
 UserModel = get_user_model()
 
 class WebUserCreationForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = WebUser
         fields = ('username', 'email')
 

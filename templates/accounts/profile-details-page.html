@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content-container center-flex">
+                <div class="post-content content-container">
+                    <div class="d-flex justify-content-between">
+                        <div class="profile-details d-flex gap-3 my-2">
+                            <div>
+                                {% include 'common/profile-picture.html'%}
+                            </div>
+                            <div class="info">
+                                {% if profile.user.full_name %}
+                                    <h2 class="py-3 abril-fatface-regular">{{ profile.user.full_name }}</h2>
+                                {% else %}
+                                    <h2 class="py-3 abril-fatface-regular">{{ profile.user.username }}</h2>
+                                {% endif %}
+                            </div>
+                      </div>
+                     {% if request.user == profile.user %}
+                        <div class="menu-container">
+                            <details>
+                                  <summary ></summary>
+                                  <div class="popup-menu">
+                                      <p><a href="{% url 'post-edit' pk=profile.user.pk %}" class="times-new-roman">Edit</a></p>
+                                      <p><a href="{% url 'post-delete' pk=profile.user.pk %}" class="times-new-roman">Delete</a></p>
+                                  </div>
+                            </details>
+                        </div>
+                     {% endif %}
+                    </div>
+                    <div>
+
+                    </div>
+
+                </div>
+    </div>
+
+<script>
+    document.addEventListener("click", function (e) {
+        document.querySelectorAll("details").forEach((detail) => {
+            if (!detail.contains(e.target)) {
+                detail.removeAttribute("open");
+            }
+        });
+    });
+</script>
+{% endblock %}

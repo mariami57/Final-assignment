@@ -11,17 +11,17 @@
                     <div class="post-content content-container">
                       {% with forloop.counter as i %}
                         <div class="d-flex justify-content-between">
-                             <a class="profile-details d-flex gap-3 my-2" href="#">
-                            <div>
-                                {% include 'common/profile-picture.html'%}
-                            </div>
-                            <div class="info">
-                                {% if post.user.profile.full_name %}
-                                    <h2 class="py-3 abril-fatface-regular">{{ post.user.profile.full_name }}</h2>
-                                {% else %}
-                                    <h2 class="py-3 abril-fatface-regular">{{ post.user.username }}</h2>
-                                {% endif %}
-                            </div>
+                            <a class="profile-details d-flex gap-3 my-2" href="{% url 'profile-details' post.user.pk %}">
+                                <div>
+                                    {% include 'common/profile-picture.html'%}
+                                </div>
+                                <div class="info">
+                                    {% if post.user.profile.full_name %}
+                                        <h2 class="py-3 abril-fatface-regular">{{ post.user.profile.full_name }}</h2>
+                                    {% else %}
+                                        <h2 class="py-3 abril-fatface-regular">{{ post.user.username }}</h2>
+                                    {% endif %}
+                                </div>
                           </a>
                          {% if request.user == post.user %}
                             <div class="menu-container">

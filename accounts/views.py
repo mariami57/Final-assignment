@@ -1,9 +1,10 @@
 from django.contrib import messages
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accounts.forms import WebUserCreationForm
+from accounts.models import Profile
 
 
 # Create your views here.
@@ -17,3 +18,7 @@ class SignInView(CreateView):
         response = super().form_valid(form)
         messages.success(self.request, 'You have successfully registered! Please log in.')
         return response
+
+class ProfileDetailView(DetailView):
+    model = Profile
+    template_name = 'accounts/profile-details-page.html'

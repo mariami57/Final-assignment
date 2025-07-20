@@ -138,8 +138,8 @@
   }
 
 .post-img-profile  img{
-  width: 250px;
-  height: 250px;
+  width: 245px;
+  height: 245px;
   object-fit: cover;
   border-radius: 15px;
 }
@@ -147,5 +147,5 @@
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 9px;
 }

@@ -26,8 +26,7 @@ class ProfileDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['post_count'] =self.object.user.post_set.count()
-        context['books_count'] =self.object.user.books_added.count()
+        context['books_count'] =self.object.user.post_set.values('book').count()
         context['destination_count'] =self.object.user.post_set.values('destination').distinct().count()
 
 

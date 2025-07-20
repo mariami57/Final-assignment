@@ -1,11 +1,10 @@
 from django.contrib import messages
-from django.db.models import Count
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView
 
 from accounts.forms import WebUserCreationForm
 from accounts.models import Profile
+from destinations.models import Destination
 
 
 # Create your views here.
@@ -28,6 +27,8 @@ class ProfileDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['books_count'] =self.object.user.post_set.values('book').count()
         context['destination_count'] =self.object.user.post_set.values('destination').distinct().count()
-
+        destination_ids = self.object.user.post_set.values_list('destination', flat=True).distinct()
+        context['visited_destinations'] = Destination.objects.filter(id__in=destination_ids)
 
         return context
+

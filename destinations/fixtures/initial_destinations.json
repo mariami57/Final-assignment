@@ -4,7 +4,11 @@
     "pk": 1,
     "fields": {
       "name": "Tuscany",
-      "country": "Italy"
+      "country": "Italy",
+      "latitude": 43.7711,
+      "longitude": 11.2486
+
+
     }
   },
 
@@ -13,7 +17,9 @@
     "pk": 2,
     "fields": {
       "name": "Tokyo",
-      "country": "Japan"
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
     }
   },
 
@@ -22,7 +28,9 @@
     "pk": 3,
     "fields": {
       "name": "Patagonia",
-      "country": "Argentina"
+      "country": "Argentina",
+      "latitude": -45.7631,
+      "longitude": -71.6833
     }
   },
 
@@ -31,7 +39,9 @@
     "pk": 4,
     "fields": {
       "name": "Cross-country",
-      "country": "USA"
+      "country": "USA",
+      "latitude": 39.8283,
+      "longitude": -98.5795
     }
   },
 
@@ -40,7 +50,9 @@
     "pk": 5,
     "fields": {
       "name": "Paris",
-      "country": "France"
+      "country": "France",
+      "latitude": 48.8566,
+      "longitude": 2.3522
     }
   },
 
@@ -49,7 +61,9 @@
     "pk": 6,
     "fields": {
       "name": "Bangkok",
-      "country": "Thailand"
+      "country": "Thailand",
+      "latitude": 13.7563,
+      "longitude": 100.5018
     }
   },
 
@@ -58,7 +72,9 @@
     "pk": 7,
     "fields": {
       "name": "Kenya",
-      "country": "Africa"
+      "country": "Africa",
+      "latitude": -1.2921,
+      "longitude": 36.8219
     }
   },
 
@@ -67,7 +83,9 @@
     "pk": 8,
     "fields": {
       "name": "Mumbai",
-      "country": "India"
+      "country": "India",
+      "latitude": 19.0760,
+      "longitude": 72.8777
     }
   },
     {
@@ -75,7 +93,9 @@
     "pk": 9,
     "fields": {
       "name": "Andalusia",
-      "country": "Spain"
+      "country": "Spain",
+      "latitude": 37.5443,
+      "longitude": -4.7278
     }
   },
 
@@ -84,7 +104,9 @@
     "pk": 10,
     "fields": {
       "name": "New Ross",
-      "country": "Ireland"
+      "country": "Ireland",
+      "latitude": 52.3966,
+      "longitude": -6.9490
     }
   }
 ]

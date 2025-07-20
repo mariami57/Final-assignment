@@ -25,7 +25,7 @@ class BookDestinationHandlerMixin:
             book = Book.objects.get(id=book_choice)
 
         if dest_choice == 'other' and dest_name:
-            d_name, d_country = dest_name.split(',')
+            d_name, d_country = dest_name.split(', ')
             destination = Destination.objects.create(
                 name=d_name,
                 country=d_country,

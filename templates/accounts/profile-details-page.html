@@ -32,6 +32,8 @@
                      {% endif %}
                     </div>
 
+                    <div id="map" style="height: 400px; width: 100%; margin-top: 1rem;"></div>
+
                     <div>
                         {% if not object.user.post_set %}
                             <h2 class="title text-center">No posts to show</h2>
@@ -59,5 +61,34 @@
             }
         });
     });
+    const destinations = [
+    {% for dest in destinations %}
+      {% if dest.latitude and dest.longitude %}
+        {
+          name: "{{ dest.name|escapejs }}",
+          country: "{{ dest.country|escapejs }}",
+          lat: {{ dest.latitude }},
+          lng: {{ dest.longitude }}
+        },
+      {% endif %}
+    {% endfor %}
+  ];
+
+  const map = L.map('map').setView([0, 0], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  destinations.forEach(dest => {
+    L.marker([dest.lat, dest.lng])
+      .addTo(map)
+      .bindPopup(`<strong>${dest.name}</strong><br>${dest.country}`);
+  });
+
+  if (destinations.length > 0) {
+    const bounds = destinations.map(d => [d.lat, d.lng]);
+    map.fitBounds(bounds);
+  }
 </script>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 
 from accounts.forms import CustomLoginForm
-from accounts.views import SignInView, ProfileDetailView
+from accounts.views import SignInView, ProfileDetailView, ProfileEditView
 
 urlpatterns = [
     path('accounts/', include([
@@ -12,6 +12,7 @@ urlpatterns = [
         path('logout/', LogoutView.as_view(), name='logout'),
         path('profile/<int:pk>/', include([
             path('profile-details/', ProfileDetailView.as_view(), name='profile-details'),
+            path('profile-edit/', ProfileEditView.as_view(), name='profile-edit'),
         ])),
     ]))
 

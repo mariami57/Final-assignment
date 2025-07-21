@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+
+{% block content %}
+
+    <form method="post" class="container" enctype="multipart/form-data">
+
+        <div class="profile-form mx-auto d-flex flex-column form-group align-items-center justify-center">
+            <h1 class="my-3">Profile Information</h1>
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
+            </div>
+            <div class="form-group">
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+            </div>
+
+            <div class="form-group">
+                {{ form.phone_number.label_tag }}
+                {{ form.phone_number }}
+            </div>
+
+            <div class="form-group">
+                {{ form.backup_email.label_tag }}
+                {{ form.backup_email }}
+            </div>
+
+            <div class="form-group d-flex flex-column">
+                {{ form.profile_picture.label_tag }}
+                {{ form.profile_picture }}
+            </div>
+
+
+            <button type="submit">Save</button>
+        </div>
+
+    </form>
+
+{% endblock %}

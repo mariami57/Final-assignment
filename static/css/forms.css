@@ -1,4 +1,4 @@
-.form-style{
+.form-style, .profile-form{
     margin-top: 30px;
     border: 2px solid rgb(224, 122, 95);
     background-color: rgb(227, 152, 132);
@@ -7,6 +7,9 @@
 
 }
 
+.profile-form {
+    width: 50%;
+}
 
 .form-style label {
     display: flex;
@@ -19,17 +22,26 @@
     margin: 10px 35px;
 }
 
+.profile-form label {
+    color: rgb(105, 11, 34);
+}
+
+.profile-form input {
+    border-radius: 5px;
+    border: 2px solid rgb(105, 11, 34);
+}
+
 .form-style input, .form-style textarea, .form-style div select{
     border-radius: 5px;
     border: 2px solid rgb(105, 11, 34);
 }
 
-.form-style *, .form-style textarea .form-style div select{
+
+.form-style *, .form-style textarea .form-style div select, .profile-form *{
     font-family: "Abril Fatface", serif;
     font-weight: 400;
     font-style: normal;
 }
-
 
 
  input:focus, .form-style textarea:focus, .form-style div select:focus {
@@ -43,8 +55,6 @@
   margin: 0 0 20px;
   padding: 5px;
   box-sizing: border-box;
-
-
 }
 
 input[type="file"]::file-selector-button {
@@ -68,4 +78,28 @@ input[type="file"] {
 
 .form-style select {
     width: 230px;
+}
+
+.profile-form input[type="file"] {
+    margin-top: 10px;
+
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 120px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="file"],
+.form-group input[type="tel"] {
+  flex: 1;
+  padding: 2px 5px;
+  border-radius: 4px;
+
 }

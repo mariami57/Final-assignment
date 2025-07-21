@@ -1,9 +1,9 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView
 
-from accounts.forms import WebUserCreationForm
+from accounts.forms import WebUserCreationForm, ProfileEditForm
 from accounts.models import Profile
 from destinations.models import Destination
 
@@ -35,4 +35,14 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
 class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Profile
+    form_class = ProfileEditForm
     template_name = 'accounts/edit-profile.html'
+
+    def test_func(self):
+        return self.request.user.pk == self.kwargs['pk']
+
+    def get_success_url(self):
+        return reverse('profile-edit', kwargs={'pk': self.object.pk})
+
+
+

@@ -10,13 +10,13 @@ from posts.validators import OtherDestinationFormatValidator
 
 class PostBaseForm(forms.ModelForm):
     book_choice = forms.ChoiceField(
-        label='Book', required=False,
+        label='Book:', required=False,
         widget=forms.Select(attrs={'class': 'select-search'})
     )
     book_title = forms.CharField(label='Book Title', required=False)
 
     destination_choice = forms.ChoiceField(
-        label='Destination', required=False,
+        label='Destination:', required=False,
         widget=forms.Select(attrs={'class': 'select-search'})
     )
     destination_name = forms.CharField(
@@ -29,6 +29,14 @@ class PostBaseForm(forms.ModelForm):
         model = Post
         fields = ['title', 'book_choice', 'book_title', 'destination_choice', 'destination_name',
                   'content', 'image1', 'image2', 'image3']
+
+        labels = {
+            'title': 'Post title:',
+            'content': 'Post content:',
+            'image1': '1st Image:',
+            'image2': '2nd Image(optional):',
+            'image3': '3rd Image(optional):',
+        }
 
 
     def __init__(self, *args, **kwargs):

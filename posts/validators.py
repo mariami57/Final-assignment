@@ -19,5 +19,5 @@ class OtherDestinationFormatValidator:
         self.__message = value or 'Please enter a valid destination format'
 
     def __call__(self, value):
-        if not re.fullmatch(r'[A-Za-z]+,[A-Za-z]+', value):
+        if not re.fullmatch(r'[A-Za-z]+, [A-Za-z]+', value):
             raise ValidationError(self.message)

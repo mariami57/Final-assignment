@@ -54,15 +54,16 @@
     </div>
 
 <script>
-    document.addEventListener("click", function (e) {
-        document.querySelectorAll("details").forEach((detail) => {
-            if (!detail.contains(e.target)) {
-                detail.removeAttribute("open");
-            }
-        });
-    });
-    const destinations = [
-    {% for dest in destinations %}
+  document.addEventListener("click", function (e) {
+      document.querySelectorAll("details").forEach((detail) => {
+          if (!detail.contains(e.target)) {
+              detail.removeAttribute("open");
+          }
+      });
+  });
+
+  const destinations = [
+    {% for dest in visited_destinations %}
       {% if dest.latitude and dest.longitude %}
         {
           name: "{{ dest.name|escapejs }}",
@@ -80,8 +81,15 @@
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
+
+  const customIcon = L.divIcon({
+    className: 'custom-marker',
+    iconSize: [12, 12],
+  });
+
+
   destinations.forEach(dest => {
-    L.marker([dest.lat, dest.lng])
+    L.marker([dest.lat, dest.lng], { icon: customIcon })
       .addTo(map)
       .bindPopup(`<strong>${dest.name}</strong><br>${dest.country}`);
   });

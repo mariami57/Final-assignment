@@ -1,0 +1,8 @@
+.custom-marker {
+  background-color: rgb(105, 11, 34);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}

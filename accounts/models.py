@@ -1,5 +1,6 @@
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
+from django.core.exceptions import ValidationError
 from django.db import models
 
 from accounts.managers import WebUserManager
@@ -33,7 +34,9 @@ class Profile(models.Model):
         full_name = f"{self.first_name or ''} {self.last_name or ''}".strip()
         return full_name if full_name else None
 
-
-
-
-
+    def clean(self):
+        super().clean()
+        if self.backup_email and self.backup_email == self.user.email:
+            raise ValidationError({
+                'backup_email': 'Your backup email cannot be the same as your account email!',
+            })

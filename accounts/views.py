@@ -1,6 +1,7 @@
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView
 
 from accounts.forms import WebUserCreationForm
 from accounts.models import Profile
@@ -19,7 +20,7 @@ class SignInView(CreateView):
         messages.success(self.request, 'You have successfully registered! Please log in.')
         return response
 
-class ProfileDetailView(DetailView):
+class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = Profile
     template_name = 'accounts/profile-details-page.html'
 
@@ -32,3 +33,6 @@ class ProfileDetailView(DetailView):
 
         return context
 
+class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Profile
+    template_name = 'accounts/edit-profile.html'

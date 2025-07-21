@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
-from accounts.models import WebUser
+from accounts.models import WebUser, Profile
 
 UserModel = get_user_model()
 
@@ -14,8 +14,6 @@ class WebUserCreationForm(UserCreationForm):
         fields = ('username', 'email')
 
 
-
-
 class CustomLoginForm(AuthenticationForm):
     error_messages = {
         'invalid_login': _(
@@ -23,3 +21,13 @@ class CustomLoginForm(AuthenticationForm):
         ),
         'inactive': _("This account is inactive."),
     }
+
+class ProfileBaseForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = '__all__'
+
+class ProfileEditForm(ProfileBaseForm):
+    class Meta(ProfileBaseForm.Meta):
+        fields = ('first_name', 'last_name', 'phone_number', 'backup_email', 'profile_picture')
+

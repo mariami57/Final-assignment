@@ -34,9 +34,8 @@
             </a>
         </li>
         <li>
-            <a href="#" class="menu-link">
-                <i class="ai-person"></i>
-                <span>Profile</span>
+            <a href="{% url 'profile-details' request.user.pk %}" class="menu-link">
+                <span>My Profile</span>
             </a>
         </li>
             <li>

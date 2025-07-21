@@ -1,3 +1,5 @@
+from django import forms
+
 from books.models import Book
 from destinations.models import Destination
 
@@ -19,25 +21,34 @@ class BookDestinationHandlerMixin:
 
         if book_choice == 'other' and book_title:
             book = Book.objects.create(
-                title=book_title,author="Unknown", added_by=self.request.user,)
+                title=book_title, author="Unknown", added_by=self.request.user,
+            )
             new_book = True
-        else:
+        elif book_choice:
             book = Book.objects.get(id=book_choice)
+        else:
+            book = None
+
 
         if dest_choice == 'other' and dest_name:
-            d_name, d_country = dest_name.split(', ')
+            try:
+                d_name, d_country = [x.strip() for x in dest_name.split(',')]
+            except ValueError:
+                raise forms.ValidationError('Destination must be in format "City, Country".')
+
             destination = Destination.objects.create(
                 name=d_name,
                 country=d_country,
-                )
+            )
             new_dest = True
-        else:
+        elif dest_choice:
             destination = Destination.objects.get(id=dest_choice)
-
-        if is_edit:
-            book.destinations.set([destination])
-
         else:
+            destination = None
+
+        if is_edit and book and destination:
+            book.destinations.set([destination])
+        elif book and destination:
             if (new_book or new_dest) and destination not in book.destinations.all():
                 book.destinations.add(destination)
 

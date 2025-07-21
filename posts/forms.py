@@ -23,7 +23,6 @@ class PostBaseForm(forms.ModelForm):
         label='Destination Name',
         help_text='Please fill in the following format: destination name, country',
         required=False,
-        validators=[OtherDestinationFormatValidator()],
     )
 
     class Meta:
@@ -61,7 +60,22 @@ class PostBaseForm(forms.ModelForm):
         dest_name = cleaned_data.get('destination_name')
 
         if (not book_choice and not book_title) or (not dest_choice and not dest_name):
-            raise forms.ValidationError('Please select both book and destination')
+            raise forms.ValidationError('Please select both a book and a destination.')
+
+        if dest_choice == 'other':
+            if dest_name:
+                if ',' not in dest_name or len(dest_name.split(', ')) != 2:
+                    self.add_error(
+                        'destination_name',
+                        'Destination must be in the format "Destination name, Country".'
+                    )
+            else:
+                self.add_error(
+                    'destination_name',
+                    'Please provide a destination in the format "Destination name, Country".'
+                )
+        else:
+            cleaned_data['destination_name'] = ''
 
         return cleaned_data
 
@@ -91,6 +105,8 @@ class PostEditForm(BookDestinationHandlerMixin, PostBaseForm):
 
        if hasattr(self, 'request'):
            book, destination = self.handle_book_and_destination(self)
+           print("BOOK:", book)
+           print("DEST:", destination)
            post.book = book
            post.destination = destination
 

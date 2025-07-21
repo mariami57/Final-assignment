@@ -26,6 +26,7 @@ class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('posts-feed')
 
     def form_valid(self, form):
+        print("FORM VALID METHOD CALLED")
         form.instance.user = self.request.user
         book, destination = self.handle_book_and_destination(form)
         form.instance.book = book
@@ -33,7 +34,13 @@ class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
         super().form_valid(form)
 
         messages.success(self.request, 'Post created! Want to leave a book review?')
+        print(form.errors)
         return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print("FORM INVALID")
+        print(form.errors)
+        return super().form_invalid(form)
 
 class PostEditView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     model = Post

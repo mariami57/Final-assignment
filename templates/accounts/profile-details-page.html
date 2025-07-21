@@ -8,17 +8,17 @@
                 <div class="profile-details d-flex gap-3 my-2">
                         {% include 'common/profile-picture-and-info.html'%}
               </div>
-              <div class="d-flex gap-4 pt-4 abril-fatface-regular justify-content-center">
-                  <div class="d-flex flex-column align-items-center">
-                      <span>{{ books_count }}</span>
-                      <span> Read books</span>
-                  </div>
-
-                  <div class="d-flex flex-column align-items-center">
-                      <span>{{ destination_count }}</span>
-                      <span>Destinations</span>
-                  </div>
-              </div>
+{#              <div class="d-flex gap-4 pt-4 abril-fatface-regular justify-content-center">#}
+{#                  <div class="d-flex flex-column align-items-center">#}
+{#                      <span>{{ books_count }}</span>#}
+{#                      <span> Read books</span>#}
+{#                  </div>#}
+{##}
+{#                  <div class="d-flex flex-column align-items-center">#}
+{#                      <span>{{ destination_count }}</span>#}
+{#                      <span>Destinations</span>#}
+{#                  </div>#}
+{#              </div>#}
              {% if request.user == profile.user %}
                 <div class="menu-container">
                     <details>
@@ -32,23 +32,35 @@
              {% endif %}
             </div>
 
-            <div id="map"></div>
-
-            <div class="mt-3">
-                {% if not object.user.post_set %}
-                    <h2 class="title text-center">No posts to show</h2>
-                {% else %}
-                    <div class="post-image-container grid-3">
-                        {% for post in object.user.post_set.all %}
-                            <a href="{%  url 'post-details' post.pk %}" class="post-img-profile">
-                                <img src="{{ post.image1.url }}" alt="img-post"/>
-                            </a>
-                        {% endfor %}
-                    </div>
-
-
-                {% endif %}
+            <div class="sections d-flex justify-content-center align-items-center">
+                  <i id="world-icon" class="fa-solid fa-earth-europe clickable-icon"></i>
+                  <div class="icon-divider"></div>
+                  <i id="book-icon" class="fa-solid fa-book-open clickable-icon"></i>
             </div>
+
+            <div id="map-posts-section">
+                <div id="map"></div>
+                <div id="profile-posts" class="mt-3">
+                    {% if not object.user.post_set %}
+                        <h2 class="title text-center">No posts to show</h2>
+                    {% else %}
+                        <div class="post-image-container grid-3">
+                            {% for post in object.user.post_set.all %}
+                                <a href="{%  url 'post-details' post.pk %}" class="post-img-profile">
+                                    <img src="{{ post.image1.url }}" alt="img-post"/>
+                                </a>
+                            {% endfor %}
+                        </div>
+
+                    {% endif %}
+            </div>
+            </div>
+
+            <div id="book-reviews" style="display: none;">
+              <p>Book Reviews are visible</p>
+            </div>
+
+
 
         </div>
     </div>
@@ -108,5 +120,31 @@
     const bounds = destinations.map(d => [d.lat, d.lng]);
     map.fitBounds(bounds);
   }
+
+  const worldIcon = document.getElementById('world-icon');
+  const bookIcon = document.getElementById('book-icon');
+  const mapPostsSection = document.getElementById('map-posts-section');
+  const bookReviewsSection = document.getElementById('book-reviews');
+
+  function showMapPosts() {
+    mapPostsSection.style.display = 'block';
+    bookReviewsSection.style.display = 'none';
+    worldIcon.classList.add('active');
+    bookIcon.classList.remove('active');
+  }
+
+  function showBookReviews() {
+    bookReviewsSection.style.display = 'block';
+    mapPostsSection.style.display = 'none';
+
+    bookIcon.classList.add('active');
+    worldIcon.classList.remove('active');
+  }
+
+
+  showMapPosts();
+
+  worldIcon.addEventListener('click', showMapPosts);
+  bookIcon.addEventListener('click', showBookReviews);
 </script>
 {% endblock %}

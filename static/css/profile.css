@@ -18,3 +18,25 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.5);
 }
 
+
+.sections{
+  margin: 10px;
+}
+
+.sections i{
+  font-size: 24px;
+  padding: 0 150px;
+  cursor: pointer;
+  color: maroon;
+}
+
+
+.icon-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #ccc;
+}
+
+.sections i:hover{
+  color: rgb(224, 122, 95);
+}

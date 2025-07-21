@@ -19,6 +19,12 @@ class PostFeedView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'posts/posts.html'
 
+    def get_queryset(self):
+        queryset = Post.objects.all().order_by('-created_at')
+
+        return queryset
+
+
 class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostCreateForm

@@ -22,10 +22,6 @@
     margin: 10px 35px;
 }
 
-.profile-form label {
-    color: rgb(105, 11, 34);
-}
-
 .profile-form input {
     border-radius: 5px;
     border: 2px solid rgb(105, 11, 34);
@@ -94,12 +90,3 @@ input[type="file"] {
   width: 120px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="file"],
-.form-group input[type="tel"] {
-  flex: 1;
-  padding: 2px 5px;
-  border-radius: 4px;
-
-}

@@ -33,7 +33,7 @@ class PostBaseForm(forms.ModelForm):
         labels = {
             'title': 'Post title:',
             'content': 'Post content:',
-            'image1': '1st Image:',
+            'image1': '1st Image(mandatory):',
             'image2': '2nd Image(optional):',
             'image3': '3rd Image(optional):',
         }

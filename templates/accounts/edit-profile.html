@@ -8,29 +8,18 @@
         <div class="profile-form mx-auto d-flex flex-column form-group align-items-center justify-center">
             <h1 class="my-3">Profile Information</h1>
             {% csrf_token %}
-            <div class="form-group">
-                {{ form.first_name.label_tag }}
-                {{ form.first_name }}
-            </div>
-            <div class="form-group">
-                {{ form.last_name.label_tag }}
-                {{ form.last_name }}
-            </div>
+            {% for field in form %}
+                <div class="form-group mb-3 flex-column">
+                    {% if field.errors %}
+                        <div class="error-field mb-2">{{ field.errors|striptags }}</div>
+                    {% endif %}
+                    <div>
+                        {{ field.label_tag }}
+                        {{ field }}
+                    </div>
 
-            <div class="form-group">
-                {{ form.phone_number.label_tag }}
-                {{ form.phone_number }}
-            </div>
-
-            <div class="form-group">
-                {{ form.backup_email.label_tag }}
-                {{ form.backup_email }}
-            </div>
-
-            <div class="form-group d-flex flex-column">
-                {{ form.profile_picture.label_tag }}
-                {{ form.profile_picture }}
-            </div>
+                </div>
+            {% endfor %}
 
 
             <button type="submit">Save</button>
@@ -38,4 +27,36 @@
 
     </form>
 
+{% if messages %}
+  {% for message in messages %}
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content rounded-3 shadow">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">{{ message }}</div>
+          <div class="modal-footer">
+            <a href="{% url 'profile-details-page' request.user.pk %}" class="btn btn-primary">Go back to profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modalEl = document.getElementById('reviewModal');
+    if (modalEl) {
+        new bootstrap.Modal(modalEl).show();
+    }
+
+});
+</script>
+
+
 {% endblock %}
+
+

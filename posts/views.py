@@ -32,7 +32,6 @@ class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('posts-feed')
 
     def form_valid(self, form):
-        print("FORM VALID METHOD CALLED")
         form.instance.user = self.request.user
         book, destination = self.handle_book_and_destination(form)
         form.instance.book = book

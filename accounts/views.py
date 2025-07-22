@@ -41,6 +41,11 @@ class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.pk == self.kwargs['pk']
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        messages.success(self.request, 'Your profile information has been successfully updated!')
+        return super().form_valid(form)
+
     def get_success_url(self):
         return reverse('profile-edit', kwargs={'pk': self.object.pk})
 

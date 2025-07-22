@@ -11,7 +11,7 @@ urlpatterns = [
              name='login'),
         path('logout/', LogoutView.as_view(), name='logout'),
         path('profile/<int:pk>/', include([
-            path('profile-details/', ProfileDetailView.as_view(), name='profile-details'),
+            path('profile-details/', ProfileDetailView.as_view(), name='profile-details-page'),
             path('profile-edit/', ProfileEditView.as_view(), name='profile-edit'),
         ])),
     ]))

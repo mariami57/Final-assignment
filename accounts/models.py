@@ -1,6 +1,7 @@
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.core.exceptions import ValidationError
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 from accounts.managers import WebUserManager
@@ -25,7 +26,7 @@ class Profile(models.Model):
     user = models.OneToOneField(WebUser, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
-    phone_number = models.CharField(max_length=10,blank=True, null=True)
+    phone_number = models.CharField(max_length=10, validators=[MinLengthValidator(10)],blank=True, null=True)
     backup_email = models.EmailField(blank=True, null=True)
     profile_picture = models.ImageField(blank=True, null=True)
 

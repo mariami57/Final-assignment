@@ -11,7 +11,7 @@
                     <div class="post-content content-container">
                       {% with forloop.counter as i %}
                         <div class="d-flex justify-content-between">
-                            <a class="profile-details d-flex gap-3 my-2" href="{% url 'profile-details' post.user.pk %}">
+                            <a class="profile-details d-flex gap-3 my-2" href="{% url 'profile-details-page' post.user.pk %}">
                                 <div>
                                     {% include 'common/profile-picture-and-info.html'%}
                                 </div>

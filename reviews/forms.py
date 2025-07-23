@@ -7,11 +7,7 @@ from reviews.models import Review
 class BaseReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        exclude = ('user', )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
+        exclude = ('user', 'book' )
 
 
 class CreateReviewForm(BaseReviewForm):

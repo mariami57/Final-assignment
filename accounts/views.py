@@ -61,10 +61,8 @@ def profile_delete_view(request, pk):
     if request.user.is_authenticated and request.user.pk == user.pk:
         if request.method == 'POST':
             user.delete()
-            messages.success(request, 'Your profile has been successfully deleted!')
             return redirect('home')
     else:
-        messages.error(request, 'You are not authorized to delete this profile.')
-        return redirect('profile-details-page', pk=pk)
+        return HttpResponseForbidden()
 
     return redirect('profile-details-page', pk=pk)

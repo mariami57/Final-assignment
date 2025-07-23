@@ -131,15 +131,21 @@
 
   .popup-menu a {
     display: block;
-    padding: 0.5em 1em;
+    padding: 0.5em;
     text-decoration: none;
     font-style: normal;
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
-  .popup-menu a:hover, .popup-menu p:hover {
-    background: #ddb884;
+  .popup-menu .delete-btn {
+    background-color: transparent;
+    border:none;
   }
+
+  .popup-menu .delete-btn:hover{
+    color: rgb(224, 122, 95);
+  }
+
 
 .post-img-profile  img{
   width: 245px;
@@ -162,3 +168,4 @@
   text-align: center;
   width: 200px;
 }
+

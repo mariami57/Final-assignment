@@ -1,14 +1,19 @@
 from django.contrib import messages
+from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.http import HttpResponseForbidden
+from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView
 
 from accounts.forms import WebUserCreationForm, ProfileEditForm
 from accounts.models import Profile
-from destinations.models import Destination
+from destinations.models import Destination, UserModel
 
 
 # Create your views here.
+UserModel = get_user_model()
 class SignInView(CreateView):
     form_class = WebUserCreationForm
     template_name = 'accounts/sign-in.html'
@@ -50,4 +55,16 @@ class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return reverse('profile-edit', kwargs={'pk': self.object.pk})
 
 
+@login_required
+def profile_delete_view(request, pk):
+    user = UserModel.objects.get(pk=pk)
+    if request.user.is_authenticated and request.user.pk == user.pk:
+        if request.method == 'POST':
+            user.delete()
+            messages.success(request, 'Your profile has been successfully deleted!')
+            return redirect('home')
+    else:
+        messages.error(request, 'You are not authorized to delete this profile.')
+        return redirect('profile-details-page', pk=pk)
 
+    return redirect('profile-details-page', pk=pk)

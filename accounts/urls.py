@@ -1,8 +1,9 @@
+
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 
 from accounts.forms import CustomLoginForm
-from accounts.views import SignInView, ProfileDetailView, ProfileEditView
+from accounts.views import SignInView, ProfileDetailView, ProfileEditView, profile_delete_view
 
 urlpatterns = [
     path('accounts/', include([
@@ -13,6 +14,7 @@ urlpatterns = [
         path('profile/<int:pk>/', include([
             path('profile-details/', ProfileDetailView.as_view(), name='profile-details-page'),
             path('profile-edit/', ProfileEditView.as_view(), name='profile-edit'),
+            path('profile-delete/', profile_delete_view, name='profile-delete'),
         ])),
     ]))
 

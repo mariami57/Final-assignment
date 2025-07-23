@@ -1,2 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block content %}
+    <form method="post" class="container" enctype="multipart/form-data">
+        <div class="form-style mx-auto d-flex flex-column form-group align-items-center justify-center add-post">
+            <h1>Create Review</h1>
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.book.label_tag }}
+                {{ form.book }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.rating.label_tag }}
+                {{ form.rating }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.content.label_tag }}
+                {{ form.content }}
+            </div>
+
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+
+
+{% endblock %}

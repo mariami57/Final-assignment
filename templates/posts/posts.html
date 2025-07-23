@@ -113,12 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', () => moveSlide(button.dataset.id, 1))
     );
 
-    // === Modal Message (Review Prompt) ===
-    const modalEl = document.getElementById('reviewModal');
-    if (modalEl) {
-        new bootstrap.Modal(modalEl).show();
-    }
-
     // === Close <details> when clicking outside ===
     document.addEventListener("click", function (e) {
         document.querySelectorAll("details").forEach((detail) => {
@@ -127,29 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
 });
 </script>
 
-
-
-{% if messages %}
-  {% for message in messages %}
-    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content rounded-3 shadow">
-          <div class="modal-header">
-            <h5 class="modal-title">Post Created</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">{{ message }}</div>
-          <div class="modal-footer d-flex justify-content-center">
-            <a href="{% url 'add-review' %}" class="btn btn-primary" style="background-color: rgb(188, 49, 82);border: 2px solid rgb(188, 49, 82);">Yes, write review</a>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Maybe later</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-{% endif %}
 
 {% endblock %}

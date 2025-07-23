@@ -1,12 +1,21 @@
 from django import forms
 
+from books.models import Book
 from reviews.models import Review
 
 
 class BaseReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['content', 'rating']
+        exclude = ('user', )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
 
 class CreateReviewForm(BaseReviewForm):
+    pass
+
+class EditReviewForm(BaseReviewForm):
     pass

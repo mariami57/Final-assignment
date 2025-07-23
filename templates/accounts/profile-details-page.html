@@ -7,12 +7,12 @@
             <div class="d-flex justify-content-between mb-3">
                 <div>
                     <div class="profile-details d-flex gap-3 mt-2 mb-4">
-                            {% include 'common/profile-picture-and-info.html'%}
+                            {% include 'common/profile-picture-and-info.html' with user=profile.user %}
                     </div>
                     <div >
-                            <p class="abril-fatface-regular my-3 fs-4">{{  user.profile.full_name }}</p>
-                            {% if user.profile.bio_info %}
-                                <p class="carattere-cursive fs-4">{{ user.profile.bio_info }}</p>
+                            <p class="abril-fatface-regular my-3 fs-4">{{  object.user.profile.full_name }}</p>
+                            {% if object.user.profile.bio_info %}
+                                <p class="carattere-cursive fs-4">{{ object.user.profile.bio_info }}</p>
                             {% endif %}
 
                     </div>
@@ -95,11 +95,13 @@
   const bounds = L.latLngBounds(southWest, northEast);
   map.setMaxBounds(bounds);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    noWrap: true,
-    bounds: bounds
-  }).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors & Carto',
+      subdomains: 'abcd',
+      maxZoom: 19,
+      noWrap: true,
+      bounds: bounds
+    }).addTo(map);
 
 
   const customIcon = L.divIcon({

@@ -28,14 +28,14 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=50, blank=True, null=True)
     phone_number = models.CharField(max_length=10, validators=[MinLengthValidator(10)],blank=True, null=True)
     backup_email = models.EmailField(blank=True, null=True)
-    bio_info = models.CharField(max_length=100, blank=True, null=True)
+    bio_info = models.CharField(max_length=100, blank=True, null=True, default='')
     profile_picture = models.ImageField(blank=True, null=True)
 
 
     @property
     def full_name(self):
         full_name = f"{self.first_name or ''} {self.last_name or ''}".strip()
-        return full_name if full_name else None
+        return full_name if full_name else ''
 
     def clean(self):
         super().clean()

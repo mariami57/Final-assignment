@@ -4,15 +4,24 @@
 {% block content %}
     <form method="post" class="container">
         <div class="form-style mx-auto d-flex flex-column form-group align-items-center justify-center add-post">
+        {% if book %}
             <h2>Create Review for <span class="carattere-cursive">"{{ book.title }}"</span></h2>
+        {% else %}
+          <h2>Create Review</h2>
+        {% endif %}
 
             {% csrf_token %}
 
              {% if form.errors %}
-              <div class="alert alert-danger">
-                {{ form.errors }}
-              </div>
+                  <div class="alert alert-danger">
+                    {{ form.errors }}
+                  </div>
             {% endif %}
+
+            <div class="mb-3">
+                {{ form.book.label_tag }}
+                {{ form.book }}
+            </div>
 
             <div class="mb-3">
                 {{ form.rating.label_tag }}

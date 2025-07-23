@@ -11,5 +11,7 @@
         {% endfor %}
     {% endif %}
 
-    <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>
+    {% if not has_reviewed %}
+        <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>
+    {% endif %}
 {% endblock %}

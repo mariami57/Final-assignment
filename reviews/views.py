@@ -15,7 +15,9 @@ class CreateReviewView(CreateView):
 
 
     def dispatch(self, request, *args, **kwargs):
-        self.book = get_object_or_404(Book, pk=kwargs['book_pk'])
+        self.book = None
+        if 'book_pk' in kwargs:
+            self.book = get_object_or_404(Book, pk=kwargs['book_pk'])
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -24,10 +26,21 @@ class CreateReviewView(CreateView):
 
         return context
 
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        if self.book:
+            form.fields['book'].initial = self.book
+            form.fields['book'].disabled = True
+        return form
+
     def form_valid(self, form):
+        if not self.book:
+            self.book = form.cleaned_data.get('book')
         form.instance.book = self.book
         form.instance.user = self.request.user
         return super().form_valid(form)
+
 
     def get_success_url(self):
         return reverse_lazy('reviews-list', kwargs={'book_pk': self.book.pk})
@@ -45,5 +58,8 @@ class ReviewsPerBookView(ListView):
         book_pk = self.kwargs.get('book_pk')
         context['book_pk'] = book_pk
         context['book'] = get_object_or_404(Book, pk=self.kwargs.get('book_pk'))
+
+        user = self.request.user
+        context['has_reviewed'] = Review.objects.filter(book__pk=book_pk).filter(user=user).exists()
         return context
 

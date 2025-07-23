@@ -30,7 +30,7 @@ class ProfileBaseForm(forms.ModelForm):
 
 class ProfileEditForm(ProfileBaseForm):
     class Meta(ProfileBaseForm.Meta):
-        fields = ('first_name', 'last_name', 'phone_number', 'backup_email', 'profile_picture')
+        exclude = ('user', )
 
 
 

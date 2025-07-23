@@ -28,7 +28,9 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=50, blank=True, null=True)
     phone_number = models.CharField(max_length=10, validators=[MinLengthValidator(10)],blank=True, null=True)
     backup_email = models.EmailField(blank=True, null=True)
+    bio_info = models.CharField(max_length=100, blank=True, null=True)
     profile_picture = models.ImageField(blank=True, null=True)
+
 
     @property
     def full_name(self):

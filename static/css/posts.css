@@ -79,6 +79,10 @@
   font-style: normal;
 }
 
+.carattere-cursive {
+    font-family: "Carattere", cursive;
+}
+
   .menu-container {
     position: relative;
     display: inline-block;
@@ -148,4 +152,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 9px;
+}
+
+.w-200 {
+  width: 200px;
 }

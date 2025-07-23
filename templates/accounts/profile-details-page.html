@@ -5,20 +5,29 @@
     <div class="content-container center-flex">
         <div class="post-content content-container">
             <div class="d-flex justify-content-between mb-3">
-                <div class="profile-details d-flex gap-3 my-2">
-                        {% include 'common/profile-picture-and-info.html'%}
-              </div>
-             {% if request.user == profile.user %}
-                <div class="menu-container">
-                    <details>
-                          <summary ></summary>
-                          <div class="popup-menu">
-                              <p><a href="{% url 'profile-edit' pk=profile.user.pk %}" class="times-new-roman">Profile details</a></p>
-                              <p><a href="{% url 'post-delete' pk=profile.user.pk %}" class="times-new-roman">Delete</a></p>
-                          </div>
-                    </details>
+                <div>
+                    <div class="profile-details d-flex gap-3 mt-2 mb-4">
+                            {% include 'common/profile-picture-and-info.html'%}
+                    </div>
+                    <div >
+                            <p class="abril-fatface-regular my-3 fs-4">{{  user.profile.full_name }}</p>
+                            {% if user.profile.bio_info %}
+                                <p class="carattere-cursive fs-4">{{ user.profile.bio_info }}</p>
+                            {% endif %}
+
+                    </div>
                 </div>
-             {% endif %}
+                 {% if request.user == profile.user %}
+                    <div class="menu-container">
+                        <details>
+                              <summary ></summary>
+                              <div class="popup-menu w-200">
+                                  <p><a href="{% url 'profile-edit' pk=profile.user.pk %}" class="times-new-roman">Edit profile details</a></p>
+                                  <p><a href="{% url 'post-delete' pk=profile.user.pk %}" class="times-new-roman">Delete</a></p>
+                              </div>
+                        </details>
+                    </div>
+                 {% endif %}
             </div>
 
             <div class="sections d-flex justify-content-center align-items-center">

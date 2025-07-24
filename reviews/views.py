@@ -1,3 +1,4 @@
+from django.db.models import Avg, Count
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
@@ -56,8 +57,17 @@ class ReviewsPerBookView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         book_pk = self.kwargs.get('book_pk')
+        self.book = get_object_or_404(Book, pk=book_pk)
         context['book_pk'] = book_pk
-        context['book'] = get_object_or_404(Book, pk=self.kwargs.get('book_pk'))
+        context['book'] = self.book
+        aggregated = Review.objects.filter(book=self.book).aggregate(
+            reviews_count=Count('id'),
+            avg_rating=Avg('rating'),
+        )
+        context.update({
+            'reviews_count':aggregated['reviews_count'],
+            'avg_rating':aggregated['avg_rating'] or 0
+        })
 
         user = self.request.user
         context['has_reviewed'] = Review.objects.filter(book__pk=book_pk).filter(user=user).exists()

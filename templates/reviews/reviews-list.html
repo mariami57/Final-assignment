@@ -5,13 +5,53 @@
     {% if not review_list %}
         <h1 class="title text-center">There are no reviews yet for this book</h1>
     {% else %}
-        {% for review in review_list %}
-            {{ review.rating }}
-            {{ review.content }}
-        {% endfor %}
+        <div class="d-flex flex-column gap-3">
+            <h2 class="title text-center"> Reviews for:</h2>
+            <h2 class="title text-center">"{{ book }} "</h2>
+            <h5 class="text-center times-new-roman"> Number of reviews:{{ reviews_count }}</h5>
+            <h5 class="text-center times-new-roman"> Average rating: {{ avg_rating }}</h5>
+            {% for review in review_list %}
+              <div class="post-content mx-auto d-flex justify-content-between">
+                <div>
+                    <p class="times-new-roman mb-0"><strong> Rating: {{ review.rating }}</strong></p>
+                    <div class="small-text small-font my-0">
+                        <p class="small-text small-font my-0">By: {{ review.user }}</p>
+                        <p class="small-text small-font mt-0">{{ review.date_added }}</p>
+                    </div>
+
+                    <p class="edu-nsw-act-hand-pre-cursive">{{ review.content }}</p>
+                </div>
+
+                  {% if request.user == review.user %}
+                    <div class="menu-container">
+                        <details>
+                              <summary ></summary>
+                              <div class="popup-menu text-center">
+                                  <p><a href="#" class="times-new-roman">Edit</a></p>
+                                  <p><a href="#" class="times-new-roman">Delete</a></p>
+                              </div>
+                        </details>
+                    </div>
+                  {% endif %}
+              </div>
+
+
+            {% endfor %}
+       </div>
     {% endif %}
 
     {% if not has_reviewed %}
         <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>
     {% endif %}
+
+ <script>
+        // === Close <details> when clicking outside ===
+    document.addEventListener("click", function (e) {
+        document.querySelectorAll("details").forEach((detail) => {
+            if (!detail.contains(e.target)) {
+                detail.removeAttribute("open");
+            }
+        });
+    });
+ </script>
 {% endblock %}

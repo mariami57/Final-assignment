@@ -11,5 +11,7 @@ urlpatterns = [
         path('reviews/', ReviewsPerBookView.as_view(), name='reviews-list'),
         path('add-review/', CreateReviewView.as_view(), name='add-review'),
 
+        # path('edit-review/')
+
     ])),
 ]

@@ -12,19 +12,29 @@
 
             {% csrf_token %}
 
-             {% if form.errors %}
-                  <div class="alert alert-danger">
-                    {{ form.errors }}
-                  </div>
-            {% endif %}
-
             {{ form.book.label_tag }}
+            {% if form.book.errors %}
+                <div class="error-field">
+                    {{ form.book.errors }}
+                </div>
+            {% endif %}
             {{ form.book }}
 
             {{ form.rating.label_tag }}
+            {% if form.rating.errors %}
+                <div class="error-field">
+                    {{ form.rating.errors }}
+                </div>
+            {% endif %}
             {{ form.rating }}
 
             {{ form.content.label_tag }}
+            {% if form.content.errors %}
+                <div class="error-field">
+                    {{ form.content.errors }}
+                </div>
+
+            {% endif %}
             {{ form.content }}
 
 

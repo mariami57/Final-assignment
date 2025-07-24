@@ -66,7 +66,7 @@ class ReviewsPerBookView(ListView):
         )
         context.update({
             'reviews_count':aggregated['reviews_count'],
-            'avg_rating':aggregated['avg_rating'] or 0
+            'avg_rating': round(aggregated['avg_rating']) or 0
         })
 
         user = self.request.user

@@ -8,10 +8,13 @@
         <div class="d-flex flex-column gap-3">
             <h2 class="title text-center"> Reviews for:</h2>
             <h2 class="title text-center">"{{ book }} "</h2>
-            <h5 class="text-center times-new-roman"> Number of reviews:{{ reviews_count }}</h5>
+            <h5 class="text-center times-new-roman"> Number of reviews: {{ reviews_count }}</h5>
             <h5 class="text-center times-new-roman"> Average rating: {{ avg_rating }}</h5>
             {% for review in review_list %}
-              <div class="post-content mx-auto d-flex justify-content-between">
+              <div class="post-content mx-auto d-flex flex-column justify-content-between">
+                <a  href="{% url 'profile-details-page' review.user.pk %}">
+                    {% include 'common/profile-picture-and-info.html' with target_user=review.user %}
+                </a>
                 <div>
                     <p class="times-new-roman mb-0"><strong> Rating: {{ review.rating }}</strong></p>
                     <div class="small-text small-font my-0">

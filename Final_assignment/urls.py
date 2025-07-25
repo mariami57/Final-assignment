@@ -24,9 +24,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('common.urls')),
-    path('', include('posts.urls')),
-    path('', include('accounts.urls')),
-    path('', include('reviews.urls')),
+    path('posts', include('posts.urls')),
+    path('accounts', include('accounts.urls')),
+    path('reviews/', include('reviews.urls')),
 ]
 
 if settings.DEBUG:

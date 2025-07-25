@@ -1,15 +1,16 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Avg, Count
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import CreateView, ListView, UpdateView
 
 from books.models import Book
-from reviews.forms import CreateReviewForm
+from reviews.forms import CreateReviewForm, EditReviewForm
 from reviews.models import Review
 
 
 # Create your views here.
-class CreateReviewView(CreateView):
+class CreateReviewView(LoginRequiredMixin, CreateView):
     model = Review
     form_class = CreateReviewForm
     template_name = 'reviews/add-review.html'
@@ -49,10 +50,9 @@ class CreateReviewView(CreateView):
     def get_success_url(self):
         return reverse_lazy('reviews-list', kwargs={'book_pk': self.book.pk})
 
-class ReviewsPerBookView(ListView):
+class ReviewsPerBookView(LoginRequiredMixin, ListView):
     model = Review
     template_name = 'reviews/reviews-list.html'
-
 
 
     def get_queryset(self):
@@ -78,5 +78,28 @@ class ReviewsPerBookView(ListView):
         context['has_reviewed'] = Review.objects.filter(book__pk=book_pk).filter(user=user).exists()
         return context
 
+class EditReviewView(LoginRequiredMixin, UserPassesTestMixin,UpdateView):
+    model = Review
+    form_class = EditReviewForm
+    template_name = 'reviews/edit-review.html'
+    pk_url_kwarg = 'review_pk'
+
+    def get_object(self, queryset=None):
+        book_pk = self.kwargs.get('book_pk')
+        review_pk = self.kwargs.get('review_pk')
+        return get_object_or_404(Review, pk=review_pk, book__pk=book_pk)
+
+
+    def test_func(self):
+        review = self.get_object()
+        return self.request.user == review.user
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
+    def get_success_url(self):
+        return reverse('reviews-list', kwargs={'book_pk': self.object.book.pk})
 
 

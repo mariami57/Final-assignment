@@ -6,7 +6,7 @@ from accounts.forms import CustomLoginForm
 from accounts.views import SignInView, ProfileDetailView, ProfileEditView, profile_delete_view
 
 urlpatterns = [
-    path('accounts/', include([
+    path('', include([
         path('signin/', SignInView.as_view(), name='signin'),
         path('login/', LoginView.as_view(template_name='accounts/log-in.html', authentication_form=CustomLoginForm),
              name='login'),

@@ -11,33 +11,34 @@
             <h5 class="text-center times-new-roman"> Number of reviews: {{ reviews_count }}</h5>
             <h5 class="text-center times-new-roman"> Average rating: {{ avg_rating }}</h5>
             {% for review in review_list %}
-              <div class="post-content mx-auto d-flex flex-column justify-content-between">
-                <a  href="{% url 'profile-details-page' review.user.pk %}">
-                    {% include 'common/profile-picture-and-info.html' with target_user=review.user %}
-                </a>
-                <div>
-                    <p class="times-new-roman mb-0"><strong> Rating: {{ review.rating }}</strong></p>
-                    <div class="small-text small-font my-0">
-                        <p class="small-text small-font my-0">By: {{ review.user }}</p>
-                        <p class="small-text small-font mt-0">{{ review.date_added }}</p>
-                    </div>
-
-                    <p class="edu-nsw-act-hand-pre-cursive">{{ review.content }}</p>
+              <div class="post-content mx-auto d-flex flex-column">
+                <div class="d-flex justify-content-between">
+                        <a  href="{% url 'profile-details-page' review.user.pk %}">
+                        {% include 'common/profile-picture-and-info.html' with target_user=review.user %}
+                    </a>
+                    {% if request.user == review.user %}
+                        <div class="menu-container">
+                            <details>
+                                  <summary ></summary>
+                                  <div class="popup-menu text-center">
+                                      <p><a href="{% url 'edit-review' book_pk=review.book.pk review_pk=review.pk %}" class="times-new-roman">Edit</a></p>
+                                      <p><a href="#" class="times-new-roman">Delete</a></p>
+                                  </div>
+                            </details>
+                        </div>
+                    {% endif %}
                 </div>
+                   <div>
+                        <p class="times-new-roman mb-0"><strong> Rating: {{ review.rating }}</strong></p>
+                        <div class="small-text small-font my-0">
+                            <p class="small-text small-font my-0">By: {{ review.user }}</p>
+                            <p class="small-text small-font mt-0">{{ review.date_added }}</p>
+                        </div>
 
-                  {% if request.user == review.user %}
-                    <div class="menu-container">
-                        <details>
-                              <summary ></summary>
-                              <div class="popup-menu text-center">
-                                  <p><a href="#" class="times-new-roman">Edit</a></p>
-                                  <p><a href="#" class="times-new-roman">Delete</a></p>
-                              </div>
-                        </details>
+                        <p class="edu-nsw-act-hand-pre-cursive">{{ review.content }}</p>
                     </div>
-                  {% endif %}
-              </div>
 
+                </div>
 
             {% endfor %}
        </div>

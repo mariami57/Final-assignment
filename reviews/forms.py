@@ -17,9 +17,12 @@ class BaseReviewForm(forms.ModelForm):
         cleaned_data = super().clean()
         book = cleaned_data.get('book')
 
-        if self.user and book:
-            already_reviewed = Review.objects.filter(user=self.user, book=book).exists()
-            if already_reviewed:
+        existing_review = Review.objects.filter(book=book, user=self.user)
+
+        if self.instance.pk:
+            existing_review = existing_review.exclude(pk=self.instance.pk)
+
+        if existing_review.exists():
                 raise forms.ValidationError('You have already submitted a review for this book.')
 
         return cleaned_data

@@ -14,6 +14,10 @@ class CreateReviewView(CreateView):
     form_class = CreateReviewForm
     template_name = 'reviews/add-review.html'
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
     def dispatch(self, request, *args, **kwargs):
         self.book = None
@@ -26,7 +30,6 @@ class CreateReviewView(CreateView):
         context['book'] = self.book
 
         return context
-
 
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
@@ -50,6 +53,8 @@ class ReviewsPerBookView(ListView):
     model = Review
     template_name = 'reviews/reviews-list.html'
 
+
+
     def get_queryset(self):
         book_pk = self.kwargs.get('book_pk')
         return Review.objects.filter(book__pk=book_pk).select_related('user')
@@ -72,4 +77,6 @@ class ReviewsPerBookView(ListView):
         user = self.request.user
         context['has_reviewed'] = Review.objects.filter(book__pk=book_pk).filter(user=user).exists()
         return context
+
+
 

@@ -18,6 +18,11 @@
                     {{ form.book.errors }}
                 </div>
             {% endif %}
+                {% if form.non_field_errors %}
+                    <div class="error-field">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
             {{ form.book }}
 
             {{ form.rating.label_tag }}

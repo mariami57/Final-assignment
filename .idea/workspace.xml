@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/profile-picture-and-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/profile-picture-and-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts/post-form-fields.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-form-fields.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/reviews-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/reviews-list.html" afterDir="false" />
-    </list>
+    <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,6 +130,7 @@
       <workItem from="1753206330144" duration="3207000" />
       <workItem from="1753257214862" duration="21377000" />
       <workItem from="1753347363552" duration="9085000" />
+      <workItem from="1753421021369" duration="605000" />
     </task>
     <servers />
   </component>

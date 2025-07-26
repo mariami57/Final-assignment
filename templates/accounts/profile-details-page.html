@@ -81,7 +81,23 @@
             </div>
 
             <div id="book-reviews" style="display: none;">
-              <p>Book Reviews are visible</p>
+
+                {% if user_reviews %}
+                    <h2 class="carattere-cursive text-center mx-3">Book reviews</h2>
+
+                        {% for review in user_reviews %}
+                            <a href="{% url 'reviews-list' book_pk=review.book.pk %}#review-{{ review.id }}">
+                                <div class="post-content content-container mb-3 w-100">
+                                    <p><strong>{{ review.book.title }}</strong></p>
+                                    <p class="times-new-roman mb-0"><strong> Rating: {{ review.rating }}</strong></p>
+                                    <p class="small-text small-font mt-0">{{ review.date_added }}</p>
+                                    <p class="edu-nsw-act-hand-pre-cursive">{{ review.content }}</p>
+                                </div>
+                             </a>
+                        {% endfor %}
+                {% else %}
+                    <h2 class="title text-center">No reviews yet.</h2>
+                {% endif %}
             </div>
 
         </div>

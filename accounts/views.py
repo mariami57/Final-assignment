@@ -10,7 +10,7 @@ from django.views.generic import CreateView, DetailView, UpdateView
 from accounts.forms import WebUserCreationForm, ProfileEditForm
 from accounts.models import Profile
 from destinations.models import Destination, UserModel
-
+from reviews.models import Review
 
 # Create your views here.
 UserModel = get_user_model()
@@ -31,10 +31,9 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['books_count'] =self.object.user.post_set.values('book').count()
-        context['destination_count'] =self.object.user.post_set.values('destination').distinct().count()
         destination_ids = self.object.user.post_set.values_list('destination', flat=True).distinct()
         context['visited_destinations'] = Destination.objects.filter(id__in=destination_ids)
+        context['user_reviews'] = Review.objects.filter(user=self.object.user).select_related('book')
 
         return context
 

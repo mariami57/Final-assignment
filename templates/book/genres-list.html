@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content-container center-flex">
+        <div class="post-content content-container">
+            <div class="post-image-container grid-3">
+                {% for book in book_list %}
+                    <div class="genre-content times-new-roman">
+                        <a href="{% url 'reviews-list' book_pk=book.pk %}">
+                            <p>{{ book.genre }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+             </div>
+        </div>
+    </div>
+{% endblock %}

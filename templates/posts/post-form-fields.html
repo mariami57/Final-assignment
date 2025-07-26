@@ -8,10 +8,20 @@
 {% endif %}
 
         {{ form.title.label_tag }}
+        {% if form.title.errors %}
+            <div class="error-field">
+                {{ form.title.errors }}
+            </div>
+        {% endif %}
         {{ form.title }}
         <div class="form-row d-flex gap-2">
             <div class="d-flex flex-column">
                 {{ form.book_choice.label }}
+                {% if form.book_choice.errors %}
+                    <div class="error-field">
+                        {{ form.book_choice.errors }}
+                    </div>
+                {% endif %}
                 <div class="d-flex flex-column align-center">
                     <select id="book_choice" name="book_choice" onchange="toggleField('book_choice', 'id_book_title')">
                         {% for value, label in form.book_choice.field.choices %}
@@ -40,7 +50,7 @@
 
                 <div style="{% if form.destination_choice.value != 'other' %}display:none;{% endif %}" class="form-group">
                     {% for error in form.destination_name.errors %}
-                        <p class="text-center" style="background-color: #fadadf;padding: 10px;border-radius: 10px;color: rgb(105, 11, 34);">{{ error}}</p>
+                        <p class="text-center error-field" >{{ error}}</p>
                     {% endfor %}
                     {{ form.destination_name.label }}
                     <small class="form-text text-muted">

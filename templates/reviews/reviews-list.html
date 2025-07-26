@@ -11,7 +11,7 @@
             <h5 class="text-center times-new-roman"> Number of reviews: {{ reviews_count }}</h5>
             <h5 class="text-center times-new-roman"> Average rating: {{ avg_rating }}</h5>
             {% for review in review_list %}
-              <div class="post-content mx-auto d-flex flex-column">
+              <div class="post-content mx-auto d-flex flex-column" id="review-{{ review.id }}">
                 <div class="d-flex justify-content-between">
                         <a  href="{% url 'profile-details-page' review.user.pk %}">
                         {% include 'common/profile-picture-and-info.html' with target_user=review.user %}
@@ -30,10 +30,8 @@
                 </div>
                    <div>
                         <p class="times-new-roman mb-0"><strong> Rating: {{ review.rating }}</strong></p>
-                        <div class="small-text small-font my-0">
-                            <p class="small-text small-font my-0">By: {{ review.user }}</p>
-                            <p class="small-text small-font mt-0">{{ review.date_added }}</p>
-                        </div>
+                        <p class="small-text small-font mt-0">{{ review.date_added }}</p>
+
 
                         <p class="edu-nsw-act-hand-pre-cursive">{{ review.content }}</p>
                     </div>

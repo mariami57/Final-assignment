@@ -21,7 +21,7 @@
             <div class="sub-container">
                 <h4>Performance Cookies</h4>
                 <label class="switch mt-4">
-                    <input type="checkbox" id="allowCookies">
+                    <input type="checkbox" id="performance">
                     <span class="slider"></span>
                 </label>
                 <p class="mt-4">These cookies help us understand how visitors interact with our website, so we can improve user experience. All data is anonymized.</p>
@@ -31,7 +31,7 @@
             <div class="sub-container">
                 <h4>Functional Cookies</h4>
                 <label class="switch mt-4">
-                    <input type="checkbox" id="allowCookies">
+                    <input type="checkbox" id="functional">
                     <span class="slider"></span>
                 </label>
                 <p class="mt-4">These cookies remember your preferences and settings, such as language, region, and accessibility options, to provide a more personalized experience.</p>
@@ -40,7 +40,7 @@
             <div class="sub-container">
                 <h4>Targeting/ Advertising Cookies</h4>
                 <label class="switch">
-                    <input type="checkbox" id="allowCookies">
+                    <input type="checkbox" id="advertising">
                     <span class="slider"></span>
                 </label>
                 <p class="mt-4">These cookies are used to deliver relevant ads and marketing campaigns, track ad performance, and measure campaign effectiveness.</p>
@@ -52,15 +52,50 @@
     </main>
 
     <script>
-            function savePreferences() {
-              const preferences = {
-                performance: document.getElementById('performanceCookies').checked,
-                functional: document.getElementById('functionalCookies').checked,
-                targeting: document.getElementById('targetingCookies').checked,
-              };
-              console.log('Saved preferences:', preferences);
+          function getPreferences() {
+            fetch('/api/cookie-preferences/')
+              .then(res => res.json())
+              .then(data => {
+                // Pre-fill switches based on saved data
+                document.getElementById('performance').checked = data.performance || false;
+                document.getElementById('functional').checked = data.functional || false;
+                document.getElementById('advertising').checked = data.advertising || false;
+              });
+          }
 
-              alert('Preferences saved!');
+          function savePreferences() {
+            const preferences = {
+              performance: document.getElementById('performance').checked,
+              functional: document.getElementById('functional').checked,
+              advertising: document.getElementById('advertising').checked,
+            };
+
+            fetch('/api/cookie-preferences/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+              },
+              body: JSON.stringify(preferences)
+            }).then(res => res.json())
+              .then(data => alert(data.message));
+          }
+
+          function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+              const cookies = document.cookie.split(';');
+              for (let cookie of cookies) {
+                cookie = cookie.trim();
+                if (cookie.startsWith(name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+                  break;
+                }
+              }
             }
+            return cookieValue;
+          }
+
+          document.addEventListener('DOMContentLoaded', getPreferences);
     </script>
 {% endblock %}

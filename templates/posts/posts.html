@@ -16,7 +16,7 @@
                             </a>
                          {% if request.user == post.user %}
                             <div class="menu-container">
-                                <details>
+                                <details class="menu-details">
                                       <summary ></summary>
                                       <div class="popup-menu text-center">
                                           <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>

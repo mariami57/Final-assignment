@@ -22,7 +22,7 @@
                 </div>
                  {% if request.user == profile.user %}
                     <div class="menu-container">
-                        <details>
+                        <details class="menu-details">
                               <summary ></summary>
                               <div class="popup-menu w-200 text-center">
                                   <p><a href="{% url 'profile-edit' pk=profile.user.pk %}" class="times-new-roman">Edit profile details</a></p>

@@ -18,7 +18,7 @@
                     </a>
                     {% if request.user == review.user %}
                         <div class="menu-container">
-                            <details>
+                            <details class="menu-details">
                                   <summary ></summary>
                                   <div class="popup-menu text-center">
                                       <p><a href="{% url 'edit-review' book_pk=review.book.pk review_pk=review.pk %}" class="times-new-roman">Edit</a></p>

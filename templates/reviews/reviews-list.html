@@ -22,7 +22,7 @@
                                   <summary ></summary>
                                   <div class="popup-menu text-center">
                                       <p><a href="{% url 'edit-review' book_pk=review.book.pk review_pk=review.pk %}" class="times-new-roman">Edit</a></p>
-                                      <p><a href="#" class="times-new-roman">Delete</a></p>
+                                      <p><a href="{% url 'delete-review' book_pk=review.book.pk review_pk=review.pk %}" class="times-new-roman">Delete</a></p>
                                   </div>
                             </details>
                         </div>

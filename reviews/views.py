@@ -1,7 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Avg, Count
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseForbidden
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
+from django.views.decorators.http import require_POST
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from books.models import Book
@@ -70,9 +73,11 @@ class ReviewsPerBookView(LoginRequiredMixin, ListView):
             reviews_count=Count('id'),
             avg_rating=Avg('rating'),
         )
+        avg_rating_raw = aggregated['avg_rating']
+        avg_rating = round(avg_rating_raw, 2) if avg_rating_raw is not None else 0
         context.update({
             'reviews_count':aggregated['reviews_count'],
-            'avg_rating': round(aggregated['avg_rating']) or 0
+            'avg_rating': avg_rating
         })
 
         user = self.request.user
@@ -98,9 +103,12 @@ class EditReviewView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     def get_success_url(self):
         return reverse('reviews-list', kwargs={'book_pk': self.object.book.pk})
 
+@login_required
+def delete_review(request, book_pk, review_pk):
+    review = get_object_or_404(Review, pk=review_pk, book__pk=book_pk)
 
-class DeleteReviewView(LoginRequiredMixin, UserIsCreatorMixin, DeleteView):
-    model = Review
+    if review.user != request.user:
+        return HttpResponseForbidden("You are not allowed to delete this review.")
 
-    def get_success_url(self):
-        return reverse('reviews-list', kwargs={'book_pk': self.object.book.pk})
+    review.delete()
+    return redirect(reverse('reviews-list', kwargs={'book_pk': book_pk}))

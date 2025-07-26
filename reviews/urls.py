@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from reviews.forms import CreateReviewForm
-from reviews.views import CreateReviewView, ReviewsPerBookView, EditReviewView
+from reviews.views import CreateReviewView, ReviewsPerBookView, EditReviewView, delete_review
 
 urlpatterns = [
     path('review/', include([
@@ -14,6 +14,7 @@ urlpatterns = [
 
         path('<int:review_pk>/', include([
             path('edit/', EditReviewView.as_view(), name='edit-review'),
+            path('delete/', delete_review, name='delete-review'),
         ])),
 
     ])),

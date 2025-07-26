@@ -2,18 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <div class="content-container center-flex">
-        <div class="post-content content-container">
-            <div class="post-image-container grid-3">
-                   {%  for book in object_list %}
-                       <div class="genre-content times-new-roman">
-                          <a href="{% url 'reviews-list' book_pk=book.pk %}">
-                            <p>{{ book.title }}</p>
-                            <p>{{ book.author }}</p>
-                          </a>
-                       </div>
-                    {% endfor %}
-            </div>
-        </div>
+     <h1 class="title mx-auto carattere-cursive"> Books in genre</h1>
+     <h1 class="title mx-auto carattere-cursive mb-3">{{ genre }}</h1>
+    <div class="mx-auto post-image-container grid-3">
+       {%  for book in object_list %}
+           <div class="book">
+               <a href="{% url 'reviews-list' book_pk=book.pk %}">
+                  <div class="d-flex justify-content-center gap-3">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <div>
+                        <p>"{{ book.title }}"</p>
+                        <p>by</p>
+                        <p>{{ book.author }}</p>
+                    </div>
+                  </div>
+              </a>
+           </div>
+       {% endfor %}
     </div>
+
 {% endblock %}

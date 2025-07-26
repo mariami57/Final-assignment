@@ -5,5 +5,17 @@
   padding: 20px;
   text-align: center;
   font-weight: 700;
-background-color: rgb(27, 77, 62);
+  background-color: rgb(27, 77, 62);
 }
+
+.fa-book-bookmark {
+  font-size: 150px;
+}
+
+.book {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  text-align: center;
+}
+

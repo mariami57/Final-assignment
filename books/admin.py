@@ -9,8 +9,8 @@ class BookAdmin(admin.ModelAdmin):
     exclude = ('added_by',)
     readonly_fields = ('added_by',)
     list_display = ('title', 'author', 'genre', 'added_by')
-    list_filter = ('genre', 'destinations', 'added_by')
-    search_fields = ('title', 'author', 'genre', 'destinations')
+    list_filter = ('destinations', 'added_by', 'author')
+    search_fields = ('title', 'author', 'genre')
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:

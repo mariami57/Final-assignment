@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_assignment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_assignment/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts/edit-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/edit-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts/post-form-fields.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-form-fields.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/reviews-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/reviews-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/book/genres-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book/genres-list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -144,7 +137,7 @@
       <workItem from="1753347363552" duration="9085000" />
       <workItem from="1753421021369" duration="605000" />
       <workItem from="1753463520386" duration="4280000" />
-      <workItem from="1753513196224" duration="7257000" />
+      <workItem from="1753513196224" duration="10079000" />
     </task>
     <servers />
   </component>

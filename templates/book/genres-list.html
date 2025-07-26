@@ -5,10 +5,10 @@
     <div class="content-container center-flex">
         <div class="post-content content-container">
             <div class="post-image-container grid-3">
-                {% for book in book_list %}
+                {% for genre in grouped_books.keys %}
                     <div class="genre-content times-new-roman">
-                        <a href="{% url 'reviews-list' book_pk=book.pk %}">
-                            <p>{{ book.genre }}</p>
+                        <a href="{% url 'books-by-genre' genre=genre|default:'undefined' %}">
+                            <p>{{ genre }}</p>
                         </a>
                     </div>
                 {% endfor %}

@@ -11,44 +11,51 @@
             <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
         </a>
     {% endif %}
-    <ul class="menu center-flex">
+    <ul class="menu center-flex gap-3">
         {% if request.user.is_authenticated %}
-            <li>
-            <a href="{%  url 'add-post' %}" class="menu-link">
-                <span>Add post</span>
-            </a>
-        </li>
+            <li class="tooltip-container">
+                <a href="{%  url 'add-post' %}">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span class="tooltip-text">Add post</span>
+                </a>
+            </li>
 
-        <li>
-            <a href="{% url 'add-review' %}" class="menu-link">
-                <span>Add book review</span>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'posts-feed' %}" class="menu-link">
-                <span>Post feed</span>
-            </a>
-        </li>
+            <li class="tooltip-container">
+                <a href="{% url 'add-review' %}">
+                    <i class="fa-solid fa-pencil"></i>
+                    <span class="tooltip-text">Add book review</span>
+                </a>
+            </li>
+            <li class="tooltip-container">
+                <a href="{% url 'posts-feed' %}">
+                    <i class="fa-solid fa-grip-vertical"></i>
+                    <span class="tooltip-text">Post feed</span>
+                </a>
+            </li>
 
-        <li>
-            <a href="{% url 'genres-list' %}" class="menu-link">
-                <span>Books</span>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'profile-details-page' request.user.pk %}" class="menu-link">
-                <span>My Profile</span>
-            </a>
-        </li>
-            <li>
-                <a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" class="menu-link">
-                    <span>Log out</span>
+            <li class="tooltip-container">
+                <a href="{% url 'genres-list' %}">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <span class="tooltip-text">Books</span>
+                </a>
+            </li>
+            <li class="tooltip-container">
+                <a href="{% url 'profile-details-page' request.user.pk %}">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="tooltip-text">My Profile</span>
+                </a>
+            </li>
+            <li class="tooltip-container">
+                <a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
+                     <i class="fa-solid fa-person-hiking"></i>
+                    <span class="tooltip-text">Log out</span>
                 </a>
             </li>
         {% else %}
-            <li>
-                <a href="{% url 'login' %}" class="menu-link">
-                    <span>Log in</span>
+            <li class="tooltip-container">
+                <a href="{% url 'login' %}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="tooltip-text">Log in</span>
                 </a>
             </li>
         {% endif %}

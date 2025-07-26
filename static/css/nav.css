@@ -25,3 +25,32 @@ nav{
     background-color: rgb(105, 11, 34);
 }
 
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-size: 0.875rem;
+  border: 1px solid #ccc;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

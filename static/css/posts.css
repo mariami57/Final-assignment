@@ -105,14 +105,7 @@
 
   }
 
-  summary::before {
-    content: "...";
-    color: black;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 2em;
-  }
+
 
 
 

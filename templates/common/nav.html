@@ -11,9 +11,11 @@
             <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
         </a>
     {% endif %}
+    <div class="search-bar mt-3 times-new-roman">
+        <input type="text" id="search-input" placeholder="SEARCH... "/>
+        <ul id="search-results" class="search-results times-new-roman"></ul>
+    </div>
 
-    <input type="text" id="search-input" placeholder="Search..." />
-    <ul id="search-results" class="search-results"></ul>
 
     <ul class="menu center-flex gap-3">
         {% if request.user.is_authenticated %}
@@ -77,10 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultsBox = document.getElementById('search-results');
 
     input.addEventListener('input', function () {
-        const query = this.value;
+        const query = this.value.trim();
 
         if (query.length < 2) {
             resultsBox.innerHTML = '';
+            resultsBox.style.display = 'none';
             return;
         }
 
@@ -88,6 +91,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 resultsBox.innerHTML = '';
+
+                 if (data.length === 0) {
+
+                    resultsBox.style.display = 'none';
+
+                    return;
+
+                }
+
+                resultsBox.style.display = 'block';
 
                 data.forEach(item => {
                     const link = document.createElement('a');
@@ -99,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => {
                 console.error('Search error:', error);
+                resultsBox.style.display = 'none';
             });
     });
 });

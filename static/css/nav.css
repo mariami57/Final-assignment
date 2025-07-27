@@ -54,15 +54,32 @@ nav{
   opacity: 1;
 }
 
+.search-bar{
+    width: 500px;
+    margin-left: 200px;
+}
+
+#search-input {
+    width: 100%;
+    border-radius: 15px;
+    height: 30px;
+    line-height: normal;
+    background-color: rgb(241, 227, 211);
+    border: 2px solid rgb(105, 11, 34);
+    padding: 5px;
+}
 .search-results {
   position: absolute;
-  background: white;
+  display: none;
   list-style: none;
-  padding: 0;
+  padding: 5px;
   margin: 0;
-  border: 1px solid #ccc;
-  width: 200px;
+  width: 500px;
   z-index: 1000;
+  background-color: rgb(248, 195, 182);
+  border: 1px solid rgb(248, 195, 182);
+  border-radius: 10px;
+
 }
 
 .search-results li {
@@ -73,3 +90,4 @@ nav{
   text-decoration: none;
   color: black;
 }
+

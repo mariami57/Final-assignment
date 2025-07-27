@@ -2,14 +2,20 @@
 
 {% block content %}
 
+
+
     {% if not review_list %}
         <h1 class="title text-center">There are no reviews yet for this book</h1>
+        <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>
     {% else %}
         <div class="d-flex flex-column gap-3">
             <h2 class="title text-center"> Reviews for:</h2>
             <h2 class="title text-center">"{{ book }} "</h2>
             <h5 class="text-center times-new-roman"> Number of reviews: {{ reviews_count }}</h5>
             <h5 class="text-center times-new-roman"> Average rating: {{ avg_rating }}</h5>
+            {% if not has_reviewed %}
+                 <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>
+            {% endif %}
             {% for review in review_list %}
               <div class="post-content mx-auto d-flex flex-column" id="review-{{ review.id }}">
                 <div class="d-flex justify-content-between">
@@ -42,9 +48,7 @@
        </div>
     {% endif %}
 
-    {% if not has_reviewed %}
-        <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>
-    {% endif %}
+
 
  <script>
     document.addEventListener("click", function (e) {

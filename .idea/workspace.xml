@@ -6,29 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_assignment/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_assignment/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_assignment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_assignment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/books.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/books.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/common_pages.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/common_pages.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/forms.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/posts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/page_break.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/pngtree-single-chocolate-chip-cookie-png-image_14031716.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/edit-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/edit-profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/log-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/log-in.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/book/books-by-genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book/books-by-genre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/post-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -159,7 +143,7 @@
       <workItem from="1753421021369" duration="605000" />
       <workItem from="1753463520386" duration="4280000" />
       <workItem from="1753513196224" duration="20956000" />
-      <workItem from="1753601122756" duration="2357000" />
+      <workItem from="1753601122756" duration="10171000" />
     </task>
     <servers />
   </component>

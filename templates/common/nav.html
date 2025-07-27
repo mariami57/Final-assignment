@@ -11,6 +11,10 @@
             <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
         </a>
     {% endif %}
+
+    <input type="text" id="search-input" placeholder="Search..." />
+    <ul id="search-results" class="search-results"></ul>
+
     <ul class="menu center-flex gap-3">
         {% if request.user.is_authenticated %}
             <li class="tooltip-container">
@@ -65,3 +69,37 @@
 <form style="display: none" id="logout-form" action="{% url 'logout' %}" method="post">
     {% csrf_token %}
 </form>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('search-input');
+    const resultsBox = document.getElementById('search-results');
+
+    input.addEventListener('input', function () {
+        const query = this.value;
+
+        if (query.length < 2) {
+            resultsBox.innerHTML = '';
+            return;
+        }
+
+        fetch(`/api/search/?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                resultsBox.innerHTML = '';
+
+                data.forEach(item => {
+                    const link = document.createElement('a');
+                    link.href = item.url;
+                    link.textContent = item.label || item.title || item.first_name || item.username || 'Result';
+                    link.style.display = 'block';
+                    resultsBox.appendChild(link);
+                });
+            })
+            .catch(error => {
+                console.error('Search error:', error);
+            });
+    });
+});
+</script>

@@ -14,14 +14,18 @@ main {
 
 .contacts {
     margin: 30px auto;
-    gap:30px;
-    flex-wrap: wrap;
+    gap:1rem;
+    justify-content: center;
+
 
 }
 
 .contact-info {
     box-sizing: border-box;
     text-align: center;
+    flex: 1 1 300px;
+    max-width: 400px;
+
 
 
 }

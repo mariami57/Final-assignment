@@ -10,6 +10,7 @@ dl, ol, ul {
     background-color: rgb(105, 11, 34);
     color: rgb(252 242 228);
     font-size: x-large;
+    margin-right: 30px;
 
 }
 
@@ -55,8 +56,12 @@ nav{
 }
 
 .search-bar{
-    width: 500px;
-    margin-left: 200px;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    transform: translate(-50%, -50%);
 }
 
 #search-input {

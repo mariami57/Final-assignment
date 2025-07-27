@@ -11,10 +11,11 @@
                 {% for field in form %}
                     <div class="mx-auto flex-column d-flex align-items-center justify-center">
                         <label for="{{ field.id_for_label }}"> {{ field.label }}</label>
-                        {{ field }}
                         {% if field.errors %}
-                            <div class="error">{{ field.errors }}</div>
+                            <div class="error-field mb-2">{{ field.errors }}</div>
                         {% endif %}
+                        {{ field }}
+
                     </div>
                 {% endfor %}
 

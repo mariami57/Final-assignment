@@ -1,7 +1,7 @@
 {% load static %}
 
 
-<nav class="d-flex justify-content-between">
+<nav class="d-flex justify-content-between position-relative">
     {% if request.user.is_authenticated %}
         <a href="{% url 'posts-feed' %}" class="menu-link">
             <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>

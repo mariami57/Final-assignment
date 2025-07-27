@@ -11,6 +11,12 @@
   font-size: 150px;
 }
 
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
 .book {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;

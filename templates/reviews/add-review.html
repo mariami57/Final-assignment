@@ -5,7 +5,8 @@
     <form method="post" class="container">
         <div class="form-style mx-auto d-flex flex-column form-group align-items-center justify-center gap-3">
         {% if book %}
-            <h2>Create Review for <span class="carattere-cursive">"{{ book.title }}"</span></h2>
+            <h2>Create Review for</h2>
+            <h2 class="carattere-cursive">"{{ book.title }}"</h2>
         {% else %}
           <h2>Create Review</h2>
         {% endif %}

@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0002_profile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0003_alter_profile_phone_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0004_profile_bio_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0005_alter_profile_bio_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0006_alter_profile_bio_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/permissions_fixture.json" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/fixtures/permissions_fixture.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0002_book_destinations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0003_alter_book_destinations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/destinations/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/destinations/migrations/0002_destination_latitude_destination_longitude.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0002_post_book_post_destination.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0003_post_book_review_post_content.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0004_alter_post_image1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0005_alter_post_book_alter_post_destination.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/migrations/0002_review_book.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/migrations/0003_review_date_added_alter_review_rating.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +138,7 @@
       <workItem from="1753421021369" duration="605000" />
       <workItem from="1753463520386" duration="4280000" />
       <workItem from="1753513196224" duration="20956000" />
-      <workItem from="1753601122756" duration="14720000" />
+      <workItem from="1753601122756" duration="16827000" />
     </task>
     <servers />
   </component>

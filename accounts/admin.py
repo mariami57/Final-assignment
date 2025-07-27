@@ -14,7 +14,7 @@ class UserModelAdmin(UserAdmin):
 
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (("Personal info"), {"fields": ("email",)}),
+        (("Personal info"), {"fields": ("email", )}),
         (
             ("Permissions"),
             {
@@ -27,5 +27,14 @@ class UserModelAdmin(UserAdmin):
                 ),
             },
         ),
-        (("Important dates"), {"fields": ("last_login",)}),
+        (("Important dates"), {"fields": ("last_login", )}),
+    )
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("username", "email", "password1", "password2"),
+            },
+        ),
     )

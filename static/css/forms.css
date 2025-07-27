@@ -39,12 +39,11 @@
     font-style: normal;
 }
 
-
  input:focus, .form-style textarea:focus, .form-style div select:focus {
     border-color: rgb(10, 188, 133);
     outline: none;
     box-shadow: 0 0 0 0.2rem rgb(243, 191, 177);
-  }
+ }
 
 .form-style input, .form-style div select{
   border-radius: 15px;
@@ -80,6 +79,7 @@ input[type="file"] {
     margin-top: 10px;
 
 }
+
 .form-group {
   display: flex;
   align-items: center;

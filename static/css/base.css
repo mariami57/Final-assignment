@@ -3,8 +3,6 @@ html, body {
   min-height: 100%;
 }
 
-
-
 main {
   min-height: 70vh;
   display: flex;
@@ -25,11 +23,9 @@ a:hover{
     color: rgb(224, 122, 95);
 }
 
-
 .title {
     font-family: "Carattere", cursive;
     font-size: 80px;
-
 }
 
 .subtitle{
@@ -38,7 +34,6 @@ a:hover{
      text-align: center;
      margin: 30px;
 }
-
 
 .center-flex {
     display: flex;
@@ -61,7 +56,6 @@ a:hover{
   flex-direction: column;
 
 }
-
 
 .footer {
     list-style-type: none;

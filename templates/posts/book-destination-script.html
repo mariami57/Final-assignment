@@ -1,23 +1,23 @@
 <script>
-function toggleField(selectId, inputId) {
-    const select = document.getElementById(selectId);
-    const input = document.getElementById(inputId);
-    const parent = input?.parentElement;
+    function toggleField(selectId, inputId) {
+        const select = document.getElementById(selectId);
+        const input = document.getElementById(inputId);
+        const parent = input?.parentElement;
 
-    if (select.value === "other") {
-        parent.style.display = "flex";
-        parent.style.flexDirection = "column";
+        if (select.value === "other") {
+            parent.style.display = "flex";
+            parent.style.flexDirection = "column";
 
-    } else {
-        parent.style.display = "none";
+        } else {
+            parent.style.display = "none";
 
+        }
     }
-}
 
-document.addEventListener("DOMContentLoaded", function() {
-    toggleField('book_choice', 'id_book_title');
-    toggleField('destination_choice', 'id_destination_name');
-});
+    document.addEventListener("DOMContentLoaded", function() {
+        toggleField('book_choice', 'id_book_title');
+        toggleField('destination_choice', 'id_destination_name');
+    });
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

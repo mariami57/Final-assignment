@@ -1,6 +1,6 @@
 from django import forms
 
-from books.models import Book
+
 from reviews.models import Review
 
 

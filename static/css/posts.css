@@ -3,7 +3,6 @@
   width: 100%;
   overflow: hidden;
   margin: 2rem auto 0 auto;
-
 }
 
 .slides {
@@ -22,7 +21,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-
 }
 
 .arrow {
@@ -38,8 +36,13 @@
   width: 10%;
 }
 
-.arrow.prev { left: 10px; }
-.arrow.next { right: 10px; }
+.arrow.prev {
+  left: 10px;
+}
+
+.arrow.next {
+  right: 10px;
+}
 
 .post-content{
   width: 800px;
@@ -80,30 +83,28 @@
 }
 
 .carattere-cursive {
-    font-family: "Carattere", cursive;
+  font-family: "Carattere", cursive;
 }
 
-  .menu-container {
-    position: relative;
-    display: inline-block;
-  }
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
 
-  .menu-details {
-    position: relative;
-    all: unset;
-    padding-right: 40px;
-  }
+.menu-details {
+  position: relative;
+  all: unset;
+  padding-right: 40px;
+}
 
-  summary {
-    list-style: none;
-    cursor: pointer;
-    color: transparent;
-    position: relative;
-    width: 1em;
-    height: 1em;
-
-
-  }
+summary {
+  list-style: none;
+  cursor: pointer;
+  color: transparent;
+  position: relative;
+  width: 1em;
+  height: 1em;
+}
 
 
 

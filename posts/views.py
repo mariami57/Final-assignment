@@ -1,14 +1,13 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse, HttpResponseForbidden
-from django.shortcuts import render, redirect
+from django.http import HttpResponseForbidden
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView
 
-from books.models import Book
+
 from common.mixins import UserIsCreatorMixin
-from destinations.models import Destination
 from posts.forms import PostCreateForm, PostEditForm
 from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post

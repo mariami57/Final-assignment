@@ -5,7 +5,7 @@ from books.models import Book
 from destinations.models import Destination
 from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post
-from posts.validators import OtherDestinationFormatValidator
+
 
 
 class PostBaseForm(forms.ModelForm):

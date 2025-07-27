@@ -2,6 +2,7 @@ import json
 
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.views.decorators.http import require_http_methods
 from django.views.generic import TemplateView
 
 
@@ -18,11 +19,12 @@ def help_page_view(request):
 def cookies_page_view(request):
     return render(request, 'common/cookies.html')
 
+@require_http_methods(["GET", "POST"])
 def save_cookie_preferences(request):
     if request.method == "POST":
         data = json.loads(request.body)
         request.session['cookies_preference'] = data
         return JsonResponse({'message': 'Preferences saved'})
-    elif request.method == 'GET':
+    else:
         preferences = request.session.get('cookies_preferences', {})
         return JsonResponse(preferences)

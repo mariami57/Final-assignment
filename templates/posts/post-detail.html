@@ -16,32 +16,30 @@
                                 <h2 class="py-3 abril-fatface-regular">{{ post.user.username }}</h2>
                             {% endif %}
                         </div>
-                  </a>
-                 {% if request.user == post.user %}
-                    <div class="menu-container">
-                        <details>
-                              <summary ></summary>
-                              <div class="popup-menu">
-                                  <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>
-                                  <p><a href="{% url 'post-delete' pk=post.pk %}" class="times-new-roman">Delete</a></p>
-                              </div>
-                        </details>
-                    </div>
-                 {% endif %}
+                    </a>
+                    {% if request.user == post.user %}
+                        <div class="menu-container">
+                            <details>
+                                  <summary ></summary>
+                                  <div class="popup-menu">
+                                      <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>
+                                      <p><a href="{% url 'post-delete' pk=post.pk %}" class="times-new-roman">Delete</a></p>
+                                  </div>
+                            </details>
+                        </div>
+                    {% endif %}
                 </div>
 
-                  <h4 class="edu-nsw-act-hand-pre-cursive"> {{ post.title }}</h4>
+                <h4 class="edu-nsw-act-hand-pre-cursive"> {{ post.title }}</h4>
 
+                <div class="small-font small-text times-new-roman my-3">
+                  <a href="#" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
+                  <p class="my-0"><i class="fa-solid fa-location-dot"></i>{{ post.destination|capfirst }}</p>
+                  <p class="my-0">{{ post.created_at }}</p>
+                </div>
 
+                <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
 
-                  <div class="small-font small-text times-new-roman my-3">
-                      <a href="#" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
-                      <p class="my-0"><i class="fa-solid fa-location-dot"></i>{{ post.destination|capfirst }}</p>
-                      <p class="my-0">{{ post.created_at }}</p>
-
-                  </div>
-
-                  <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
                 <div class="carousel-container" id="carousel-{{ i }}">
                   <div class="slides" id="slides-{{ i }}">
                     {% if post.image1 %}
@@ -55,12 +53,12 @@
                     {% endif %}
                   </div>
 
-                    <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
+                  <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
 
-                {% if post.image_count > 1 %}
-                  <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
-                  <button class="arrow next" data-id="{{ i }}">&#10095;</button>
-                {% endif %}
+                    {% if post.image_count > 1 %}
+                      <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
+                      <button class="arrow next" data-id="{{ i }}">&#10095;</button>
+                    {% endif %}
                 </div>
               {% endwith %}
             </div>

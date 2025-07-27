@@ -1,6 +1,5 @@
 from django.urls import path, include
 
-from accounts.views import ProfileDetailView
 from posts.views import PostFeedView, AddPostView, PostEditView, post_delete_view, PostDetailView
 
 urlpatterns = [

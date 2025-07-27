@@ -5,8 +5,8 @@
     <main>
         <div>
             <h1 class="section-title times">Manage Your Cookie Preferences <i class="fa-solid fa-cookie-bite"></i></h1>
-
-            <h2 class="subtitle">We use cookies to enhance your experience, analyze site performance, and provide personalized content. You can choose which types of cookies you're comfortable with. Your preferences can be updated at any time.</h2>
+            <h2 class="subtitle">We use cookies to enhance your experience, analyze site performance, and provide personalized content.
+                You can choose which types of cookies you're comfortable with. Your preferences can be updated at any time.</h2>
         </div>
         <div class="container d-flex">
 
@@ -15,7 +15,6 @@
                 <h4>Strictly Necessary Cookies</h4>
                 <p>They are always active</p>
                 <p>These cookies are essential for the website to function properly. They enable core features like page navigation, secure access, and form submission.</p>
-
             </div>
 
             <div class="sub-container">
@@ -25,7 +24,6 @@
                     <span class="slider"></span>
                 </label>
                 <p class="mt-4">These cookies help us understand how visitors interact with our website, so we can improve user experience. All data is anonymized.</p>
-
             </div>
 
             <div class="sub-container">
@@ -52,50 +50,49 @@
     </main>
 
     <script>
-          function getPreferences() {
-            fetch('/api/cookie-preferences/')
-              .then(res => res.json())
-              .then(data => {
-                // Pre-fill switches based on saved data
-                document.getElementById('performance').checked = data.performance || false;
-                document.getElementById('functional').checked = data.functional || false;
-                document.getElementById('advertising').checked = data.advertising || false;
-              });
-          }
+      function getPreferences() {
+        fetch('/api/cookie-preferences/')
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('performance').checked = data.performance || false;
+            document.getElementById('functional').checked = data.functional || false;
+            document.getElementById('advertising').checked = data.advertising || false;
+          });
+      }
 
-          function savePreferences() {
-            const preferences = {
-              performance: document.getElementById('performance').checked,
-              functional: document.getElementById('functional').checked,
-              advertising: document.getElementById('advertising').checked,
-            };
+      function savePreferences() {
+        const preferences = {
+          performance: document.getElementById('performance').checked,
+          functional: document.getElementById('functional').checked,
+          advertising: document.getElementById('advertising').checked,
+        };
 
-            fetch('/api/cookie-preferences/', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-              },
-              body: JSON.stringify(preferences)
-            }).then(res => res.json())
-              .then(data => alert(data.message));
-          }
+        fetch('/api/cookie-preferences/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+          },
+          body: JSON.stringify(preferences)
+        }).then(res => res.json())
+          .then(data => alert(data.message));
+      }
 
-          function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-              const cookies = document.cookie.split(';');
-              for (let cookie of cookies) {
-                cookie = cookie.trim();
-                if (cookie.startsWith(name + '=')) {
-                  cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
-                  break;
-                }
-              }
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + '=')) {
+              cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+              break;
             }
-            return cookieValue;
           }
+        }
+        return cookieValue;
+      }
 
-          document.addEventListener('DOMContentLoaded', getPreferences);
+      document.addEventListener('DOMContentLoaded', getPreferences);
     </script>
 {% endblock %}

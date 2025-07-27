@@ -9,15 +9,14 @@
                     <div class="profile-details d-flex gap-3 mt-2 mb-4">
                             {% include 'common/profile-picture-and-info.html' with user=profile.user %}
                     </div>
-                    <div >
-                            <p class="abril-fatface-regular my-3 fs-5">{{  object.user.profile.full_name }}</p>
-                            {% if object.user.profile.bio_info %}
-                                <p class="carattere-cursive fs-4">{{ object.user.profile.bio_info }}</p>
-                            {% else %}
-                                <br>
-                                <br>
-                            {% endif %}
-
+                    <div>
+                        <p class="abril-fatface-regular my-3 fs-5">{{  object.user.profile.full_name }}</p>
+                        {% if object.user.profile.bio_info %}
+                            <p class="carattere-cursive fs-4">{{ object.user.profile.bio_info }}</p>
+                        {% else %}
+                            <br>
+                            <br>
+                        {% endif %}
                     </div>
                 </div>
                  {% if request.user == profile.user %}
@@ -78,13 +77,11 @@
 
                     {% endif %}
             </div>
-            </div>
+        </div>
 
             <div id="book-reviews" style="display: none;">
-
                 {% if user_reviews %}
                     <h2 class="carattere-cursive text-center mx-3">Book reviews</h2>
-
                         {% for review in user_reviews %}
                             <a href="{% url 'reviews-list' book_pk=review.book.pk %}#review-{{ review.id }}">
                                 <div class="post-content content-container mb-3 w-100">
@@ -135,13 +132,13 @@
   const bounds = L.latLngBounds(southWest, northEast);
   map.setMaxBounds(bounds);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; OpenStreetMap contributors & Carto',
       subdomains: 'abcd',
       maxZoom: 19,
       noWrap: true,
       bounds: bounds
-    }).addTo(map);
+  }).addTo(map);
 
 
   const customIcon = L.divIcon({
@@ -187,7 +184,7 @@
   worldIcon.addEventListener('click', showMapPosts);
   bookIcon.addEventListener('click', showBookReviews);
 
-   function confirmDelete() {
+  function confirmDelete() {
     return confirm("Are you sure you want to delete your profile?");
   }
 </script>

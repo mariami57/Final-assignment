@@ -1,123 +1,119 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
     {% if not post_list %}
         <h1 class="title text-center">No posts to show</h1>
     {% else %}
         <div class="content-container center-flex">
-                {% for post in post_list %}
-
-                    <div class="post-content content-container">
-                      {% with forloop.counter as i %}
-                        <div class="d-flex justify-content-between">
-                            <a  href="{% url 'profile-details-page' post.user.pk %}">
-                                {% include 'common/profile-picture-and-info.html' with user=post.user%}
-                            </a>
-                         {% if request.user == post.user %}
-                            <div class="menu-container">
-                                <details class="menu-details">
-                                      <summary ></summary>
-                                      <div class="popup-menu text-center">
-                                          <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>
-                                          <p><a href="{% url 'post-delete' pk=post.pk %}" class="times-new-roman">Delete</a></p>
-                                      </div>
-                                </details>
-                            </div>
-                         {% endif %}
+            {% for post in post_list %}
+                <div class="post-content content-container">
+                  {% with forloop.counter as i %}
+                    <div class="d-flex justify-content-between">
+                        <a  href="{% url 'profile-details-page' post.user.pk %}">
+                            {% include 'common/profile-picture-and-info.html' with user=post.user%}
+                        </a>
+                     {% if request.user == post.user %}
+                        <div class="menu-container">
+                            <details class="menu-details">
+                                  <summary ></summary>
+                                  <div class="popup-menu text-center">
+                                      <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>
+                                      <p><a href="{% url 'post-delete' pk=post.pk %}" class="times-new-roman">Delete</a></p>
+                                  </div>
+                            </details>
                         </div>
-
-                          <h4 class="edu-nsw-act-hand-pre-cursive"> {{ post.title }}</h4>
-
-
-
-                          <div class="small-font small-text times-new-roman my-3">
-                              <a href="{% url 'reviews-list' book_pk=post.book.pk %}" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
-                              <p class="my-0"><i class="fa-solid fa-location-dot"></i>{{ post.destination|capfirst }}</p>
-                              <p class="my-0">{{ post.created_at }}</p>
-
-                          </div>
-
-                          <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
-                        <div class="carousel-container" id="carousel-{{ i }}">
-                          <div class="slides" id="slides-{{ i }}">
-                            {% if post.image1 %}
-                              <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1" crossorigin="anonymous" class="img-fluid"></div>
-                            {% endif %}
-                            {% if post.image2 %}
-                              <div class="slide"><img src="{{ post.image2.url }}" alt="Image 2" crossorigin="anonymous" class="img-fluid"></div>
-                            {% endif %}
-                            {% if post.image3 %}
-                              <div class="slide"><img src="{{ post.image3.url }}" alt="Image 3" crossorigin="anonymous" class="img-fluid"></div>
-                            {% endif %}
-                          </div>
-
-                            <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
-
-                        {% if post.image_count > 1 %}
-                          <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
-                          <button class="arrow next" data-id="{{ i }}">&#10095;</button>
-                        {% endif %}
-                        </div>
-                      {% endwith %}
+                     {% endif %}
                     </div>
-                {% endfor %}
-        {% endif %}
-</div>
+
+                      <h4 class="edu-nsw-act-hand-pre-cursive"> {{ post.title }}</h4>
+
+                      <div class="small-font small-text times-new-roman my-3">
+                          <a href="{% url 'reviews-list' book_pk=post.book.pk %}" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
+                          <p class="my-0"><i class="fa-solid fa-location-dot"></i>{{ post.destination|capfirst }}</p>
+                          <p class="my-0">{{ post.created_at }}</p>
+                      </div>
+
+                    <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
+                    <div class="carousel-container" id="carousel-{{ i }}">
+                      <div class="slides" id="slides-{{ i }}">
+                        {% if post.image1 %}
+                          <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1" crossorigin="anonymous" class="img-fluid"></div>
+                        {% endif %}
+                        {% if post.image2 %}
+                          <div class="slide"><img src="{{ post.image2.url }}" alt="Image 2" crossorigin="anonymous" class="img-fluid"></div>
+                        {% endif %}
+                        {% if post.image3 %}
+                          <div class="slide"><img src="{{ post.image3.url }}" alt="Image 3" crossorigin="anonymous" class="img-fluid"></div>
+                        {% endif %}
+                      </div>
+
+                    <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
+
+                    {% if post.image_count > 1 %}
+                      <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
+                      <button class="arrow next" data-id="{{ i }}">&#10095;</button>
+                    {% endif %}
+                    </div>
+                  {% endwith %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // === Carousel Logic ===
-    const sliders = {};
+    document.addEventListener("DOMContentLoaded", function () {
 
-    document.querySelectorAll('.slides').forEach((slidesEl, idx) => {
-        const id = slidesEl.id.replace('slides-', '');
-        const slideCount = slidesEl.querySelectorAll('.slide').length;
+        const sliders = {};
 
-        sliders[id] = { index: 0, count: slideCount };
+        document.querySelectorAll('.slides').forEach((slidesEl, idx) => {
+            const id = slidesEl.id.replace('slides-', '');
+            const slideCount = slidesEl.querySelectorAll('.slide').length;
 
-        slidesEl.style.width = `${slideCount * 100}%`;
-        slidesEl.querySelectorAll('.slide').forEach(slide => {
-            slide.style.width = `${100 / slideCount}%`;
+            sliders[id] = { index: 0, count: slideCount };
+
+            slidesEl.style.width = `${slideCount * 100}%`;
+            slidesEl.querySelectorAll('.slide').forEach(slide => {
+                slide.style.width = `${100 / slideCount}%`;
+            });
+
+            updateCounter(id);
         });
 
-        updateCounter(id);
-    });
+        function moveSlide(id, direction) {
+            const slidesEl = document.getElementById(`slides-${id}`);
+            const slider = sliders[id];
 
-    function moveSlide(id, direction) {
-        const slidesEl = document.getElementById(`slides-${id}`);
-        const slider = sliders[id];
+            slider.index = (slider.index + direction + slider.count) % slider.count;
+            slidesEl.style.transform = `translateX(-${slider.index * (100 / slider.count)}%)`;
 
-        slider.index = (slider.index + direction + slider.count) % slider.count;
-        slidesEl.style.transform = `translateX(-${slider.index * (100 / slider.count)}%)`;
+            updateCounter(id);
+        }
 
-        updateCounter(id);
-    }
+        function updateCounter(id) {
+            const counterEl = document.getElementById(`counter-${id}`);
+            if (!counterEl) return;
+            const slider = sliders[id];
+            counterEl.textContent = `${slider.index + 1}/${slider.count}`;
+        }
 
-    function updateCounter(id) {
-        const counterEl = document.getElementById(`counter-${id}`);
-        if (!counterEl) return;
-        const slider = sliders[id];
-        counterEl.textContent = `${slider.index + 1}/${slider.count}`;
-    }
+        document.querySelectorAll('.arrow.prev').forEach(button =>
+            button.addEventListener('click', () => moveSlide(button.dataset.id, -1))
+        );
+        document.querySelectorAll('.arrow.next').forEach(button =>
+            button.addEventListener('click', () => moveSlide(button.dataset.id, 1))
+        );
 
-    document.querySelectorAll('.arrow.prev').forEach(button =>
-        button.addEventListener('click', () => moveSlide(button.dataset.id, -1))
-    );
-    document.querySelectorAll('.arrow.next').forEach(button =>
-        button.addEventListener('click', () => moveSlide(button.dataset.id, 1))
-    );
 
-    // === Close <details> when clicking outside ===
-    document.addEventListener("click", function (e) {
-        document.querySelectorAll("details").forEach((detail) => {
-            if (!detail.contains(e.target)) {
-                detail.removeAttribute("open");
-            }
+        document.addEventListener("click", function (e) {
+            document.querySelectorAll("details").forEach((detail) => {
+                if (!detail.contains(e.target)) {
+                    detail.removeAttribute("open");
+                }
+            });
         });
-    });
 
-});
+    });
 </script>
 
 

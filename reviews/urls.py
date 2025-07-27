@@ -1,6 +1,5 @@
 from django.urls import path, include
 
-from reviews.forms import CreateReviewForm
 from reviews.views import CreateReviewView, ReviewsPerBookView, EditReviewView, delete_review
 
 urlpatterns = [

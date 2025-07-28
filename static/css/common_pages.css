@@ -105,7 +105,7 @@ input:checked + .slider:before {
     color: #935f51;
 }
 
-details {
+.details {
     border: 2px solid rgb(224, 122, 95);
     border-radius: 15px;
     padding: 10px;

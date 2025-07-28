@@ -1,12 +1,14 @@
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.views.generic.edit import FormMixin
 
-
+from comments.forms import CommentBaseForm
+from comments.models import Comment
 from common.mixins import UserIsCreatorMixin
 from posts.forms import PostCreateForm, PostEditForm
 from posts.mixins import BookDestinationHandlerMixin
@@ -37,7 +39,6 @@ class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
         form.instance.destination = destination
         super().form_valid(form)
 
-        messages.success(self.request, 'Post created! Want to leave a book review?')
         print(form.errors)
         return super().form_valid(form)
 
@@ -67,7 +68,38 @@ def post_delete_view(request, pk):
     else:
         return HttpResponseForbidden()
 
-class PostDetailView(LoginRequiredMixin, DetailView):
+class PostDetailView(LoginRequiredMixin, FormMixin, DetailView):
     model = Post
     template_name = 'posts/post-detail.html'
+    form_class = CommentBaseForm
+
+    def get_success_url(self):
+        return reverse('post-details', kwargs={'pk': self.object.pk})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        content_type = ContentType.objects.get_for_model(post)
+
+        context['comments'] = Comment.objects.filter(
+            content_type=content_type, object_id=post.pk)
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = self.request.user
+            comment.content_object = self.object
+            comment.save()
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+
+
+
 

@@ -12,12 +12,14 @@ class Post(models.Model):
     book=models.ForeignKey(Book, on_delete=models.CASCADE)
     destination=models.ForeignKey(Destination, on_delete=models.CASCADE)
     content=models.TextField(null=True, blank=True)
-    book_review=models.ForeignKey(Review, on_delete=models.CASCADE, null=True, blank=True)
     title=models.CharField(max_length=150)
     created_at = models.DateTimeField(auto_now_add=True)
     image1 = models.ImageField(upload_to='post_mediafiles/')
     image2 = models.ImageField(upload_to='post_mediafiles/', blank=True, null=True)
     image3 = models.ImageField(upload_to='post_mediafiles/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
 
     @property
     def image_count(self):

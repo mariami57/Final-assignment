@@ -13,3 +13,6 @@ class Review(models.Model):
     content = models.TextField(null=True, blank=True)
     rating = models.FloatField(null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(5)])
     date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"'{self.book.title}' Review"

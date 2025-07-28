@@ -39,6 +39,7 @@ PROJECT_APPS = [
     'destinations',
     'reviews',
     'rest_framework',
+    'comments',
 ]
 
 INSTALLED_APPS = [

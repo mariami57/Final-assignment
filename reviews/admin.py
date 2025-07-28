@@ -6,6 +6,7 @@ from reviews.models import Review
 # Register your models here.
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
+    readonly_fields = ('user', 'content', 'rating')
     list_display = ('book', 'user', 'content', 'rating', 'date_added')
     search_fields =('rating', 'content')
     list_filter = ('book', 'user', 'date_added', 'rating')

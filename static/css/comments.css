@@ -1,0 +1,38 @@
+.comment-card {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  padding: 5px;
+}
+
+
+.profilepic-comment img{
+    border-radius: 50%;
+}
+
+.comment-text textarea {
+    border-radius: 15px;
+    border: 1px solid seashell;
+    padding: 5px;
+    width: 100%;
+
+}
+
+.comment-text{
+    margin-bottom: 0;
+}
+
+.comment-text textarea:focus{
+    border-color: rgb(10, 188, 133);
+}
+
+.comment-button{
+    width: 100%;
+    background-color: #f8c3b6;
+    border: #f8c3b6;
+}
+
+#toggle-comments-btn {
+    background-color: bisque;
+    border: bisque;
+    width: 100%;
+}

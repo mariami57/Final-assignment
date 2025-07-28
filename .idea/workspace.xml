@@ -5,68 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/127570f9-781e-49f1-acfa-3747f5c41435/storage_v2/_src_/database/wanderwords.HCCftw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_assignment/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_assignment/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/destinations/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Nyhavn-Neighborhood-Copenhagen-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/Nyhavn-Neighborhood-Copenhagen-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/Nyhavn-Neighborhood-Copenhagen-6_Wo8iQd4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/VisitCPH-0110_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/VisitCPH-0110_2_6m2KHP6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/amalfi-coast.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/little-mermaid-copenhagen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/little-mermaid-copenhagen_bNLFytj.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/little-mermaid-copenhagen_jEpK9aW.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_1W8gU5o.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_E3CEyrt.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_HArPgUb.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_MYdghb3.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_NUfj1uU.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_aECtUJz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_eayEE4q.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_imkK0i2.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_nFRZM0u.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_nHdv2wE.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_q3ZO16z.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_quLRUkO.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_rfCu6UO.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_uwgZ0j4.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/s_75292516_kerkyra-aggeorgios_1743x752_vL7NW1K.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_1.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_1_IacNu7n.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_1_dzAq3Lj.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_1_hhXwH1o.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_1_lqQVdvv.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_1_pSgrE6g.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/unnamed_Ml6dShR.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/venice-1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/venice-1_2qqlIEk.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/venice-1_L0R06VG.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/venice-1_OR6JTnb.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/venice-1_Utk6zE6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/post_mediafiles/venice-1_tgMuV4Q.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/premium_photo-1673967831980-1d377baaded2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/premium_photo-1673967831980-1d377baaded2_OJPIQeQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/comments/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/posts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/posts/post-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/add-review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/add-review.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -199,7 +142,7 @@
       <workItem from="1753513196224" duration="20956000" />
       <workItem from="1753601122756" duration="18518000" />
       <workItem from="1753639070040" duration="2193000" />
-      <workItem from="1753695722608" duration="8717000" />
+      <workItem from="1753695722608" duration="12197000" />
     </task>
     <servers />
   </component>

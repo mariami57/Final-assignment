@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="content-container center-flex">
@@ -54,23 +55,56 @@
                     {% endif %}
                 </div>
               {% endwith %}
-            </div>
+              <button id="toggle-comments-btn">💬 Show Comments</button>
+                <div id="comments-container" style="display: none;">
+                    <div id="comments">
+                      {% for comment in comments %}
+                          <div class="mb-3">
+                             <div class="d-flex gap-2 comment-card">
+                                <div class="profilepic-comment">
+                                    {% if comment.user.profile.profile_picture %}
+                                        <img src="{{ comment.user.profile.profile_picture.url }}" alt="profile-pic" width="50" height="50">
+                                    {% else %}
+                                        <img src="{% static 'images/default-avatar-profile.jpg' %}" alt="Default profile picture" width="50" height="50">
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {{ comment.user.username }}
+                                    <p class="small-font small-text times-new-roman my-3">{{ comment.created_at }}</p>
+                                    <p>{{ comment.text }}</p>
+                                </div>
+                            </div>
+                          </div>
 
-    </div>
-    <div id="comments">
-      {% for comment in comments %}
-        <p><strong>{{ comment.user.username }}</strong>: {{ comment.text }} <br><small>{{ comment.created_at }}</small></p>
-      {% endfor %}
+
+                      {% endfor %}
+                    </div>
+
+                    {% if user.is_authenticated %}
+                        <form method="post">
+                          {% csrf_token %}
+                          <p class="comment-text">{{ form.text }}</p>
+                          <button type="submit" class="comment-button">Post Comment</button>
+                        </form>
+                    {% else %}
+                        <p><a href="{% url 'login' %}">Log in</a> to comment.</p>
+                    {% endif %}
+              </div>
+
+        </div>
     </div>
 
-    {% if user.is_authenticated %}
-        <form method="post">
-          {% csrf_token %}
-          {{ form.text  }}
-          <button type="submit">Add Comment</button>
-        </form>
-    {% else %}
-        <p><a href="{% url 'login' %}">Log in</a> to comment.</p>
-    {% endif %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('toggle-comments-btn');
+    const commentsContainer = document.getElementById('comments-container');
+
+    toggleBtn.addEventListener('click', function () {
+      const isVisible = commentsContainer.style.display === 'block';
+      commentsContainer.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? '💬 Show Comments' : 'Hide Comments';
+    });
+  });
+</script>
 
 {% endblock %}

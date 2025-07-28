@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/books.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/books.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/common_pages.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/common_pages.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/sign-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/sign-in.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/add-review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/add-review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +138,8 @@
       <workItem from="1753463520386" duration="4280000" />
       <workItem from="1753513196224" duration="20956000" />
       <workItem from="1753601122756" duration="18518000" />
-      <workItem from="1753639070040" duration="1961000" />
+      <workItem from="1753639070040" duration="2193000" />
+      <workItem from="1753695722608" duration="1624000" />
     </task>
     <servers />
   </component>

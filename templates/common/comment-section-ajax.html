@@ -1,0 +1,86 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('toggle-comments-btn');
+    const commentsContainer = document.getElementById('comments-container');
+
+    if (toggleBtn && commentsContainer) {
+      toggleBtn.addEventListener('click', function () {
+        const isVisible = commentsContainer.style.display === 'block';
+        commentsContainer.style.display = isVisible ? 'none' : 'block';
+        toggleBtn.textContent = isVisible ? '💬 Show Comments' : 'Hide Comments';
+      });
+    }
+
+    document.querySelectorAll('.delete-comment-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const commentId = this.dataset.id;
+
+
+          fetch(`/comments/${commentId}/delete/`, {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': '{{ csrf_token }}',
+              'Content-Type': 'application/json',
+            },
+          })
+          .then(res => {
+            if (res.ok) {
+              const commentEl = document.querySelector(`.comment[data-id="${commentId}"]`);
+              if (commentEl) {
+                commentEl.remove();
+              }
+            }
+          });
+
+      });
+    });
+
+    document.querySelectorAll('.edit-comment-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const commentId = this.dataset.id;
+        const commentEl = document.querySelector(`.comment[data-id="${commentId}"]`);
+        const textEl = commentEl.querySelector('.comment-text');
+
+        if (!textEl) return;
+
+        const originalText = textEl.textContent;
+
+        const textarea = document.createElement('textarea');
+        textarea.value = originalText;
+        textarea.classList.add('comment-textarea');
+        textEl.replaceWith(textarea);
+
+
+        const saveBtn = document.createElement('button');
+       saveBtn.innerHTML = '<i class="fas fa-save"></i>';
+        saveBtn.classList.add('save-comment-btn');
+
+        this.replaceWith(saveBtn);
+
+        saveBtn.addEventListener('click', function () {
+          const newText = textarea.value;
+
+          fetch(`/comments/${commentId}/edit/`, {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': '{{ csrf_token }}',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ text: newText })
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.success) {
+              const newTextEl = document.createElement('p');
+              newTextEl.textContent = newText;
+              newTextEl.classList.add('comment-text');
+
+              textarea.replaceWith(newTextEl);
+              saveBtn.replaceWith(btn);
+            }
+          });
+        });
+      });
+    });
+  });
+</script>

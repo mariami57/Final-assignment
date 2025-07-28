@@ -11,6 +11,7 @@ class CommentBaseForm(forms.ModelForm):
             'rows': 3,
             'cols': 98,
             'placeholder': 'Write your comment...',
+            'class': 'comment-textarea',
         })}
 
 class CommentCreateForm(CommentBaseForm):

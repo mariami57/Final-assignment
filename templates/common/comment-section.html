@@ -1,0 +1,44 @@
+{% load static %}
+<button id="toggle-comments-btn">💬 Show Comments</button>
+    <div id="comments-container" style="display: none;">
+        <div id="comments">
+          {% for comment in comments %}
+              <div class="mb-3 comment position-relative" data-id="{{ comment.id }}">
+                 <div class="d-flex gap-2 comment-card">
+                    <div class="profilepic-comment">
+                        {% if comment.user.profile.profile_picture %}
+                            <img src="{{ comment.user.profile.profile_picture.url }}" alt="profile-pic" width="50" height="50">
+                        {% else %}
+                            <img src="{% static 'images/default-avatar-profile.jpg' %}" alt="Default profile picture" width="50" height="50">
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{ comment.user.username }}
+                        <p class="small-font small-text times-new-roman mb-3 mt-0">{{ comment.created_at }}</p>
+                        <p class="comment-text mt-0">{{ comment.text }}</p>
+
+                        {% if request.user == comment.user %}
+                            <div class="comment-buttons">
+                                <button class="edit-comment-btn" data-id="{{ comment.id }}"><i class="fa-solid fa-pen"></i></button>
+                                <button class="delete-comment-btn" data-id="{{ comment.id }}"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+              </div>
+
+
+          {% endfor %}
+        </div>
+
+        {% if user.is_authenticated %}
+            <form method="post">
+              {% csrf_token %}
+              <p class="comment-text">{{ form.text }}</p>
+              <button type="submit" class="comment-button">Post Comment</button>
+            </form>
+        {% else %}
+            <p><a href="{% url 'login' %}">Log in</a> to comment.</p>
+        {% endif %}
+  </div>

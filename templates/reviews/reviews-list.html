@@ -2,8 +2,6 @@
 
 {% block content %}
 
-
-
     {% if not review_list %}
         <h1 class="title text-center">There are no reviews yet for this book</h1>
         <h2 class="subtitle"><a href="{% url 'add-review' book_pk=book_pk %}">Want to add review? Click here</a></h2>

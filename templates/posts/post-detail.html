@@ -65,4 +65,59 @@
     </div>
 
 {% include 'common/comment-section-ajax.html' %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const sliders = {};
+
+        document.querySelectorAll('.slides').forEach((slidesEl, idx) => {
+            const id = slidesEl.id.replace('slides-', '');
+            const slideCount = slidesEl.querySelectorAll('.slide').length;
+
+            sliders[id] = { index: 0, count: slideCount };
+
+            slidesEl.style.width = `${slideCount * 100}%`;
+            slidesEl.querySelectorAll('.slide').forEach(slide => {
+                slide.style.width = `${100 / slideCount}%`;
+            });
+
+            updateCounter(id);
+        });
+
+        function moveSlide(id, direction) {
+            const slidesEl = document.getElementById(`slides-${id}`);
+            const slider = sliders[id];
+
+            slider.index = (slider.index + direction + slider.count) % slider.count;
+            slidesEl.style.transform = `translateX(-${slider.index * (100 / slider.count)}%)`;
+
+            updateCounter(id);
+        }
+
+        function updateCounter(id) {
+            const counterEl = document.getElementById(`counter-${id}`);
+            if (!counterEl) return;
+            const slider = sliders[id];
+            counterEl.textContent = `${slider.index + 1}/${slider.count}`;
+        }
+
+        document.querySelectorAll('.arrow.prev').forEach(button =>
+            button.addEventListener('click', () => moveSlide(button.dataset.id, -1))
+        );
+        document.querySelectorAll('.arrow.next').forEach(button =>
+            button.addEventListener('click', () => moveSlide(button.dataset.id, 1))
+        );
+
+
+        document.addEventListener("click", function (e) {
+            document.querySelectorAll("details").forEach((detail) => {
+                if (!detail.contains(e.target)) {
+                    detail.removeAttribute("open");
+                }
+            });
+        });
+
+    });
+</script>
+
 {% endblock %}

@@ -144,9 +144,9 @@ summary {
   border-radius: 15px;
 }
 
-.grid-3 {
+.grid-3-posts{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 9px;
 }
 

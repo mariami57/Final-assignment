@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+    <div class="fw-bold">
+    <a href="{% url 'posts-feed' %}"> <i class="fa-solid fa-arrow-left"></i> Back to Posts feed </a>
+    </div>
     <div class="content-container center-flex">
         <div class="post-content content-container">
               {% with forloop.counter as i %}

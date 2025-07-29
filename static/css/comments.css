@@ -28,7 +28,7 @@ p.comment-text:focus, textarea.comment-textarea:focus{
     border: #f8c3b6;
 }
 
-#toggle-comments-btn {
+#toggle-comments-btn, .comment-redirect {
     background-color: bisque;
     border: bisque;
     width: 100%;

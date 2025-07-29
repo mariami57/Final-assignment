@@ -55,6 +55,10 @@
                     {% endif %}
                     </div>
                   {% endwith %}
+                  <div class="comment-redirect text-center abril-fatface-regular">
+                      <a href="{% url 'post-details' post.pk %}" > Check out/Add comments</a>
+                  </div>
+
                 </div>
 
             {% endfor %}

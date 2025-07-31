@@ -150,3 +150,8 @@ summary::-webkit-details-marker {
 .sub-container ul {
     padding: 0;
 }
+
+.home-page {
+    gap: 50px;
+
+}

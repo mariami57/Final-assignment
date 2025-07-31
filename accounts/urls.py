@@ -7,9 +7,10 @@ from accounts.views import SignInView, ProfileDetailView, ProfileEditView, profi
 
 urlpatterns = [
     path('', include([
-        path('signin/', SignInView.as_view(), name='signin'),
-        path('login/', LoginView.as_view(template_name='accounts/log-in.html', authentication_form=CustomLoginForm),
+        path('', LoginView.as_view(template_name='accounts/log-in.html', authentication_form=CustomLoginForm),
              name='login'),
+        path('signin/', SignInView.as_view(), name='signin'),
+
         path('logout/', LogoutView.as_view(), name='logout'),
         path('profile/<int:pk>/', include([
             path('profile-details/', ProfileDetailView.as_view(), name='profile-details-page'),

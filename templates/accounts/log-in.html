@@ -2,40 +2,42 @@
 {% load static %}
 
 {% block content %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="text-center subtitle">
-                {{ message }}
+    <div class="d-flex home-page mx-auto my-auto">
+        <div class="center-flex flex-column background">
+            <h1 class="title center-flex">Welcome to WanderWords!</h1>
+            <div class="img-fluid home-logo">
+                <img src="{% static 'images/logo.png' %}" class="home-logo" alt="logo"/>
             </div>
-        {% endfor %}
-    {% endif %}
-
-    <form method="post" class="container">
-        {% csrf_token %}
-        <div class="form-style mx-auto flex-column form-group d-flex align-items-sm-center justify-center">
-
-            <h1>Log In</h1>
-
-              <label for="{{ form.username.id_for_label }}">Username:</label>
-              {{ form.username }}
-
-              <label for="{{ form.password.id_for_label }}">Password:</label>
-              {{ form.password }}
-
-              {% if form.non_field_errors %}
-                <div class="login-error">
-                  {% for error in form.non_field_errors %}
-                    <p>{{ error }}</p>
-                  {% endfor %}
-                </div>
-              {% endif %}
-
-            <button>Submit</button>
-            <a href="{% url 'signin' %}">Don`t have an account? Create one here</a>
-
         </div>
 
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-style flex-column form-group d-flex align-items-sm-center justify-center w-auto">
+
+                <h1>Log In</h1>
+
+                  <label for="{{ form.username.id_for_label }}">Username:</label>
+                  {{ form.username }}
+
+                  <label for="{{ form.password.id_for_label }}">Password:</label>
+                  {{ form.password }}
+
+                  {% if form.non_field_errors %}
+                    <div class="login-error text-center">
+                      {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                <button>Submit</button>
+                <a href="{% url 'signin' %}">Don`t have an account? Create one here</a>
+
+            </div>
+
+        </form>
+    </div>
+
 
 
 {% endblock %}

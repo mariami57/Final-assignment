@@ -5,20 +5,11 @@ from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-from django.views.generic import TemplateView
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
 from Final_assignment.serializers import PostSerializer, BookSerializer, ProfileSerializer
-from accounts.models import Profile
-from books.models import Book
-from posts.models import Post, UserModel
+
 
 UserModel = get_user_model()
 # Create your views here.
-class HomeView(TemplateView):
-    template_name = 'common/home.html'
 
 def contacts_page_view(request):
     return render(request, 'common/contacts.html')

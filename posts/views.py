@@ -79,10 +79,10 @@ class PostDetailView(LoginRequiredMixin, FormMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = self.get_object()
-        content_type = ContentType.objects.get_for_model(post)
+
 
         context['comments'] = Comment.objects.filter(
-            content_type=content_type, object_id=post.pk)
+            post=post)
 
         return context
 
@@ -93,7 +93,7 @@ class PostDetailView(LoginRequiredMixin, FormMixin, DetailView):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.user = self.request.user
-            comment.content_object = self.object
+            comment.post = self.object
             comment.save()
             return self.form_valid(form)
         else:

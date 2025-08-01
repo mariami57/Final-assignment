@@ -6,10 +6,9 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView
-
 from accounts.forms import WebUserCreationForm, ProfileEditForm
 from accounts.models import Profile
-from destinations.models import Destination, UserModel
+from destinations.models import Destination
 from reviews.models import Review
 
 # Create your views here.
@@ -21,9 +20,8 @@ class SignInView(CreateView):
     #Uses signal to create a profile for the user
 
     def form_valid(self, form):
-        response = super().form_valid(form)
         messages.success(self.request, 'You have successfully registered! Please log in.')
-        return response
+        return super().form_valid(form)
 
 class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = Profile
@@ -60,7 +58,7 @@ def profile_delete_view(request, pk):
     if request.user.is_authenticated and request.user.pk == user.pk:
         if request.method == 'POST':
             user.delete()
-            return redirect('home')
+            return redirect('login')
     else:
         return HttpResponseForbidden()
 

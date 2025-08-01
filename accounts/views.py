@@ -17,7 +17,7 @@ UserModel = get_user_model()
 class SignInView(CreateView):
     form_class = WebUserCreationForm
     template_name = 'accounts/sign-in.html'
-    success_url = reverse_lazy('posts-feed')
+    success_url = reverse_lazy('login')
     #Uses signal to create a profile for the user
 
     def form_valid(self, form):

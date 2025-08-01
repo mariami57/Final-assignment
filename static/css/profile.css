@@ -38,3 +38,7 @@
 .sections i:hover{
   color: rgb(224, 122, 95);
 }
+
+.message {
+  color: rgb(27, 77, 62);
+}

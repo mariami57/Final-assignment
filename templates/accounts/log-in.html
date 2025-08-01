@@ -9,33 +9,34 @@
                 <img src="{% static 'images/logo.png' %}" class="home-logo" alt="logo"/>
             </div>
         </div>
+        {% if not request.user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-style flex-column form-group d-flex align-items-sm-center justify-center w-auto">
 
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-style flex-column form-group d-flex align-items-sm-center justify-center w-auto">
+                    <h1>Log In</h1>
 
-                <h1>Log In</h1>
+                      <label for="{{ form.username.id_for_label }}">Username:</label>
+                      {{ form.username }}
 
-                  <label for="{{ form.username.id_for_label }}">Username:</label>
-                  {{ form.username }}
+                      <label for="{{ form.password.id_for_label }}">Password:</label>
+                      {{ form.password }}
 
-                  <label for="{{ form.password.id_for_label }}">Password:</label>
-                  {{ form.password }}
+                      {% if form.non_field_errors %}
+                        <div class="login-error text-center">
+                          {% for error in form.non_field_errors %}
+                            <p>{{ error }}</p>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
 
-                  {% if form.non_field_errors %}
-                    <div class="login-error text-center">
-                      {% for error in form.non_field_errors %}
-                        <p>{{ error }}</p>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
+                    <button>Submit</button>
+                    <a href="{% url 'signin' %}">Don`t have an account? Create one here</a>
 
-                <button>Submit</button>
-                <a href="{% url 'signin' %}">Don`t have an account? Create one here</a>
+                </div>
 
-            </div>
-
-        </form>
+            </form>
+        {% endif %}
     </div>
 
 

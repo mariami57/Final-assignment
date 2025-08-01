@@ -11,14 +11,15 @@
             <img src="{% static 'images/logo.png' %}" class="nav-logo" alt="logo"/>
         </a>
     {% endif %}
-    <div class="search-bar mt-3 times-new-roman">
-        <input type="text" id="search-input" placeholder="SEARCH... "/>
-        <ul id="search-results" class="search-results times-new-roman"></ul>
-    </div>
+
 
 
     <ul class="menu center-flex gap-3">
         {% if request.user.is_authenticated %}
+            <div class="search-bar mt-3 times-new-roman">
+                <input type="text" id="search-input" placeholder="SEARCH... "/>
+                <ul id="search-results" class="search-results times-new-roman"></ul>
+            </div>
             <li class="tooltip-container">
                 <a href="{%  url 'add-post' %}">
                     <i class="fa-solid fa-circle-plus"></i>

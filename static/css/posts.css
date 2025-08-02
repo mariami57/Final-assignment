@@ -145,11 +145,14 @@ summary {
 }
 
 .grid-3-posts{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 9px;
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
 }
 
+.grid-3-posts > * {
+  flex: 0 1 200px;
+}
 .w-200 {
   width: 200px;
 }

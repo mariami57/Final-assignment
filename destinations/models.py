@@ -13,18 +13,3 @@ class Destination(models.Model):
 
     def __str__(self):
         return f'{self.name}, {self.country}'
-
-    # def save(self, *args, **kwargs):
-    #     if (self.latitude is None or self.longitude is None) and self.name and self.country:
-    #         try:
-    #             geolocator = Nominatim(user_agent='wanderwords_dev')
-    #             location = geolocator.geocode(f'{self.name}, {self.country}', timeout=10)
-    #             if location:
-    #                 self.latitude = location.latitude
-    #                 self.longitude = location.longitude
-    #             else:
-    #                 raise ValidationError({
-    #                     'name': f"Could not find the location '{self.name}, {self.country}'. Please check the spelling."
-    #                 })
-    #
-    #     super().save(*args, **kwargs)

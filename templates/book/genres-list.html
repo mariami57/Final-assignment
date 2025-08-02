@@ -8,7 +8,7 @@
             <div class="post-image-container grid-3">
                 {% for genre in grouped_books.keys %}
                     <div class="genre-content times-new-roman">
-                        <a href="{% url 'books-by-genre' genre=genre|default:'undefined' %}">
+                        <a href="{% url 'books-by-genre' genre=genre %}">
                             <p>{{ genre }}</p>
                         </a>
                     </div>

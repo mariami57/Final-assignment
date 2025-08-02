@@ -24,7 +24,7 @@ class BookDestinationHandlerMixin:
 
         if book_choice == 'other' and book_title:
             book = Book.objects.create(
-                title=book_title, author="Unknown", added_by=self.request.user,
+                title=book_title, author='Unknown', genre='Undefined', added_by=self.request.user,
             )
             new_book = True
         elif book_choice:

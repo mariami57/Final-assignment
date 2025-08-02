@@ -79,6 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const input = document.getElementById('search-input');
     const resultsBox = document.getElementById('search-results');
 
+      document.addEventListener("click", function (e) {
+      if (resultsBox && !resultsBox.contains(e.target)) {
+          resultsBox.style.display = 'none';
+      }
+  });
+
     input.addEventListener('input', function () {
         const query = this.value.trim();
 

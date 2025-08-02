@@ -7,6 +7,11 @@ from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from Final_assignment.serializers import PostSerializer, BookSerializer, ProfileSerializer
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from accounts.models import Profile
+from books.models import Book
+from posts.models import Post
 
 UserModel = get_user_model()
 # Create your views here.
@@ -30,14 +35,6 @@ def save_cookie_preferences(request):
         preferences = request.session.get('cookies_preferences', {})
         return JsonResponse(preferences)
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from django.db.models import Q
-from accounts.models import Profile
-from books.models import Book
-
-from posts.models import Post
-
 class GlobalSearchAPIView(APIView):
     def get(self, request):
         query = request.GET.get('q', '')
@@ -47,7 +44,8 @@ class GlobalSearchAPIView(APIView):
 
             profiles = Profile.objects.filter(
                 Q(user__username__icontains=query) |
-                Q(first_name__icontains=query)
+                Q(first_name__icontains=query) |
+                Q(last_name__icontains=query)
             )
             books = Book.objects.filter(title__icontains=query)
             posts = Post.objects.filter(title__icontains=query)

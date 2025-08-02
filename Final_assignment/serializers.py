@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from accounts.models import Profile
 from books.models import Book
 from posts.models import Post
@@ -32,7 +31,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'url']
 
     def get_url(self, obj):
-        return f'/accounts/profile/{obj.id}/profile-details/'
+        return f'/profile/{obj.id}/profile-details/'
 
 
 

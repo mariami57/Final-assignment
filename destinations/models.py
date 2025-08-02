@@ -10,6 +10,7 @@ class Destination(models.Model):
     country = models.CharField(max_length=100)
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
+    created_by = models.ForeignKey(UserModel, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}, {self.country}'

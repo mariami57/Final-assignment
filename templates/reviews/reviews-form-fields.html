@@ -1,12 +1,12 @@
 {{ form.book.label_tag }}
 {% if form.book.errors %}
     <div class="error-field">
-        {{ form.book.errors }}
+        {{ form.book.errors|striptags }}
     </div>
 {% endif %}
     {% if form.non_field_errors %}
         <div class="error-field">
-            {{ form.non_field_errors }}
+            {{ form.non_field_errors|striptags }}
         </div>
     {% endif %}
 {{ form.book }}
@@ -14,7 +14,7 @@
 {{ form.rating.label_tag }}
 {% if form.rating.errors %}
     <div class="error-field">
-        {{ form.rating.errors }}
+        {{ form.rating.errors|striptags }}
     </div>
 {% endif %}
 {{ form.rating }}
@@ -22,7 +22,7 @@
 {{ form.content.label_tag }}
 {% if form.content.errors %}
     <div class="error-field">
-        {{ form.content.errors }}
+        {{ form.content.errors|striptags }}
     </div>
 
 {% endif %}

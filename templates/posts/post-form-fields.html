@@ -10,7 +10,7 @@
         {{ form.title.label_tag }}
         {% if form.title.errors %}
             <div class="error-field">
-                {{ form.title.errors }}
+                {{ form.title.errors|striptags }}
             </div>
         {% endif %}
         {{ form.title }}
@@ -19,7 +19,7 @@
                 {{ form.book_choice.label }}
                 {% if form.book_choice.errors %}
                     <div class="error-field">
-                        {{ form.book_choice.errors }}
+                        {{ form.book_choice.errors|striptags }}
                     </div>
                 {% endif %}
                 <div class="d-flex flex-column align-center">
@@ -50,7 +50,7 @@
 
                 <div style="{% if form.destination_choice.value != 'other' %}display:none;{% endif %}" class="form-group">
                     {% for error in form.destination_name.errors %}
-                        <p class="text-center error-field" >{{ error}}</p>
+                        <p class="text-center error-field" >{{ error|striptags }}</p>
                     {% endfor %}
                     {{ form.destination_name.label }}
                     <small class="form-text text-muted">

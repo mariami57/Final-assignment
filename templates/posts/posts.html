@@ -10,7 +10,7 @@
                   {% with forloop.counter as i %}
                     <div class="d-flex justify-content-between">
                         <a  href="{% url 'profile-details-page' post.user.pk %}">
-                            {% include 'common/profile-picture-and-info.html' with user=post.user%}
+                            {% include 'common/profile-picture-and-info.html' with user=post.user %}
                         </a>
                      {% if request.user == post.user %}
                         <div class="menu-container">

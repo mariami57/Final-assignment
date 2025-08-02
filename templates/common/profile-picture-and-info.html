@@ -1,20 +1,18 @@
 {% load static %}
 <div class="d-flex gap-2">
-    {% with target_user|default:user as person %}
-        {% if person.profile.profile_picture %}
-            <img src="{{ person.profile.profile_picture.url }}" class="nav-logo" alt="profile-picture">
+        {% if user.profile.profile_picture %}
+            <img src="{{ user.profile.profile_picture.url }}" class="nav-logo" alt="profile-picture">
         {% else %}
             <img src="{% static 'images/default-avatar-profile.jpg' %}" alt="default-profile-picture" class="nav-logo">
         {% endif %}
 
         <div class="info">
             <h2 class="py-3 abril-fatface-regular">
-                {% if person.profile.full_name %}
-                    {{ person.profile.full_name }}
+                {% if user.profile.full_name %}
+                    {{ user.profile.full_name }}
                 {% else %}
-                    {{ person.username }}
+                    {{ user.username }}
                 {% endif %}
             </h2>
         </div>
-    {% endwith %}
 </div>

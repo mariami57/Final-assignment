@@ -17,8 +17,8 @@
             {% for review in review_list %}
               <div class="post-content mx-auto d-flex flex-column" id="review-{{ review.id }}">
                 <div class="d-flex justify-content-between">
-                        <a  href="{% url 'profile-details-page' review.user.pk %}">
-                        {% include 'common/profile-picture-and-info.html' with target_user=review.user %}
+                    <a  href="{% url 'profile-details-page' review.user.pk %}">
+                        {% include 'common/profile-picture-and-info.html' with user=review.user %}
                     </a>
                     {% if request.user == review.user %}
                         <div class="menu-container">

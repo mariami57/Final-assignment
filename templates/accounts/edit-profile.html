@@ -27,7 +27,7 @@
 
     {% if messages %}
         {% for message in messages %}
-            <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content rounded-3 shadow">
                   <div class="modal-header">
@@ -46,7 +46,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const modalEl = document.getElementById('reviewModal');
+    const modalEl = document.getElementById('profileModal');
     if (modalEl) {
         new bootstrap.Modal(modalEl).show();
     }

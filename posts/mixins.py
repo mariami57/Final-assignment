@@ -17,7 +17,10 @@ class BookDestinationHandlerMixin:
         book_title = form.cleaned_data.get('book_title')
 
         dest_choice = form.cleaned_data.get('destination_choice')
-        dest_name = form.cleaned_data.get('destination_name')
+        d_name = form.cleaned_data.get('destination_name')
+        d_country = form.cleaned_data.get('destination_country')
+        lat = form.cleaned_data.get('latitude')
+        lng = form.cleaned_data.get('longitude')
 
         if book_choice == 'other' and book_title:
             book = Book.objects.create(
@@ -30,15 +33,13 @@ class BookDestinationHandlerMixin:
             book = None
 
 
-        if dest_choice == 'other' and dest_name:
-            try:
-                d_name, d_country = [x.strip() for x in dest_name.split(',')]
-            except ValueError:
-                raise forms.ValidationError('Destination must be in format "City, Country".')
+        if dest_choice == 'other' and d_name and d_country:
 
             destination = Destination.objects.create(
                 name=d_name,
                 country=d_country,
+                latitude= lat,
+                longitude= lng
             )
             new_dest = True
         elif dest_choice:

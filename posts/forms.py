@@ -1,11 +1,11 @@
 from django import forms
-
+from geopy import Nominatim
+from geopy.exc import GeocoderServiceError, GeocoderTimedOut
 
 from books.models import Book
 from destinations.models import Destination
 from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post
-
 
 
 class PostBaseForm(forms.ModelForm):
@@ -77,11 +77,23 @@ class PostBaseForm(forms.ModelForm):
                         'destination_name',
                         'Destination must be in the format "Destination name, Country".'
                     )
-            else:
-                self.add_error(
-                    'destination_name',
-                    'Please provide a destination in the format "Destination name, Country".'
-                )
+                else:
+                    name, country = dest_name.split(', ')
+
+                    geolocator = Nominatim(user_agent='wanderwords_dev')
+                    location = geolocator.geocode(f'{name}, {country}', timeout=10)
+
+                    if location:
+                        # Attach to cleaned_data so you can use it in the view or save()
+                        cleaned_data['latitude'] = location.latitude
+                        cleaned_data['longitude'] = location.longitude
+                        cleaned_data['destination_name'] = name
+                        cleaned_data['destination_country'] = country
+                    else:
+                        self.add_error(
+                            'destination_name',
+                            f"Could not find the location '{dest_name}'. Please check the spelling."
+                        )
         else:
             cleaned_data['destination_name'] = ''
 

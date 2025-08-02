@@ -6,7 +6,8 @@
       "name": "Tuscany",
       "country": "Italy",
       "latitude": 43.7711,
-      "longitude": 11.2486
+      "longitude": 11.2486,
+      "created_by": 1
 
 
     }
@@ -19,7 +20,8 @@
       "name": "Tokyo",
       "country": "Japan",
       "latitude": 35.6895,
-      "longitude": 139.6917
+      "longitude": 139.6917,
+      "created_by": 1
     }
   },
 
@@ -30,7 +32,8 @@
       "name": "Patagonia",
       "country": "Argentina",
       "latitude": -45.7631,
-      "longitude": -71.6833
+      "longitude": -71.6833,
+      "created_by": 1
     }
   },
 
@@ -41,7 +44,8 @@
       "name": "Cross-country",
       "country": "USA",
       "latitude": 39.8283,
-      "longitude": -98.5795
+      "longitude": -98.5795,
+      "created_by": 1
     }
   },
 
@@ -52,7 +56,8 @@
       "name": "Paris",
       "country": "France",
       "latitude": 48.8566,
-      "longitude": 2.3522
+      "longitude": 2.3522,
+      "created_by": 1
     }
   },
 
@@ -63,7 +68,8 @@
       "name": "Bangkok",
       "country": "Thailand",
       "latitude": 13.7563,
-      "longitude": 100.5018
+      "longitude": 100.5018,
+      "created_by": 1
     }
   },
 
@@ -74,7 +80,8 @@
       "name": "Kenya",
       "country": "Africa",
       "latitude": -1.2921,
-      "longitude": 36.8219
+      "longitude": 36.8219,
+      "created_by": 1
     }
   },
 
@@ -85,7 +92,8 @@
       "name": "Mumbai",
       "country": "India",
       "latitude": 19.0760,
-      "longitude": 72.8777
+      "longitude": 72.8777,
+      "created_by": 1
     }
   },
     {
@@ -95,7 +103,8 @@
       "name": "Andalusia",
       "country": "Spain",
       "latitude": 37.5443,
-      "longitude": -4.7278
+      "longitude": -4.7278,
+      "created_by": 1
     }
   },
 
@@ -106,7 +115,8 @@
       "name": "New Ross",
       "country": "Ireland",
       "latitude": 52.3966,
-      "longitude": -6.9490
+      "longitude": -6.9490,
+      "created_by": 1
     }
   }
 ]

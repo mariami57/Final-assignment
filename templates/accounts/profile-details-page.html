@@ -21,7 +21,7 @@
                 </div>
                  {% if request.user == profile.user %}
                     <div class="menu-container">
-                        <details class="menu-details">
+                        <details class="menu-details" id="profile-details">
                               <summary ></summary>
                               <div class="popup-menu w-200 text-center">
                                   <p><a href="{% url 'profile-edit' pk=profile.user.pk %}" class="times-new-roman">Edit profile details</a></p>
@@ -46,7 +46,7 @@
                         <form method="POST" action="{% url 'profile-delete' pk=profile.user.pk %}">
                           {% csrf_token %}
                           <button type="submit" class="btn btn-danger">Yes</button>
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel </button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         </form>
                       </div>
                     </div>
@@ -102,11 +102,10 @@
 
 <script>
   document.addEventListener("click", function (e) {
-      document.querySelectorAll("details").forEach((detail) => {
-          if (!detail.contains(e.target)) {
-              detail.removeAttribute("open");
-          }
-      });
+      const detailEl = document.getElementById("profile-details")
+      if (detailEl && !detailEl.contains(e.target)) {
+          detailEl.removeAttribute("open");
+      }
   });
 
   const destinations = [

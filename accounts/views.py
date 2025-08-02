@@ -8,6 +8,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView
 from accounts.forms import WebUserCreationForm, ProfileEditForm
 from accounts.models import Profile
+from common.mixins import UserIsCreatorMixin
 from destinations.models import Destination
 from reviews.models import Review
 
@@ -35,13 +36,10 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
         return context
 
-class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class ProfileEditView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     model = Profile
     form_class = ProfileEditForm
     template_name = 'accounts/edit-profile.html'
-
-    def test_func(self):
-        return self.request.user.pk == self.kwargs['pk']
 
     def form_valid(self, form):
         form.instance.user = self.request.user

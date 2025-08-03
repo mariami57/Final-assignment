@@ -29,7 +29,7 @@
                 <h4 class="edu-nsw-act-hand-pre-cursive"> {{ post.title }}</h4>
 
                 <div class="small-font small-text times-new-roman my-3">
-                  <a href="#" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
+                  <a href="{% url 'reviews-list' book_pk=post.book.pk %}" class="my-0"><i class="fa-solid fa-book-open"></i> {{ post.book|capfirst }}</a>
                   <p class="my-0"><i class="fa-solid fa-location-dot"></i>{{ post.destination|capfirst }}</p>
                   <p class="my-0">{{ post.created_at }}</p>
                 </div>

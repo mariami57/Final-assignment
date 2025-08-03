@@ -74,7 +74,6 @@ class PostDetailView(LoginRequiredMixin, FormMixin, DetailView):
         context = super().get_context_data(**kwargs)
         post = self.get_object()
 
-
         context['comments'] = Comment.objects.filter(
             post=post)
 

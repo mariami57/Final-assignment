@@ -1,6 +1,5 @@
 from django import forms
 from geopy import Nominatim
-from geopy.exc import GeocoderServiceError, GeocoderTimedOut
 
 from books.models import Book
 from destinations.models import Destination
@@ -84,7 +83,6 @@ class PostBaseForm(forms.ModelForm):
                     location = geolocator.geocode(f'{name}, {country}', timeout=10)
 
                     if location:
-                        # Attach to cleaned_data so you can use it in the view or save()
                         cleaned_data['latitude'] = location.latitude
                         cleaned_data['longitude'] = location.longitude
                         cleaned_data['destination_name'] = name
@@ -100,7 +98,7 @@ class PostBaseForm(forms.ModelForm):
         return cleaned_data
 
 
-class PostCreateForm(PostBaseForm):
+class PostCreateForm(PostBaseForm, BookDestinationHandlerMixin):
     pass
 
 class PostEditForm(BookDestinationHandlerMixin, PostBaseForm):
@@ -125,8 +123,6 @@ class PostEditForm(BookDestinationHandlerMixin, PostBaseForm):
 
        if hasattr(self, 'request'):
            book, destination = self.handle_book_and_destination(self)
-           print("BOOK:", book)
-           print("DEST:", destination)
            post.book = book
            post.destination = destination
 

@@ -1,6 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
@@ -39,13 +38,8 @@ class AddPostView(BookDestinationHandlerMixin, LoginRequiredMixin, CreateView):
         form.instance.destination = destination
         super().form_valid(form)
 
-        print(form.errors)
         return super().form_valid(form)
 
-    def form_invalid(self, form):
-        print("FORM INVALID")
-        print(form.errors)
-        return super().form_invalid(form)
 
 class PostEditView(LoginRequiredMixin, UserIsCreatorMixin, UpdateView):
     model = Post

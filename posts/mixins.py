@@ -10,9 +10,6 @@ class BookDestinationHandlerMixin:
         instance = form.instance
         is_edit = form.instance.pk is not None
 
-        new_book = False
-        new_dest = False
-
         book_choice = form.cleaned_data.get('book_choice')
         book_title = form.cleaned_data.get('book_title')
 
@@ -26,7 +23,6 @@ class BookDestinationHandlerMixin:
             book = Book.objects.create(
                 title=book_title, author='Unknown', genre='Undefined', added_by=self.request.user,
             )
-            new_book = True
         elif book_choice:
             book = Book.objects.get(id=book_choice)
         else:
@@ -36,21 +32,18 @@ class BookDestinationHandlerMixin:
         if dest_choice == 'other' and d_name and d_country:
 
             destination = Destination.objects.create(
-                name=d_name,
-                country=d_country,
-                latitude= lat,
-                longitude= lng
+                name=d_name, country=d_country, latitude= lat, longitude= lng, created_by = self.request.user
             )
-            new_dest = True
+
         elif dest_choice:
             destination = Destination.objects.get(id=dest_choice)
         else:
             destination = None
 
         if is_edit and book and destination:
-            book.destinations.set([destination])
+            book.destinations.add(destination)
         elif book and destination:
-            if (new_book or new_dest) and destination not in book.destinations.all():
+            if destination not in book.destinations.all():
                 book.destinations.add(destination)
 
         return book, destination

@@ -52,7 +52,7 @@
 
 
         const saveBtn = document.createElement('button');
-       saveBtn.innerHTML = '<i class="fas fa-save"></i>';
+        saveBtn.innerHTML = '<i class="fas fa-save"></i>';
         saveBtn.classList.add('save-comment-btn');
 
         this.replaceWith(saveBtn);
@@ -63,8 +63,8 @@
           fetch(`/comments/${commentId}/edit/`, {
             method: 'POST',
             headers: {
-              'X-CSRFToken': '{{ csrf_token }}',
               'Content-Type': 'application/json',
+              'X-CSRFToken': getCookie('csrftoken'),
             },
             body: JSON.stringify({ text: newText })
           })
@@ -80,6 +80,20 @@
             }
           });
         });
+        function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + '=')) {
+              cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
       });
     });
   });

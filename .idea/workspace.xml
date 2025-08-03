@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06806069-5774-4376-922d-9558c84b467d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/comment-section-ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/comment-section-ajax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/comment-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/comment-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/posts/post-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts/post-detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +65,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\minni\Final-assignment\templates\posts" />
       <recent name="C:\Users\minni\Final-assignment\accounts\fixtures" />
       <recent name="C:\Users\minni\Final-assignment\accounts" />
       <recent name="C:\Users\minni\Final-assignment\templates\common" />
       <recent name="C:\Users\minni\Final-assignment\templates" />
-      <recent name="C:\Users\minni\Final-assignment\templates\posts" />
     </key>
   </component>
   <component name="RunManager">
@@ -145,10 +146,25 @@
       <workItem from="1753941994380" duration="4130000" />
       <workItem from="1754025984922" duration="12569000" />
       <workItem from="1754070071428" duration="275000" />
+      <workItem from="1754070355963" duration="33294000" />
+      <workItem from="1754156553757" duration="735000" />
+      <workItem from="1754193235793" duration="1931000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/templates/posts/comment-section-ajax.html</url>
+          <line>71</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

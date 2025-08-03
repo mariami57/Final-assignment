@@ -51,8 +51,8 @@
                   <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ post.id }}">1/{{ post.image_count }}</p>
 
                     {% if post.image_count > 1 %}
-                      <button class="arrow prev" data-id="{{ post.id }}">&#10094;</button>
-                      <button class="arrow next" data-id="{{ post.id }}">&#10095;</button>
+                      <button class="arrow prev" data-id="{{ post.id }}" id="arrow-prev">&#10094;</button>
+                      <button class="arrow next" data-id="{{ post.id }}" id="arrow-next">&#10095;</button>
                     {% endif %}
                 </div>
 
@@ -98,13 +98,23 @@
             counterEl.textContent = `${slider.index + 1}/${slider.count}`;
         }
 
-        document.querySelectorAll('.arrow.prev').forEach(button =>
-            button.addEventListener('click', () => moveSlide(button.dataset.id, -1))
-        );
-        document.querySelectorAll('.arrow.next').forEach(button =>
-            button.addEventListener('click', () => moveSlide(button.dataset.id, 1))
-        );
+        const prevBtn = document.getElementById('arrow-prev')
 
+        if(prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                const id = prevBtn.dataset.id;
+                moveSlide(id, -1);
+            });
+        }
+
+        const nextBtn = document.getElementById('arrow-next')
+
+        if(nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                const id = nextBtn.dataset.id;
+                moveSlide(id, 1);
+            });
+        }
 
         document.addEventListener("click", function (e) {
             const detailEl = document.getElementById("post-details")

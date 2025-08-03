@@ -7,7 +7,6 @@
         <div class="content-container center-flex">
             {% for post in post_list %}
                 <div class="post-content content-container">
-                  {% with forloop.counter as i %}
                     <div class="d-flex justify-content-between">
                         <a  href="{% url 'profile-details-page' post.user.pk %}">
                             {% include 'common/profile-picture-and-info.html' with user=post.user %}
@@ -34,8 +33,8 @@
                       </div>
 
                     <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
-                    <div class="carousel-container" id="carousel-{{ i }}">
-                      <div class="slides" id="slides-{{ i }}">
+                    <div class="carousel-container" id="carousel-{{ post.id }}">
+                      <div class="slides" id="slides-{{ post.id }}">
                         {% if post.image1 %}
                           <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1" crossorigin="anonymous" class="img-fluid"></div>
                         {% endif %}
@@ -47,14 +46,14 @@
                         {% endif %}
                       </div>
 
-                    <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
+                    <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ post.id }}">1/{{ post.image_count }}</p>
 
                     {% if post.image_count > 1 %}
-                      <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
-                      <button class="arrow next" data-id="{{ i }}">&#10095;</button>
+                      <button class="arrow prev" data-id="{{ post.id }}">&#10094;</button>
+                      <button class="arrow next" data-id="{{ post.id }}">&#10095;</button>
                     {% endif %}
                     </div>
-                  {% endwith %}
+
                   <div class="comment-redirect text-center abril-fatface-regular">
                       <a href="{% url 'post-details' post.pk %}" > Check out/Add comments</a>
                   </div>

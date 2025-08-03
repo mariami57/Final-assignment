@@ -7,7 +7,6 @@
     </div>
     <div class="content-container center-flex">
         <div class="post-content content-container">
-              {% with forloop.counter as i %}
                 <div class="d-flex justify-content-between">
                     <a class="profile-details d-flex gap-3 my-2" href="{% url 'profile-details-page' post.user.pk %}">
                         <div>
@@ -16,7 +15,7 @@
                     </a>
                     {% if request.user == post.user %}
                         <div class="menu-container">
-                            <details>
+                            <details id="post-details">
                                   <summary ></summary>
                                   <div class="popup-menu">
                                       <p><a href="{% url 'post-edit' pk=post.pk %}" class="times-new-roman">Edit</a></p>
@@ -37,11 +36,10 @@
 
                 <p class="edu-nsw-act-hand-pre-cursive">{{ post.content }}</p>
 
-                <div class="carousel-container" id="carousel-{{ i }}">
-                  <div class="slides" id="slides-{{ i }}">
-                    {% if post.image1 %}
-                      <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1" crossorigin="anonymous" class="img-fluid"></div>
-                    {% endif %}
+                <div class="carousel-container" id="carousel-{{ post.id }}">
+                  <div class="slides" id="slides-{{ post.id }}">
+                    <div class="slide"><img src="{{ post.image1.url }}" alt="Image 1" crossorigin="anonymous" class="img-fluid"></div>
+
                     {% if post.image2 %}
                       <div class="slide"><img src="{{ post.image2.url }}" alt="Image 2" crossorigin="anonymous" class="img-fluid"></div>
                     {% endif %}
@@ -50,14 +48,13 @@
                     {% endif %}
                   </div>
 
-                  <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ i }}">1/{{ post.image_count }}</p>
+                  <p class="slide-counter edu-nsw-act-hand-pre-cursive text-center" id="counter-{{ post.id }}">1/{{ post.image_count }}</p>
 
                     {% if post.image_count > 1 %}
-                      <button class="arrow prev" data-id="{{ i }}">&#10094;</button>
-                      <button class="arrow next" data-id="{{ i }}">&#10095;</button>
+                      <button class="arrow prev" data-id="{{ post.id }}">&#10094;</button>
+                      <button class="arrow next" data-id="{{ post.id }}">&#10095;</button>
                     {% endif %}
                 </div>
-              {% endwith %}
 
               {% include 'posts/comment-section.html' %}
 
@@ -110,11 +107,10 @@
 
 
         document.addEventListener("click", function (e) {
-            document.querySelectorAll("details").forEach((detail) => {
-                if (!detail.contains(e.target)) {
-                    detail.removeAttribute("open");
-                }
-            });
+            const detailEl = document.getElementById("post-details")
+                  if (detailEl && !detailEl.contains(e.target)) {
+                      detailEl.removeAttribute("open");
+                  }
         });
 
     });

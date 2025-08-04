@@ -42,3 +42,12 @@
 .message {
   color: rgb(27, 77, 62);
 }
+
+
+.delete-profile-popup{
+  margin-top: 100px;
+}
+
+.modal {
+  z-index: 1055;
+}

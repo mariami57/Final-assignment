@@ -25,7 +25,7 @@
                               <summary ></summary>
                               <div class="popup-menu w-200 text-center">
                                   <p><a href="{% url 'profile-edit' pk=profile.user.pk %}" class="times-new-roman">Edit profile details</a></p>
-                                  <p><button type="button" class="p-0 m-0 times-new-roman delete-btn" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">
+                                  <p><button type="button" class="p-0 m-0 times-new-roman delete-btn" data-bs-toggle="modal" data-bs-target="#deleteProfileModal" data-bs-backdrop="false">
                                     Delete profile
                                   </button>
                                   </p>
@@ -33,7 +33,7 @@
                         </details>
                     </div>
                   <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
+                  <div class="modal-dialog delete-profile-popup">
                     <div class="modal-content rounded-4 shadow">
                       <div class="modal-header">
                         <h5 class="modal-title" id="deleteProfileModalLabel">Delete Profile</h5>
@@ -100,13 +100,21 @@
         </div>
     </div>
 
+
+
 <script>
-  document.addEventListener("click", function (e) {
-      const detailEl = document.getElementById("profile-details")
-      if (detailEl && !detailEl.contains(e.target)) {
-          detailEl.removeAttribute("open");
+    document.addEventListener("click", function (e) {
+      const detailEl = document.getElementById("profile-details");
+
+
+      if (document.querySelector('.modal.show')?.contains(e.target)) {
+        return;
       }
-  });
+
+      if (detailEl && !detailEl.contains(e.target)) {
+        detailEl.removeAttribute("open");
+      }
+    });
 
   const destinations = [
     {% for dest in visited_destinations %}

@@ -32,7 +32,7 @@ def save_cookie_preferences(request):
         request.session['cookies_preference'] = data
         return JsonResponse({'message': 'Preferences saved'})
     else:
-        preferences = request.session.get('cookies_preferences', {})
+        preferences = request.session.get('cookies_preference', {})
         return JsonResponse(preferences)
 
 class GlobalSearchAPIView(APIView):

@@ -104,9 +104,706 @@
     "fields": {
       "title": "Small things like these",
       "author": "Claire Keegan",
-      "genre": "Historical/Fiction",
+      "genre": "Fiction/Historical",
       "added_by": 1,
       "destinations": [10]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 11,
+    "fields": {
+      "title": "The Shadow of the Wind",
+      "author": "Carlos Ruiz Zaf\u00f3n",
+      "genre": "Mystery/Historical Fiction",
+      "added_by": 1,
+      "destinations": [
+        9,
+        2,
+        60
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 12,
+    "fields": {
+      "title": "Wild",
+      "author": "Cheryl Strayed",
+      "genre": "Memoir/Adventure",
+      "added_by": 1,
+      "destinations": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 13,
+    "fields": {
+      "title": "Eat, Pray, Love",
+      "author": "Elizabeth Gilbert",
+      "genre": "Memoir/Travel",
+      "added_by": 1,
+      "destinations": [
+        30
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 14,
+    "fields": {
+      "title": "The Little Paris Bookshop",
+      "author": "Nina George",
+      "genre": "Fiction",
+      "added_by": 1,
+      "destinations": [
+        42
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 15,
+    "fields": {
+      "title": "The Old Man and the Sea",
+      "author": "Ernest Hemingway",
+      "genre": "Fiction",
+      "added_by": 1,
+      "destinations": [
+        49,
+        38,
+        45
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 16,
+    "fields": {
+      "title": "The Art of Travel",
+      "author": "Alain de Botton",
+      "genre": "Travel/Philosophy",
+      "added_by": 1,
+      "destinations": [
+        2,
+        51
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 17,
+    "fields": {
+      "title": "The Cairo Trilogy",
+      "author": "Naguib Mahfouz",
+      "genre": "Fiction/Historical",
+      "added_by": 1,
+      "destinations": [
+        53,
+        55,
+        12
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 18,
+    "fields": {
+      "title": "Memoirs of a Geisha",
+      "author": "Arthur Golden",
+      "genre": "Fiction/Historical",
+      "added_by": 1,
+      "destinations": [
+        57,
+        32
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 19,
+    "fields": {
+      "title": "Love with a Chance of Drowning",
+      "author": "Torre DeRoche",
+      "genre": "Memoir",
+      "added_by": 1,
+      "destinations": [
+        38,
+        47
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 20,
+    "fields": {
+      "title": "A Year in Provence",
+      "author": "Peter Mayle",
+      "genre": "Memoir/Travel",
+      "added_by": 1,
+      "destinations": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 21,
+    "fields": {
+      "title": "Tracks",
+      "author": "Robyn Davidson",
+      "genre": "Memoir/Adventure",
+      "added_by": 1,
+      "destinations": [
+        17,
+        6,
+        31
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 22,
+    "fields": {
+      "title": "Istanbul: Memories and the City",
+      "author": "Orhan Pamuk",
+      "genre": "Memoir",
+      "added_by": 1,
+      "destinations": [
+        20
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 23,
+    "fields": {
+      "title": "The Motorcycle Diaries",
+      "author": "Che Guevara",
+      "genre": "Memoir/Travel",
+      "added_by": 1,
+      "destinations": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 24,
+    "fields": {
+      "title": "Turn Right at Machu Picchu",
+      "author": "Mark Adams",
+      "genre": "Travel/History",
+      "added_by": 1,
+      "destinations": [
+        43
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 25,
+    "fields": {
+      "title": "The Great Railway Bazaar",
+      "author": "Paul Theroux",
+      "genre": "Travel",
+      "added_by": 1,
+      "destinations": [
+        44,
+        9
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 26,
+    "fields": {
+      "title": "Holy Cow",
+      "author": "Sarah Macdonald",
+      "genre": "Memoir/Humor",
+      "added_by": 1,
+      "destinations": [
+        55
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 27,
+    "fields": {
+      "title": "Down Under",
+      "author": "Bill Bryson",
+      "genre": "Travel/Humor",
+      "added_by": 1,
+      "destinations": [
+        2,
+        59
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 28,
+    "fields": {
+      "title": "Neither Here nor There",
+      "author": "Bill Bryson",
+      "genre": "Travel/Humor",
+      "added_by": 1,
+      "destinations": [
+        28
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 29,
+    "fields": {
+      "title": "The Caliph\u2019s House",
+      "author": "Tahir Shah",
+      "genre": "Memoir/Culture",
+      "added_by": 1,
+      "destinations": [
+        30,
+        49
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 30,
+    "fields": {
+      "title": "The Geography of Bliss",
+      "author": "Eric Weiner",
+      "genre": "Travel/Psychology",
+      "added_by": 1,
+      "destinations": [
+        42,
+        18
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 31,
+    "fields": {
+      "title": "Venice",
+      "author": "Jan Morris",
+      "genre": "Travel/History",
+      "added_by": 1,
+      "destinations": [
+        44,
+        43
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 32,
+    "fields": {
+      "title": "Midnight\u2019s Children",
+      "author": "Salman Rushdie",
+      "genre": "Fiction/Magical Realism",
+      "added_by": 1,
+      "destinations": [
+        49,
+        35,
+        45
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 33,
+    "fields": {
+      "title": "Seven Years in Tibet",
+      "author": "Heinrich Harrer",
+      "genre": "Memoir/Adventure",
+      "added_by": 1,
+      "destinations": [
+        23,
+        18,
+        50
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 34,
+    "fields": {
+      "title": "Into the Wild",
+      "author": "Jon Krakauer",
+      "genre": "Non-fiction/Adventure",
+      "added_by": 1,
+      "destinations": [
+        52,
+        56
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 35,
+    "fields": {
+      "title": "Into Thin Air",
+      "author": "Jon Krakauer",
+      "genre": "Non-fiction/Adventure",
+      "added_by": 1,
+      "destinations": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 36,
+    "fields": {
+      "title": "The Sun Also Rises",
+      "author": "Ernest Hemingway",
+      "genre": "Fiction",
+      "added_by": 1,
+      "destinations": [
+        33,
+        32
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 37,
+    "fields": {
+      "title": "The Zahir",
+      "author": "Paulo Coelho",
+      "genre": "Fiction/Philosophical",
+      "added_by": 1,
+      "destinations": [
+        59,
+        51
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 38,
+    "fields": {
+      "title": "An Artist of the Floating World",
+      "author": "Kazuo Ishiguro",
+      "genre": "Fiction/Historical",
+      "added_by": 1,
+      "destinations": [
+        47
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 39,
+    "fields": {
+      "title": "The Talented Mr. Ripley",
+      "author": "Patricia Highsmith",
+      "genre": "Fiction/Thriller",
+      "added_by": 1,
+      "destinations": [
+        9,
+        59
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 40,
+    "fields": {
+      "title": "The Elephant Whisperer",
+      "author": "Lawrence Anthony",
+      "genre": "Memoir/Wildlife",
+      "added_by": 1,
+      "destinations": [
+        21,
+        43,
+        48
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 41,
+    "fields": {
+      "title": "Travels with Charley",
+      "author": "John Steinbeck",
+      "genre": "Travel",
+      "added_by": 1,
+      "destinations": [
+        59
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 42,
+    "fields": {
+      "title": "The Snow Leopard",
+      "author": "Peter Matthiessen",
+      "genre": "Travel/Nature",
+      "added_by": 1,
+      "destinations": [
+        3,
+        36,
+        51
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 43,
+    "fields": {
+      "title": "The Discovery of France",
+      "author": "Graham Robb",
+      "genre": "Travel/History",
+      "added_by": 1,
+      "destinations": [
+        6,
+        46,
+        10
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 44,
+    "fields": {
+      "title": "The Rings of Saturn",
+      "author": "W.G. Sebald",
+      "genre": "Travel/Philosophy",
+      "added_by": 1,
+      "destinations": [
+        50,
+        21,
+        32
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 45,
+    "fields": {
+      "title": "The Invention of Nature",
+      "author": "Andrea Wulf",
+      "genre": "Biography/Nature",
+      "added_by": 1,
+      "destinations": [
+        10,
+        4
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 46,
+    "fields": {
+      "title": "Neither East Nor West",
+      "author": "Christiane Bird",
+      "genre": "Travel/Culture",
+      "added_by": 1,
+      "destinations": [
+        25,
+        9
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 47,
+    "fields": {
+      "title": "Land of the Painted Caves",
+      "author": "Jean M. Auel",
+      "genre": "Fiction/Historical",
+      "added_by": 1,
+      "destinations": [
+        6,
+        52
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 48,
+    "fields": {
+      "title": "The Lost City of Z",
+      "author": "David Grann",
+      "genre": "Non-fiction/Adventure",
+      "added_by": 1,
+      "destinations": [
+        53
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 49,
+    "fields": {
+      "title": "Beneath a Scarlet Sky",
+      "author": "Mark Sullivan",
+      "genre": "Fiction/Historical",
+      "added_by": 1,
+      "destinations": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 50,
+    "fields": {
+      "title": "The Paris Library",
+      "author": "Janet Skeslien Charles",
+      "genre": "Fiction/Historical",
+      "added_by": 1,
+      "destinations": [
+        26,
+        22,
+        53
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 51,
+    "fields": {
+      "title": "Alone Time",
+      "author": "Stephanie Rosenbloom",
+      "genre": "Travel/Philosophy",
+      "added_by": 1,
+      "destinations": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 52,
+    "fields": {
+      "title": "On the Plain of Snakes",
+      "author": "Paul Theroux",
+      "genre": "Travel",
+      "added_by": 1,
+      "destinations": [
+        26,
+        9,
+        25
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 53,
+    "fields": {
+      "title": "Paris to the Moon",
+      "author": "Adam Gopnik",
+      "genre": "Memoir",
+      "added_by": 1,
+      "destinations": [
+        49,
+        28
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 54,
+    "fields": {
+      "title": "How Not to Travel the World",
+      "author": "Lauren Juliff",
+      "genre": "Memoir",
+      "added_by": 1,
+      "destinations": [
+        53,
+        39,
+        34
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 55,
+    "fields": {
+      "title": "River Town",
+      "author": "Peter Hessler",
+      "genre": "Memoir/Culture",
+      "added_by": 1,
+      "destinations": [
+        2,
+        1,
+        44
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 56,
+    "fields": {
+      "title": "Borderlands",
+      "author": "Gloria Anzald\u00faa",
+      "genre": "Memoir/Culture",
+      "added_by": 1,
+      "destinations": [
+        26
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 57,
+    "fields": {
+      "title": "Blue Highways",
+      "author": "William Least Heat-Moon",
+      "genre": "Travel",
+      "added_by": 1,
+      "destinations": [
+        55,
+        16
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 58,
+    "fields": {
+      "title": "In a Sunburned Country",
+      "author": "Bill Bryson",
+      "genre": "Travel/Humor",
+      "added_by": 1,
+      "destinations": [
+        42,
+        24
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 59,
+    "fields": {
+      "title": "Arabian Sands",
+      "author": "Wilfred Thesiger",
+      "genre": "Travel/History",
+      "added_by": 1,
+      "destinations": [
+        47
+      ]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 60,
+    "fields": {
+      "title": "Shadow of the Silk Road",
+      "author": "Colin Thubron",
+      "genre": "Travel/History",
+      "added_by": 1,
+      "destinations": [
+        44,
+        48
+      ]
     }
   }
 

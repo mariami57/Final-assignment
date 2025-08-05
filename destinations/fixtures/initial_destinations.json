@@ -118,5 +118,556 @@
       "longitude": -6.9490,
       "created_by": 1
     }
+  },
+
+    {
+    "model": "destinations.destination",
+    "pk": 11,
+    "fields": {
+      "name": "Reykjavik",
+      "country": "Iceland",
+      "latitude": 64.1355,
+      "longitude": -21.8954,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 12,
+    "fields": {
+      "name": "Cusco",
+      "country": "Peru",
+      "latitude": -13.5319,
+      "longitude": -71.9675,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 13,
+    "fields": {
+      "name": "Zanzibar",
+      "country": "Tanzania",
+      "latitude": -6.1659,
+      "longitude": 39.2026,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 14,
+    "fields": {
+      "name": "Quebec City",
+      "country": "Canada",
+      "latitude": 46.8139,
+      "longitude": -71.2082,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 15,
+    "fields": {
+      "name": "Dubrovnik",
+      "country": "Croatia",
+      "latitude": 42.6507,
+      "longitude": 18.0944,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 16,
+    "fields": {
+      "name": "Cappadocia",
+      "country": "Turkey",
+      "latitude": 38.6431,
+      "longitude": 34.8273,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 17,
+    "fields": {
+      "name": "Cape Town",
+      "country": "South Africa",
+      "latitude": -33.9249,
+      "longitude": 18.4241,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 18,
+    "fields": {
+      "name": "Petra",
+      "country": "Jordan",
+      "latitude": 30.3285,
+      "longitude": 35.4444,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 19,
+    "fields": {
+      "name": "Havana",
+      "country": "Cuba",
+      "latitude": 23.1136,
+      "longitude": -82.3666,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 20,
+    "fields": {
+      "name": "Santorini",
+      "country": "Greece",
+      "latitude": 36.3932,
+      "longitude": 25.4615,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 21,
+    "fields": {
+      "name": "Marrakech",
+      "country": "Morocco",
+      "latitude": 31.6295,
+      "longitude": -7.9811,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 22,
+    "fields": {
+      "name": "Tallinn",
+      "country": "Estonia",
+      "latitude": 59.437,
+      "longitude": 24.7536,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 23,
+    "fields": {
+      "name": "H\u1ea1 Long Bay",
+      "country": "Vietnam",
+      "latitude": 20.9101,
+      "longitude": 107.1839,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 24,
+    "fields": {
+      "name": "Kotor",
+      "country": "Montenegro",
+      "latitude": 42.4247,
+      "longitude": 18.7712,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 25,
+    "fields": {
+      "name": "Galapagos Islands",
+      "country": "Ecuador",
+      "latitude": -0.9538,
+      "longitude": -90.9656,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 26,
+    "fields": {
+      "name": "Banff",
+      "country": "Canada",
+      "latitude": 51.1784,
+      "longitude": -115.5708,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 27,
+    "fields": {
+      "name": "Seychelles",
+      "country": "Seychelles",
+      "latitude": -4.6796,
+      "longitude": 55.492,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 28,
+    "fields": {
+      "name": "Bali",
+      "country": "Indonesia",
+      "latitude": -8.3405,
+      "longitude": 115.092,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 29,
+    "fields": {
+      "name": "Kyoto",
+      "country": "Japan",
+      "latitude": 35.0116,
+      "longitude": 135.7681,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 30,
+    "fields": {
+      "name": "Vienna",
+      "country": "Austria",
+      "latitude": 48.2082,
+      "longitude": 16.3738,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 31,
+    "fields": {
+      "name": "Tbilisi",
+      "country": "Georgia",
+      "latitude": 41.7151,
+      "longitude": 44.8271,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 32,
+    "fields": {
+      "name": "Hallstatt",
+      "country": "Austria",
+      "latitude": 47.5615,
+      "longitude": 13.6481,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 33,
+    "fields": {
+      "name": "Riga",
+      "country": "Latvia",
+      "latitude": 56.9496,
+      "longitude": 24.1052,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 34,
+    "fields": {
+      "name": "Ljubljana",
+      "country": "Slovenia",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 35,
+    "fields": {
+      "name": "Valpara\u00edso",
+      "country": "Chile",
+      "latitude": -33.0472,
+      "longitude": -71.6127,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 36,
+    "fields": {
+      "name": "Auckland",
+      "country": "New Zealand",
+      "latitude": -36.8485,
+      "longitude": 174.7633,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 37,
+    "fields": {
+      "name": "Rotorua",
+      "country": "New Zealand",
+      "latitude": -38.1368,
+      "longitude": 176.2497,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 38,
+    "fields": {
+      "name": "Amalfi Coast",
+      "country": "Italy",
+      "latitude": 40.6333,
+      "longitude": 14.6029,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 39,
+    "fields": {
+      "name": "Naples",
+      "country": "Italy",
+      "latitude": 40.8518,
+      "longitude": 14.2681,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 40,
+    "fields": {
+      "name": "Oslo",
+      "country": "Norway",
+      "latitude": 59.9139,
+      "longitude": 10.7522,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 41,
+    "fields": {
+      "name": "Troms\u00f8",
+      "country": "Norway",
+      "latitude": 69.6496,
+      "longitude": 18.956,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 42,
+    "fields": {
+      "name": "Lisbon",
+      "country": "Portugal",
+      "latitude": 38.7169,
+      "longitude": -9.1399,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 43,
+    "fields": {
+      "name": "Porto",
+      "country": "Portugal",
+      "latitude": 41.1579,
+      "longitude": -8.6291,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 44,
+    "fields": {
+      "name": "Prague",
+      "country": "Czech Republic",
+      "latitude": 50.0755,
+      "longitude": 14.4378,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 45,
+    "fields": {
+      "name": "Bruges",
+      "country": "Belgium",
+      "latitude": 51.2093,
+      "longitude": 3.2247,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 46,
+    "fields": {
+      "name": "Antwerp",
+      "country": "Belgium",
+      "latitude": 51.2194,
+      "longitude": 4.4025,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 47,
+    "fields": {
+      "name": "Cairo",
+      "country": "Egypt",
+      "latitude": 30.0444,
+      "longitude": 31.2357,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 48,
+    "fields": {
+      "name": "Luxor",
+      "country": "Egypt",
+      "latitude": 25.6872,
+      "longitude": 32.6396,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 49,
+    "fields": {
+      "name": "Jerusalem",
+      "country": "Israel",
+      "latitude": 31.7683,
+      "longitude": 35.2137,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 50,
+    "fields": {
+      "name": "Tel Aviv",
+      "country": "Israel",
+      "latitude": 32.0853,
+      "longitude": 34.7818,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 51,
+    "fields": {
+      "name": "Istanbul",
+      "country": "Turkey",
+      "latitude": 41.0082,
+      "longitude": 28.9784,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 52,
+    "fields": {
+      "name": "Doha",
+      "country": "Qatar",
+      "latitude": 25.276987,
+      "longitude": 51.520008,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 53,
+    "fields": {
+      "name": "Dubai",
+      "country": "UAE",
+      "latitude": 25.2048,
+      "longitude": 55.2708,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 54,
+    "fields": {
+      "name": "Muscat",
+      "country": "Oman",
+      "latitude": 23.588,
+      "longitude": 58.3829,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 55,
+    "fields": {
+      "name": "Tehran",
+      "country": "Iran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 56,
+    "fields": {
+      "name": "Kathmandu",
+      "country": "Nepal",
+      "latitude": 27.7172,
+      "longitude": 85.324,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 57,
+    "fields": {
+      "name": "Colombo",
+      "country": "Sri Lanka",
+      "latitude": 6.9271,
+      "longitude": 79.8612,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 58,
+    "fields": {
+      "name": "Lima",
+      "country": "Peru",
+      "latitude": -12.0464,
+      "longitude": -77.0428,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 59,
+    "fields": {
+      "name": "La Paz",
+      "country": "Bolivia",
+      "latitude": -16.5,
+      "longitude": -68.15,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "destinations.destination",
+    "pk": 60,
+    "fields": {
+      "name": "Manila",
+      "country": "Philippines",
+      "latitude": 14.5995,
+      "longitude": 120.9842,
+      "created_by": 1
+    }
   }
 ]

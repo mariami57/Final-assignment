@@ -58,6 +58,6 @@ def profile_delete_view(request, pk):
             user.delete()
             return redirect('login')
     else:
-        return HttpResponseForbidden()
+        return HttpResponseForbidden("You are not allowed to delete this profile.")
 
     return redirect('profile-details-page', pk=pk)

@@ -60,7 +60,7 @@ def post_delete_view(request, pk):
         post.delete()
         return redirect('posts-feed')
     else:
-        return HttpResponseForbidden()
+        return HttpResponseForbidden("You are not allowed to delete this post.")
 
 class PostDetailView(LoginRequiredMixin, FormMixin, DetailView):
     model = Post

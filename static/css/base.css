@@ -67,6 +67,17 @@ a:hover{
     margin-top: 10px;
 }
 
+.menu-footer{
+    list-style-type: none;
+    font-weight: 700;
+    font-family: "Times New Roman", sans-serif;
+    background-color: rgb(105, 11, 34);
+    color: rgb(252 242 228);
+    font-size: x-large;
+
+
+}
+
  button {
     background-color: rgb(188, 49, 82);
     border: 2px solid rgb(188, 49, 82);

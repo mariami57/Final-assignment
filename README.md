@@ -52,9 +52,8 @@ WanderWords is a Django-powered social platform where users can share travel-ins
   pip install -r requirements.txt
 </pre>
 
-### 3. Create and apply migrations
+### 3. Apply migrations
 <pre>
-  python manage.py makemigrations
   python manage.py migrate
 </pre>
 

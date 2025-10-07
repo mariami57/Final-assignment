@@ -1,7 +1,6 @@
-# WanderWords
-
 This is my project for SoftUni`s Django Advanced July 2025 course.
 
+# WanderWords
 WanderWords is a Django-powered social platform where users can share travel-inspired posts, write reviews, and engage with each other through comments. It provides a seamless way to share experiences, explore destinations, and interact with a community of fellow explorers.
 
 ## Features

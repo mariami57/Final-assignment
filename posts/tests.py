@@ -3,10 +3,11 @@ from io import BytesIO
 from PIL import Image
 from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 
 from books.models import Book
 from destinations.models import Destination
+from posts.mixins import BookDestinationHandlerMixin
 from posts.models import Post
 
 # Create your tests here.
@@ -39,6 +40,37 @@ class ModelTests(TestCase):
 
 
 
+class DummyForm:
+    def __init__(self, cleaned_data, instance = None):
+        self.cleaned_data = cleaned_data
+        self.instance = instance or type('Instance', (), {'pk':None})()
+
+class TestBookDestinationHandlerMixin(TestCase):
+    def setUp(self):
+        self.user = UserModel.objects.create_user(username="tester", password="12345")
+        self.factory = RequestFactory()
+        self.request = self.factory.get('/')
+        self.request.user = self.user
+        self.mixin = BookDestinationHandlerMixin()
+        self.mixin.request = self.request
+
+    def test_creates_new_book_and_new_destination_when_choice_is_other(self):
+        form = DummyForm({
+            'book_choice': 'other',
+            'book_title': 'Wanderlust Tales',
+            'destination_choice': 'other',
+            'destination_name': 'Kyoto',
+            'destination_country': 'Japan',
+            'latitude': 35.6895,
+            'longitude': 139.6917,
+        })
+
+        book, destination = self.mixin.handle_book_and_destination(form)
+
+        self.assertIsNotNone(book)
+        self.assertIsNotNone(destination)
+        self.assertEqual(destination.name, 'Kyoto')
+        self.assertIn(destination, book.destinations.all())
 
 
 

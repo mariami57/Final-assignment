@@ -6,6 +6,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
 from books.models import Book
+from comments.models import Comment
 from destinations.models import Destination
 from posts.models import Post
 
@@ -32,3 +33,13 @@ class ModelTests(TestCase):
 
     def test_post_str_returns_title(self):
         self.assertEqual(str(self.post), "My Alaska Trip")
+
+    def test_comment_creation_success(self):
+        comment = Comment.objects.create(
+            user = self.user,
+            text = 'Sounds interesting, can`t wait to go there',
+            post = self.post
+        )
+
+        self.assertEqual(comment.user.username, self.user.username)
+        self.assertEqual(comment.post, self.post)

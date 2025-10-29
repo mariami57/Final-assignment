@@ -94,3 +94,26 @@ class TestBookDestinationHandlerMixin(TestCase):
         self.assertEqual(book, existing_book)
         self.assertEqual(destination, existing_dest)
         self.assertIn(existing_dest, existing_book.destinations.all())
+
+    def test_edit_mode_adds_existing_destination_to_book(self):
+        book = Book.objects.create(title="TestBook", author="A", genre="G", added_by=self.user)
+        dest = Destination.objects.create(
+            name="Lisbon", country="Portugal", latitude=38.7223, longitude=-9.1393, created_by=self.user
+        )
+
+        instance = type('Instance', (), {'pk':1})()
+
+        form = DummyForm({
+            'book_choice': book.id,
+            'book_title': '',
+            'destination_choice': dest.id,
+            'destination_name': '',
+            'destination_country': '',
+            'latitude': None,
+            'longitude': None,
+        }, instance=instance)
+
+
+        book, destination = self.mixin.handle_book_and_destination(form)
+
+        self.assertIn(dest, book.destinations.all())

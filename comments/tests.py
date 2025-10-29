@@ -25,7 +25,7 @@ class ModelTests(TestCase):
 
     def setUp(self):
         test_image = self.create_test_image()
-        self.user = UserModel.objects.create(username='testuser', password='12345')
+        self.user = UserModel.objects.create_user(username='testuser', password='12345')
         self.dest = Destination.objects.create(name='Alaska', country='USA', created_by=self.user, latitude=63.5888,
                                                longitude=154.4931)
         self.book = Book.objects.create(title='Into the Wild', author='Jon Krakauer', genre='Biography',

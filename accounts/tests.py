@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.db import IntegrityError
 from django.test import TestCase
 
 # Create your tests here.
@@ -18,3 +19,13 @@ class TestUserModel(TestCase):
 
     def test_valid_str_method_returns_username(self):
             self.assertEqual('TesUsername', str(self.user))
+
+    def test_second_user_with_same_username_raise_integrity_error(self):
+        with self.assertRaises(IntegrityError) as context:
+            UserModel.objects.create_user(
+                username = self.username,
+                email = 'a' + self.email,
+                password = self.password
+            )
+
+        self.assertIn('UNIQUE', str(context.exception).upper())

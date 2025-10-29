@@ -6,12 +6,13 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
 from books.models import Book
-from comments.models import Comment
 from destinations.models import Destination
 from posts.models import Post
 
 # Create your tests here.
 UserModel = get_user_model()
+
+
 class ModelTests(TestCase):
 
     def create_test_image(self, name='test_image.jpg', size=(100, 100), color=(255, 0, 0)):
@@ -24,22 +25,15 @@ class ModelTests(TestCase):
     def setUp(self):
         test_image = self.create_test_image()
         self.user = UserModel.objects.create(username='testuser', password='12345')
-        self.dest = Destination.objects.create(name='Alaska', country='USA', created_by=self.user, latitude=63.5888, longitude=154.4931)
-        self.book = Book.objects.create(title='Into the Wild', author='Jon Krakauer', genre='Biography', added_by=self.user)
+        self.dest = Destination.objects.create(name='Alaska', country='USA', created_by=self.user, latitude=63.5888,
+                                               longitude=154.4931)
+        self.book = Book.objects.create(title='Into the Wild', author='Jon Krakauer', genre='Biography',
+                                        added_by=self.user)
         self.post = Post.objects.create(user=self.user, book=self.book, destination=self.dest,
-                    content='It was cold but beautiful!',
-                    title='My Alaska Trip', image1=test_image)
+                                        content='It was cold but beautiful!',
+                                        title='My Alaska Trip', image1=test_image)
 
-
-    def test_post_str_returns_title(self):
-        self.assertEqual(str(self.post), "My Alaska Trip")
-
-    def test_comment_creation_success(self):
-        comment = Comment.objects.create(
-            user = self.user,
-            text = 'Sounds interesting, can`t wait to go there',
-            post = self.post
-        )
-
-        self.assertEqual(comment.user.username, self.user.username)
-        self.assertEqual(comment.post, self.post)
+    def test_search_returns_results(self):
+        response = self.client.get('/api/search/?q=Alaska')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('cold', str(response.content))

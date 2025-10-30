@@ -25,6 +25,10 @@ WanderWords is a Django-powered social platform where users can share travel-ins
 - Edit comments in place with a smooth UI.
 - Delete comments instantly.
 
+○ Testing - The WanderWords project includes a comprehensive suite of automated tests built using Django’s built-in TestCase framework.
+These tests ensure that all key features — from user authentication to post and review creation and comment handling — work as expected.
+
+
 
 ## Tech Stack
 
@@ -82,3 +86,16 @@ WanderWords is a Django-powered social platform where users can share travel-ins
 ○ Validations applied to user input when it comes to books, destinations, profile information  
 
 ○ Django auth system  
+
+## Testing Framework
+
+All tests are implemented using:
+
+- Django’s TestCase class for isolated database testing. (Each test runs in its own transaction with a temporary test database.)
+- RequestFactory for simulating view requests.
+- SimpleUploadedFile and Pillow (PIL) for image upload simulation.
+
+You can run all tests using:
+<pre>
+  python manage.py test
+</pre>
